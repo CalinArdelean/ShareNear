@@ -7,14 +7,7 @@
 }
 
 .App-navbar {
-  background-color: #000000;
-  min-height: 10vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: top;
-  font-size: calc(10px + 2vmin);
-  color: black;
+  background-color: #10263b;
 }
 
 .App-link {
@@ -22,5 +15,9 @@
 }
 
 Col{
-  width: 5px;
+  width: 5%;
+}
+
+.fas fa-search{
+  color: white;
 }

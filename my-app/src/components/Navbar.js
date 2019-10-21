@@ -1,18 +1,9 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-//import Button from 'react-bootstrap/Button';
-import Button from '@material-ui/core/Button';
+import React from 'react'
+import logo from './../assets/logo.svg';
 import { Navbar, Nav, Form, FormControl, Container, Row, Col} from 'react-bootstrap';
 
-
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-
+function AppNavbar() {
+    return (
         <Navbar variant="dark" className="App-navbar">
           <Navbar.Brand href="/">
             <img
@@ -40,12 +31,7 @@ function App() {
             </Navbar.Text>
           </Navbar.Collapse>
         </Navbar>      
-
-      </header>
-    </div>
-  );
+    );
 }
 
-
-
-export default App;
+export default Navbar;

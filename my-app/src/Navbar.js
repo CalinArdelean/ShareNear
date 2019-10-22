@@ -1,8 +1,11 @@
 import React from 'react'
-import logo from './../assets/logo.svg';
+import {Link} from 'react-router-dom';
+import './App.css';
+import logo from './logo.svg';
 import { Navbar, Nav, Form, FormControl, Container, Row, Col} from 'react-bootstrap';
 
-function AppNavbar() {
+class AppNavbar extends React.Component {
+  render() {
     return (
         <Navbar variant="dark" className="App-navbar">
           <Navbar.Brand href="/">
@@ -32,6 +35,7 @@ function AppNavbar() {
           </Navbar.Collapse>
         </Navbar>      
     );
+  }
 }
 
-export default Navbar;
+export default AppNavbar;

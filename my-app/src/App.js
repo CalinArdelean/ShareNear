@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import Button from '@material-ui/core/Button';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
-import Login from './Login';
+import Login from './components/LoginForm';
 import Home from './Home';
 
 class App extends React.Component {

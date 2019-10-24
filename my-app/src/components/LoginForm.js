@@ -1,30 +1,46 @@
 import React from 'react';
+//import './App.css';
+import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
 
-/* Component for the Student Form */
+/* Component for the Home page */
+
 class LoginForm extends React.Component {
-
   render() {
-    // console.log(this.props)
-
     return (
-    	<div>
-    	  <input name='userName' 
-    	         value={ this.props.userName } 
-    	         onChange={this.props.handleChange} 
-    	         type="text" 
-    	         placeholder="Username" />
-    	         
-          <input name='passWord' 
-               value={ this.props.passWord } 
-               onChange={this.props.handleChange} 
-               type="text" 
-               placeholder="Password" />
+      <div>
 
-	      {/* <button onClick={ this.props.addStudent }>Add Student</button> */}
-		</div>
-	)
+        { /* Inputs to add user */}
+        <br></br>
+        <br></br>
+        <h4>Welcome to ShareNear</h4>
+        <br></br>
+        <br></br>
+        <input username='username'
+          //  value={ this.props.studentName } 
+          //  onChange={this.props.handleChange} 
+          type="text"
+          placeholder="username" />
+        <br></br>
+        <br></br>
+        <input password='password'
+          //  value={ this.props.studentName } 
+          //  onChange={this.props.handleChange} 
+          type="text"
+          placeholder="password" />
+        <br></br>
+        <br></br>
+        <a href="./">Don't have an account already? Sign Up Here</a>
+
+        {/* <Button variant="contained" className={classes.button}>
+                    Default
+                </Button>
+                 */}
+
+      </div>
+
+    );
   }
 }
 
 export default LoginForm;
-

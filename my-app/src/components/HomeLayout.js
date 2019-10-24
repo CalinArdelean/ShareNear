@@ -6,7 +6,10 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
+
+//hard coded pictures of products (will need to change for phase 2)
 import bike from '../bike.jpg';
+import snowblower from '../snowblower.jpg';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -66,24 +69,24 @@ export default function ComplexGrid() {
                         </Grid>
                     </Grid>
                 </Grid>
-
                 <Grid container spacing={2}>
                     <Grid item>
                         <ButtonBase className={classes.image}>
-                            <img className={classes.img} alt="logo" src={bike} />
+                            <img className={classes.img} alt="logo" src={snowblower} />
                         </ButtonBase>
                     </Grid>
                     <Grid item xs={12} sm container>
                         <Grid item xs container direction="column" spacing={2}>
                             <Grid item xs>
                                 <Typography gutterBottom variant="header">
-                                    Children's Bicycle
+                                    Snow Blower
                 </Typography>
                                 <Typography variant="body2" gutterBottom>
-                                    Markham, ON
+                                    Mississauga, ON
                 </Typography>
                                 <Typography variant="body2" color="textSecondary">
-                                    Brand new, my son uses it and he's eight, so I can guarantee that it's good for eight-year-olds
+                                    This heavy duty snow blower powered by a 11 HP 120 Volt electric 
+                                    start engine transforms banks of snow into a clear path in a single pass. 
                 </Typography>
                             </Grid>
                             <Grid item>
@@ -93,7 +96,7 @@ export default function ComplexGrid() {
                             </Grid>
                         </Grid>
                         <Grid item>
-                            <Typography variant="subtitle1">$8.00/day</Typography>
+                            <Typography variant="subtitle1">$20.00/day</Typography>
                         </Grid>
                     </Grid>
                 </Grid>

@@ -13,7 +13,8 @@ class LoginForm extends React.Component {
         { /* Inputs to add user */}
         <br></br>
         <br></br>
-        <h4>Welcome to ShareNear</h4>
+        <h3>Welcome to ShareNear</h3>
+        <p>Your One-Stop Online Rent Marketplace</p>
         <br></br>
         <br></br>
         <input username='username'

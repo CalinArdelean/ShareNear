@@ -1,9 +1,7 @@
 import React from 'react'
-import {Link} from 'react-router-dom';
-import './App.css';
-import logo from './logo.svg';
+import '../App.css';
+import logo from '../logo.svg';
 import { Navbar, Nav, Form, FormControl, Container, Row, Col} from 'react-bootstrap';
-import login from './login';
 
 class AppNavbar extends React.Component {
   render() {
@@ -18,7 +16,6 @@ class AppNavbar extends React.Component {
               className="d-inline-block align-top"
             />
           </Navbar.Brand>
-          {/* <Navbar.Brand href="#home"><img src={logo} className="App-logo" alt="logo" />  </Navbar.Brand> */}
           <Form inline className="text-white">
             <FormControl type="text" placeholder="Item" className="ml-4 text-white rounded-0 bg-transparent border-left-0 border-right-0 border-top-0" />
             <FormControl type="text" placeholder="Location" className="ml-4 text-white rounded-0 bg-transparent border-left-0 border-right-0 border-top-0" />

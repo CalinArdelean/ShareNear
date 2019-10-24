@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
 import Login from './components/LoginForm';
+import SignUp from './components/SignUpForm';
 import Home from './Home';
 
 class App extends React.Component {
@@ -18,6 +19,7 @@ class App extends React.Component {
                             { /* Each Route below shows a different component depending on the exact path in the URL  */}
                             <Route exact path='/' component={Home}/>
                             <Route exact path='/login' component={Login} />
+                            <Route exact path='/signup' component={SignUp} />
                         </Switch>
                     </BrowserRouter>
                 </div>

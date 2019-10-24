@@ -3,14 +3,13 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 
-/* Component for the Home page */
+/* Component to Login */
 
 class LoginForm extends React.Component {
   render() {
     return (
       <div>
 
-        { /* Inputs to add user */}
         <br></br>
         <br></br>
         <h3>Welcome to ShareNear</h3>
@@ -21,22 +20,22 @@ class LoginForm extends React.Component {
           //  value={ this.props.studentName } 
           //  onChange={this.props.handleChange} 
           type="text"
-          placeholder="username" />
+          placeholder="Username" />
         <br></br>
         <br></br>
         <input password='password'
           //  value={ this.props.studentName } 
           //  onChange={this.props.handleChange} 
           type="text"
-          placeholder="password" />
+          placeholder="Password" />
+        <br/>
+        <br/>
+        <a href="./">
+          <button type="button">Sign In</button>
+        </a>
         <br></br>
         <br></br>
-        <a href="./">Don't have an account already? Sign Up Here</a>
-
-        {/* <Button variant="contained" className={classes.button}>
-                    Default
-                </Button>
-                 */}
+        <a href="./signup">Don't have an account already? Sign Up Here</a>
 
       </div>
 

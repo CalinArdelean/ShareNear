@@ -7,19 +7,17 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
 
-//hard coded pictures of products (will need to change for phase 2)
-import bike from '../bike.jpg';
-import snowblower from '../snowblower.jpg';
-import chainsaw from '../chainsaw.jpg';
-import ps4 from '../ps4.jpg';
-import airpods from '../airpods.jpg';
-import trampoline from '../trampoline.jpg';
-import apartment from '../apartment.jpg';
-import oculus from '../oculus.jpg';
-import porsche from '../porsche.jpg';
-
-
-var images = [bike, snowblower, chainsaw, ps4, airpods, trampoline, apartment, oculus, porsche];
+//hard coded pictures and listings of products (will need to change for phase 2)
+import bike from '../assets/bike.jpg';
+import snowblower from '../assets/snowblower.jpg';
+import chainsaw from '../assets/chainsaw.jpg';
+import ps4 from '../assets/ps4.jpg';
+import airpods from '../assets/airpods.jpg';
+import trampoline from '../assets/trampoline.jpg';
+import apartment from '../assets/apartment.jpg';
+import oculus from '../assets/oculus.jpg';
+import porsche from '../assets/porsche.jpg';
+var images = [bike, chainsaw, snowblower, ps4, airpods, trampoline, apartment, oculus, porsche];
 var names = ['Children\'s Bicycle', 'Chainsaw', 'Snow Blower', 'PlayStation 4', 'Air Pods', 'Trampoline', 'Apartment for Rent', 'Oculus Quest', 'Porsche Rental'];
 var descriptions = ['Brand new, my son uses it and he\'s eight, so I can guarantee that it\'s good for eight - year - olds.',
     '15-inch petrol chainsaw.',

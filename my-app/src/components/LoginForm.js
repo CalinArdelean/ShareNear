@@ -2,6 +2,9 @@ import React from 'react';
 //import './App.css';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
+import logo from '../logo.svg';
+import './Forms.css';
+
 
 /* Component to Login */
 
@@ -9,9 +12,15 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div>
-
         <br></br>
         <br></br>
+        <img
+              alt=""
+              src={logo}
+              width="175px"
+              height="100px"
+              className="d-inline-block align-top"
+            />
         <h3>Welcome to ShareNear</h3>
         <p>Your One-Stop Online Rent Marketplace</p>
         <br></br>

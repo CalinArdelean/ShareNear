@@ -20,7 +20,9 @@ class AppNavbar extends React.Component {
             <FormControl type="text" placeholder="Item" className="ml-4 text-white rounded-0 bg-transparent border-left-0 border-right-0 border-top-0" />
             <FormControl type="text" placeholder="Location" className="ml-4 text-white rounded-0 bg-transparent border-left-0 border-right-0 border-top-0" />
             &nbsp; &nbsp; &nbsp; &nbsp;
+            <a href="/">
             <i class="fas fa-search"></i>
+            </a>
           </Form>
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text className="text-white">

@@ -8,7 +8,7 @@ import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import Login from './components/LoginForm';
 import SignUp from './components/SignUpForm';
 import Profile from './components/UserProfile';
-import Home from './Home';
+import Home from './components/Home';
 
 class App extends React.Component {
     render() {

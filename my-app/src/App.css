@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  height: 100%;
 }
 
 .App-logo {
@@ -19,8 +20,21 @@
   padding: 10px;
 }
 
+.Width {
+  width: 50%;
+}
+
 div.Form {
   background-color: #10263b;
+  color: white;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+a i {
   color: white;
 }
 

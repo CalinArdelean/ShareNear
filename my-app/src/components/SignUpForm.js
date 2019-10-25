@@ -7,16 +7,15 @@ import logo from '../logo.svg';
 class SignUpForm extends React.Component {
     render() {
         return (
-            <div className="Form">
+            <div className="Form" height="100px">
                 <br></br>
                 <br></br>
-                <img
+              <img
               alt=""
               src={logo}
               width="175px"
               height="100px"
-              className="d-inline-block align-top"
-            />
+              className="d-inline-block align-top"/>
                 <h3>Welcome to ShareNear</h3>
                 <p>Let's get you set up</p>
                 <br></br>

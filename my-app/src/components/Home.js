@@ -1,8 +1,8 @@
 import React from 'react';
-import './App.css';
+import '../App.css';
 
-import AppNavbar from './components/Navbar';
-import ComplexGrid from './components/HomeLayout';
+import AppNavbar from './Navbar';
+import ComplexGrid from './HomeLayout';
 
 /* Component for the Home page */ 
 class Home extends React.Component {

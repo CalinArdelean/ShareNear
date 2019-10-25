@@ -1,9 +1,9 @@
 import React from 'react';
-//import './App.css';
+import '../App.css';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import logo from '../logo.svg';
-import './Forms.css';
+//import './Forms.css';
 
 
 /* Component to Login */
@@ -11,7 +11,7 @@ import './Forms.css';
 class LoginForm extends React.Component {
   render() {
     return (
-      <div>
+      <div className="Form">
         <br></br>
         <br></br>
         <img

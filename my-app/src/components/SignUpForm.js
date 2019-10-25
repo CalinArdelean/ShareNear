@@ -7,8 +7,7 @@ import logo from '../logo.svg';
 class SignUpForm extends React.Component {
     render() {
         return (
-            <div>
-
+            <div className="Form">
                 <br></br>
                 <br></br>
                 <img

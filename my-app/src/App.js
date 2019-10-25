@@ -7,6 +7,7 @@ import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
 import Login from './components/LoginForm';
 import SignUp from './components/SignUpForm';
+import Profile from './components/UserProfile';
 import Home from './Home';
 
 class App extends React.Component {
@@ -20,6 +21,7 @@ class App extends React.Component {
                             <Route exact path='/' component={Home}/>
                             <Route exact path='/login' component={Login} />
                             <Route exact path='/signup' component={SignUp} />
+                            <Route exact path='/profile' component={Profile} />
                         </Switch>
                     </BrowserRouter>
                 </div>

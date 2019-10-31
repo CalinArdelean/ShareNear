@@ -7,7 +7,7 @@ import logo from '../logo.svg';
 class SignUpForm extends React.Component {
     render() {
         return (
-            <div className="Form" height="100px">
+            <div className="Form">
                 <br></br>
                 <br></br>
               <img
@@ -17,56 +17,52 @@ class SignUpForm extends React.Component {
               height="100px"
               className="d-inline-block align-top"/>
                 <h3>Welcome to ShareNear</h3>
-                <p>Let's get you set up</p>
+                <h6>Let's get you set up</h6>
                 <br></br>
-                <br></br>
+                <p>Please input your information in the fields below:</p>
+                <div className="input">
                 <input firstname='firstname'
-                    //  value={ this.props.studentName } 
-                    //  onChange={this.props.handleChange} 
                     type="text"
                     placeholder="First Name" />
-                <br></br>
-                <br></br>
+                </div>
+                <div className="input">
                 <input lastname='lastname'
-                    //  value={ this.props.studentName } 
-                    //  onChange={this.props.handleChange} 
                     type="text"
                     placeholder="Last Name" />
+                </div>
                 <br></br>
-                <br></br>
+                <div className="input">
+                <input phonenumber='phonenumber'
+                    type="text"
+                    placeholder="Phone Number" />
+                </div>
+                <div className="input">
                 <input email='email'
-                    //  value={ this.props.studentName } 
-                    //  onChange={this.props.handleChange} 
                     type="text"
                     placeholder="Email Address" />
+                </div>
                 <br></br>
-                <br></br>
+                <div className="input">
                 <input location='location'
-                    //  value={ this.props.studentName } 
-                    //  onChange={this.props.handleChange} 
                     type="text"
                     placeholder="Location" />
-                <br></br>
-                <br></br>
+                </div>
+                <div className="input">
                 <input username='username'
-                    //  value={ this.props.studentName } 
-                    //  onChange={this.props.handleChange} 
                     type="text"
-                    placeholder="Username" />
+                    placeholder="Username" />   
+                </div>             
                 <br></br>
-                <br></br>
+                <div className="input">              
                 <input password='password'
-                    //  value={ this.props.studentName } 
-                    //  onChange={this.props.handleChange} 
                     type="text"
                     placeholder="Password" />
-                <br />
-                <br />
+                </div>
+                <div className="input">
                 <input password='password'
-                    //  value={ this.props.studentName } 
-                    //  onChange={this.props.handleChange} 
                     type="text"
                     placeholder="Confirm Password" />
+                </div>
                 <br />
                 <br />
                 <a href="./">
@@ -75,7 +71,6 @@ class SignUpForm extends React.Component {
                 <br></br>
                 <br></br>
                 <a href="./login">Already have an account? Login Here</a>
-
             </div>
 
         );

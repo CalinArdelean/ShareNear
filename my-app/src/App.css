@@ -32,6 +32,12 @@ div.Form {
   left: 0;
   width: 100%;
   overflow: hidden;
+
+}
+
+div.input {
+    display: inline-block;
+    padding: 10px;
 }
 
 a i {

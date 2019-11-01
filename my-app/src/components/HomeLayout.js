@@ -6,6 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
+import Dotdotdot from 'react-dotdotdot';
 
 //hard coded pictures and listings of products (will need to change for phase 2)
 import bike from '../assets/bike.jpg';
@@ -17,14 +18,17 @@ import trampoline from '../assets/trampoline.jpg';
 import apartment from '../assets/apartment.jpg';
 import oculus from '../assets/oculus.jpg';
 import porsche from '../assets/porsche.jpg';
+import { borderColor } from '@material-ui/system';
 var images = [bike, chainsaw, snowblower, ps4, airpods, trampoline, apartment, oculus, porsche];
 var names = ['Children\'s Bicycle', 'Chainsaw', 'Snow Blower', 'PlayStation 4', 'Air Pods', 'Trampoline', 'Apartment for Rent', 'Oculus Quest', 'Porsche Rental'];
 var descriptions = ['Brand new, my son uses it and he\'s eight, so I can guarantee that it\'s good for eight - year - olds.',
     '15-inch petrol chainsaw.',
     'This heavy duty snow blower powered by a 11 HP 120 Volt electric start engine transforms banks of snow into a clear path in a single pass.',
     'Comes with the new Spiderman and God of War!', 'You have to experience this.', '5 meters in diameter.', 'Two-bedroom apartment for rent. $40.00 per person per night. Check out is at noon.', 'Quest headset and controllers with a bunch of games downloaded.', '2016 dark gray Porsche.'];
-var prices = ['15.00', '11.00', '20.00', '14.00', '8.00', '35.00', '40.00', '20.00', '90.00'];
+var prices = ['15.00', '11.00', '20.00', '14.00', '8.00', '35.00', '40.00', '20.00', '230.00'];
 var cities = ['Markham, ON', 'Mississauga, ON', 'Toronto, ON', 'Toronto, ON', 'North York, ON', 'Toronto, ON', 'Thornhill, ON', 'Toronto, ON', 'Toronto, ON'];
+
+var numCols = 12;
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -48,7 +52,13 @@ const useStyles = makeStyles(theme => ({
     },
     item: {
         background: 'beige',
+        width: 400,
+        height: 180
     },
+    description: {
+        maxHeight: 10,
+        color: "red"
+    }
 }));
 
 
@@ -60,15 +70,43 @@ export default function ComplexGrid() {
     const items = [];
     let index = 0;
     for (let i = 0; i < 3; i++) {
-        items.push(singleItem(classes, index));
-        index += 3;
+        for (let j = 0; j < numCols; j++) {
+
+    
+
+            //if (j % numCols == 0) {
+             //   items.push(singleItem(classes));
+            //}
+            items.push(singleItem(classes, index));
+            //if (j % numCols == numCols - 1) {
+             //   items.push(singleItem(classes));
+            //}
+            index++;
+        }
     }
+
     return (
         <div>
-            {items}
+            {wrapper(classes, items)}
         </div>
     );
 }
+
+function wrapper(classes, items) {
+
+    return (
+        <div className={classes.root}>
+            <Paper className={classes.paper}>
+                <Grid container spacing={2}>
+
+                    {items}
+
+                </Grid>
+            </Paper>
+        </div>
+    );
+}
+
 
 function singleItem(classes, index) {
     
@@ -84,83 +122,30 @@ function singleItem(classes, index) {
                             </ButtonBase>
                         </Grid>
                         <Grid item xs container direction="column" spacing={2}>
-                            <Grid item xs>
+                            <Grid item xs >
                                 <Typography gutterBottom variant="header">
                                     {names[index]}
-                </Typography>
+                                </Typography>
                                 <Typography variant="body2" gutterBottom>
                                     {cities[index]}
-                </Typography>
-                                <Typography variant="body2" color="textSecondary">
-                                    {descriptions[index]}
-                </Typography>
+                                </Typography>
+                                <Dotdotdot clamp={3}>
+                                    <Typography variant="body2" color="textSecondary">
+                                        {descriptions[index]}
+                                    </Typography>
+                                </Dotdotdot>
+                                
                             </Grid>
                             <Grid item>
-                                <Typography variant="body2" style={{ cursor: 'pointer' }}>
-                                    See item
-                </Typography>
+                                <Typography variant="body2" style={{ cursor: 'pointer' }} >
+                                    <a href="./item">
+                                        See item
+                                    </a>    
+                                </Typography>
                             </Grid>
                         </Grid>
                         <Grid item>
                             <Typography variant="subtitle1">${prices[index]}/day</Typography>
-                        </Grid>
-                    </Grid>
-                    
-                    <Grid item xs sm container spacing={12} className={classes.item}>
-                        <Grid item>
-                            <ButtonBase className={classes.image}>
-                                <img className={classes.img} alt="logo" src={images[index + 1]} />
-                            </ButtonBase>
-                        </Grid>
-                        <Grid item xs container direction="column" spacing={2}>
-                            <Grid item xs>
-                                <Typography gutterBottom variant="header">
-                                    {names[index+1]}
-                </Typography>
-                                <Typography variant="body2" gutterBottom>
-                                    {cities[index+1]}
-                </Typography>
-                                <Typography variant="body2" color="textSecondary">
-                                    {descriptions[index+1]}
-                </Typography>
-                            </Grid>
-                            <Grid item>
-                                <Typography variant="body2" style={{ cursor: 'pointer' }}>
-                                    See item
-                </Typography>
-                            </Grid>
-                        </Grid>
-                        <Grid item>
-                            <Typography variant="subtitle1">${prices[index+1]}/day</Typography>
-                        </Grid>
-                    </Grid>
-                    
-                    <Grid item xs sm container spacing={12} className={classes.item}>
-                        <Grid item>
-                            <ButtonBase className={classes.image}>
-                                <img className={classes.img} alt="logo" src={images[index+2]} />
-                            </ButtonBase>
-                        </Grid>
-                        <Grid item xs container direction="column" spacing={2}>
-                            <Grid item xs>
-                                <Typography gutterBottom variant="header">
-                                    {names[index+2]}
-                </Typography>
-                                <Typography variant="body2" gutterBottom>
-                                    {cities[index+2]}
-                </Typography>
-                                <Typography variant="body2" color="textSecondary">
-                                    {descriptions[index+2]}
-                </Typography>
-                            </Grid>
-                            <Grid item>
-                                <Typography variant="body2" style={{ cursor: 'pointer' }}>
-                                    See item
-                </Typography>
-                            </Grid>
-                        </Grid>
-                        <Grid item>
-                            <Typography variant="subtitle1">${prices[index+2]}/day</Typography>
                         </Grid>
                     </Grid>
                 </Grid>

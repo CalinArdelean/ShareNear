@@ -9,6 +9,7 @@ import Login from './components/LoginForm';
 import SignUp from './components/SignUpForm';
 import Profile from './components/UserProfile';
 import Home from './components/Home';
+import Item from './components/ItemPage';
 
 class App extends React.Component {
     render() {
@@ -22,6 +23,7 @@ class App extends React.Component {
                             <Route exact path='/login' component={Login} />
                             <Route exact path='/signup' component={SignUp} />
                             <Route exact path='/profile' component={Profile} />
+                            <Route exact path='/item' component={Item} />
                         </Switch>
                     </BrowserRouter>
                 </div>

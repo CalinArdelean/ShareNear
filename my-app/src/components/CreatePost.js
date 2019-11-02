@@ -12,7 +12,7 @@ class newPost extends React.Component {
                 <br/>
                 <h3>Rent Form</h3>
                 <br/>
-                <a href="./Profile">
+                <a href="./">
                     <button type="button">Create Post</button>
                 </a>
             </div>

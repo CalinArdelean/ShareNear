@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 
-import AppNavbar from './Navbar';
+import AppNavbar from './NavbarLoggedIn';
 
 /* Component for the profile page */
 class Profile extends React.Component {

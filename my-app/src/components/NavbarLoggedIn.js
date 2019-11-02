@@ -25,8 +25,13 @@ class AppNavbar extends React.Component {
             </a>
           </Form>
           <Navbar.Collapse className="justify-content-end">
+          <Navbar.Text className="text-white">
+            <a href="./Profile">View Profile
+            </a>
+            &nbsp; &nbsp; &nbsp;
+            </Navbar.Text>
             <Navbar.Text className="text-white">
-              <a href="./login">Login
+              <a href="./">Logout
               &nbsp; <i class="fas fa-user"></i>
               </a>
             </Navbar.Text>

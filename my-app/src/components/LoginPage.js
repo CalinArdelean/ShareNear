@@ -14,8 +14,8 @@ class LoginPage extends React.Component {
     userName: "",
     userPassword: "",
     users: [
-      {user: "user", pass: "user"},
-      {user: "admin", pass: "admin"}
+      {id: 0, user: "user", pass: "user", fName: "John", lName: "Doe", num: "416-900-8555", email: "JohnDoe123@hotmail.com", location: "Toronto, ON" },
+      { id: 1, user: "admin", pass: "admin", fName: "Mary", lName: "Smith", num: "647-880-3325", email: "MarySmithers@hotmail.com", location: "Oakville, ON"}
     ]
   }
   // Generic handler for whenever we type in an input box.
@@ -55,7 +55,6 @@ class LoginPage extends React.Component {
   // Each section of the Queue now has its own componenet, cleaning up the
   // JSX a lot.
   render() {
-    console.log("hello")
     return (
         
 

@@ -21,13 +21,13 @@ class AppNavbar extends React.Component {
             <FormControl type="text" placeholder="Location" className="ml-4 text-white rounded-0 bg-transparent border-left-0 border-right-0 border-top-0" />
             &nbsp; &nbsp; &nbsp; &nbsp;
             <a href="/">
-            <i class="fas fa-search"></i>
+            <i className="fas fa-search"></i>
             </a>
           </Form>
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text className="text-white">
               <a href="./login">Login
-              &nbsp; <i class="fas fa-user"></i>
+              &nbsp; <i className="fas fa-user"></i>
               </a>
             </Navbar.Text>
           </Navbar.Collapse>

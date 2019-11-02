@@ -13,10 +13,13 @@ class LoginPage extends React.Component {
   state = {
     userName: "",
     userPassword: "",
+    currentUser: {},
     validUser: -1,
     users: [
-      {id: 0, user: "user", pass: "user", fName: "John", lName: "Doe", num: "416-900-8555", email: "JohnDoe123@hotmail.com", location: "Toronto, ON" },
-      { id: 1, user: "admin", pass: "admin", fName: "Mary", lName: "Smith", num: "647-880-3325", email: "MarySmithers@hotmail.com", location: "Oakville, ON"}
+      {id: 0, user: "user", pass: "user", fName: "John", lName: "Doe", num: "416-900-8555",
+       email: "JohnDoe123@hotmail.com", location: "Toronto, ON" },
+      { id: 1, user: "admin", pass: "admin", fName: "Mary", lName: "Smith", num: "647-880-3325",
+       email: "MarySmithers@hotmail.com", location: "Oakville, ON"}
     ]
   }
   // Generic handler for whenever we type in an input box.
@@ -41,15 +44,20 @@ class LoginPage extends React.Component {
       const username = this.state.userName
       const pass = this.state.userPassword
       let valid = 0
+      let id = -1
 
       for(let i = 0; i < userList.length; i++){
           if(userList[i].user === username && userList[i].pass === pass){
             valid = 1
+            id = i;
           }
       }
       console.log(valid)
+      const user = this.state.users[id];
+      console.log(user);
       this.setState({
-        validUser: valid
+        validUser: valid,
+        currentUser: user
       });
       
       
@@ -64,6 +72,7 @@ class LoginPage extends React.Component {
         <LoginForm 
               userName={ this.state.userName }
               userPassword={ this.state.userPassword }
+              currentUser={ this.state.currentUser }
               validUser={ this.state.validUser }
               handleChange={ this.handleInputChange } 
               checkUser={ this.checkUser } 

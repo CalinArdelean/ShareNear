@@ -14,12 +14,15 @@ class Home extends React.Component {
       if(this.props.validUser === 1){
           return (
             <div className="App">
-            <AppNavbarLoggedIn />
+            <AppNavbarLoggedIn 
+                currentUser={this.props.currentUser}
+            />
             <ComplexGrid />
             
         </div> 
           )
       }
+      else {
 	  return (
         <div className="App">
             <AppNavbar />
@@ -27,8 +30,9 @@ class Home extends React.Component {
             
         </div>     
         
-	    );
-	}
+        );
+      }
+    }
 }
 
 export default Home;

@@ -14,6 +14,7 @@ class LoginForm extends React.Component {
       <div className="Form">
         <br></br>
         <br></br>
+        <a href = "./">
         <img
               alt="ShareNear Logo"
               src={logo}
@@ -21,6 +22,7 @@ class LoginForm extends React.Component {
               height="100px"
               className="d-inline-block align-top"
         />
+        </a>
         <br></br>
         <h3>Welcome to ShareNear</h3>
         <p>Your One-Stop Online Rent Marketplace</p>

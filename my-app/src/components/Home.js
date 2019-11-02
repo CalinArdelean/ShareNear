@@ -4,6 +4,9 @@ import '../App.css';
 import AppNavbar from './Navbar';
 import ComplexGrid from './HomeLayout';
 
+// var loggedIn = false;
+
+
 /* Component for the Home page */ 
 class Home extends React.Component {
   render()  {
@@ -14,7 +17,9 @@ class Home extends React.Component {
             <a href='./Profile'>View Profile</a>
             </div>
             <ComplexGrid />
-        </div>           
+            
+        </div>     
+        
 	    );
 	}
 }

@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import Button from '@material-ui/core/Button';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
-import Login from './components/LoginForm';
+import Login from './components/LoginPage';
 import SignUp from './components/SignUpForm';
 import Profile from './components/UserProfile';
 import Home from './components/Home';

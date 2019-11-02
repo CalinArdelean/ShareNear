@@ -1,14 +1,14 @@
 import React from 'react';
 import '../App.css';
 
-import AppNavbar from './Navbar';
+import AppNavbarLoggedIn from './NavbarLoggedIn';
 
 /* Component for a user to create a post and put an item up for rent */
 class newPost extends React.Component {
     render() {
         return (
             <div className="App">
-                <AppNavbar />
+                <AppNavbarLoggedIn />
                 <br/>
                 <h3>Rent Form</h3>
                 <br/>

@@ -9,12 +9,14 @@ class Profile extends React.Component {
         return (
             <div className="App">
                 <AppNavbar />
-                <br></br>
+                <div className="Profile">
+                    <br></br>
                 <h3>Welcome to your profile!</h3>
                 <br></br>
                 <a href="./newPost">
                     <button type="button">Make a new posting</button>
                 </a>
+                </div>
             </div>
 
         );

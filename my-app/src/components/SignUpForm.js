@@ -10,12 +10,13 @@ class SignUpForm extends React.Component {
             <div className="Form">
                 <br></br>
                 <br></br>
+                <a href="./">
               <img
               alt=""
               src={logo}
               width="175px"
               height="100px"
-              className="d-inline-block align-top"/>
+              className="d-inline-block align-top"/> </a>
                 <h3>Welcome to ShareNear</h3>
                 <h6>Let's get you set up</h6>
                 <br></br>

@@ -13,7 +13,11 @@ class LoginForm extends React.Component {
       <div className="Form">
         <br></br>
         <br></br>
+<<<<<<< HEAD
         <a href="./">
+=======
+        <a href = "./">
+>>>>>>> af26afcf3f79ced358aca8d129f7fd08e1233f21
         <img
               alt="ShareNear Logo"
               src={logo}
@@ -22,7 +26,10 @@ class LoginForm extends React.Component {
               className="d-inline-block align-top"
         />
         </a>
+<<<<<<< HEAD
         
+=======
+>>>>>>> af26afcf3f79ced358aca8d129f7fd08e1233f21
         <br></br>
         <h3>Welcome to ShareNear</h3>
         <p>Your One-Stop Online Rent Marketplace</p>

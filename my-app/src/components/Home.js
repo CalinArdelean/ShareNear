@@ -2,6 +2,7 @@ import React from 'react';
 import '../App.css';
 
 import AppNavbar from './Navbar';
+import AppNavbarLoggedIn from './NavbarLoggedIn';
 import ComplexGrid from './HomeLayout';
 
 // var loggedIn = false;
@@ -10,12 +11,18 @@ import ComplexGrid from './HomeLayout';
 /* Component for the Home page */ 
 class Home extends React.Component {
   render()  {
+      if(this.props.validUser === 1){
+          return (
+            <div className="App">
+            <AppNavbarLoggedIn />
+            <ComplexGrid />
+            
+        </div> 
+          )
+      }
 	  return (
         <div className="App">
             <AppNavbar />
-            <div className='Right'>
-            <a href='./Profile'>View Profile</a>
-            </div>
             <ComplexGrid />
             
         </div>     

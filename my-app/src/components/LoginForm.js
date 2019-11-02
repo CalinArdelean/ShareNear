@@ -16,7 +16,9 @@ class LoginForm extends React.Component {
 
         <div className="App">
            
-          <Home />
+          <Home 
+            validUser={this.props.validUser}
+            />
          
         </div>
       );

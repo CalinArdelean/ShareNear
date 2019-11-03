@@ -13,6 +13,7 @@ class Profile extends React.Component {
                     <br></br>
                 <h3>Welcome to your profile!</h3>
                 <br></br>
+                <p> {this.props.currentUser.fName} </p>
                 <a href="./newPost">
                     <button type="button">Make a new posting</button>
                 </a>

@@ -16,7 +16,7 @@ import { Link } from 'react-router-dom';
 
 //import arrays
 
-import { images, names, descriptions, prices, cities, renters, locations } from './HomeLayout';
+import { listings } from './HomeLayout';
 
 class ItemPage extends React.Component {
 
@@ -32,26 +32,26 @@ class ItemPage extends React.Component {
                     
                         <Grid item container direction="row" justify="space-evenly" className="item">
                             <Grid item className="imageWrapper">
-                                <ButtonBase className="image">
-                                    <img className="img" alt="logo" src={images[data]} />
-                                </ButtonBase>
+                            <ButtonBase className="image">
+                                <img className="img" alt="logo" src={listings[data].image} />
+                            </ButtonBase>
                             </Grid>
                             <Grid item className="info" direction="column">
                                 <Grid item direction="column">
                                     <Typography gutterBottom variant="header" className="name">
-                                        {names[data]}
+                                        {listings[data].name}
                                     </Typography>
-                                    <Grid item className="city">
-                                        {renters[data]}
+                                    <Grid item className="seller">
+                                        {listings[data].seller}
                                     </Grid>
                                     <Grid item className="city">
-                                        {locations[data]}, {cities[data]}
+                                        {listings[data].address}, {listings[data].location}
                                     </Grid>
                                     <Grid item className="description">
-                                        {descriptions[data]}
+                                        {listings[data].description}
                                     </Grid>
                                     <Grid item className="price">
-                                        ${prices[data]}/day
+                                        ${listings[data].price}/day
                                     </Grid>
                                     
                                 </Grid>

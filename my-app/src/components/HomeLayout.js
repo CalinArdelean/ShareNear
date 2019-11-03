@@ -7,6 +7,8 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Dotdotdot from 'react-dotdotdot';
+import { Link } from 'react-router-dom';
+
 
 /* Component that makes a grid of the product listings to put on the home page */
 
@@ -21,43 +23,44 @@ import apartment from '../assets/apartment.jpg';
 import oculus from '../assets/oculus.jpg';
 import porsche from '../assets/porsche.jpg';
 import { borderColor } from '@material-ui/system';
-var listings = [
+
+export var listings = [
     {
         id: 0, image: bike, name: "Children\'s Bicycle",
         description: "Brand new, my son uses it and he\'s eight, so I can guarantee that it\'s good for eight - year - olds.",
-        price: "15.00", location: "Markham, ON"
+        price: "15.00", location: "Markham, ON", seller: "Bob Anderson", address: "123 Fake St"
     },
     {
         id: 1, image: chainsaw, name: "Chainsaw", description: "15-inch petrol chainsaw.", price: "11.00", 
-        location: "Mississauga, ON"
+        location: "Mississauga, ON", seller: "Andrew Matheson", address: "123 Street Rd"
     },
     {
         id: 2, image: snowblower, name: "Snow Blower", description: "This heavy duty snow blower powered by a 11 HP 120 Volt electric start engine transforms banks of snow into a clear path in a single pass.",
-        price: "20.00", location: "Toronto, ON"
+        price: "20.00", location: "Toronto, ON", seller: "Matthew Anderson", address: "123 Real Place St"
     },
     {
         id: 3, image: ps4, name: "Playstation 4", description: "Comes with the new Spiderman and God of War!",
-        price: "14.00", location: "Toronto, ON"
+        price: "14.00", location: "Toronto, ON", seller: "Matthew Andrews", address: "123 False Blvd"
     },
     {
         id: 4, image: airpods, name: "Air Pods", description: "You have to experience this.",
-        price: "8.00", location: "North York, ON"
+        price: "8.00", location: "North York, ON", seller: "Andrew Matthews", address: "123 Placeholder Lane"
     },
     {
         id: 5, image: trampoline, name: "Trampoline", description: "5 meters in diameter.",
-        price: "35.00", location: "Toronto, ON"
+        price: "35.00", location: "Toronto, ON", seller: "Johnny Johnston", address: "85 Building Place"
     },
     {
         id: 6, image: apartment, name: "Apartment for Rent", description: "Two-bedroom apartment for rent. $40.00 per person per night. Check out is at noon.",
-        price: "40.00", location: "Thornhill, ON"
+        price: "40.00", location: "Thornhill, ON", seller: "Jimmy Stevens", address: "111 Location Ave"
     },
     {
         id: 7, image: oculus, name: "Oculus Quest", description: "Quest headset and controllers with a bunch of games downloaded.",
-        price: "20.00", location: "Toronto, ON"
+        price: "20.00", location: "Toronto, ON", seller: "Jacob Jacobson", address: "123 House St"
     },
     {
         id: 8, image: porsche, name: "Porshe Rental", description: "2016 dark gray Porsche.",
-        price: "230.00", location: "Toronto, ON"
+        price: "230.00", location: "Toronto, ON", seller: "Paul Blart", address: "123 Boulevard Ave"
     }
 ]
 
@@ -180,9 +183,16 @@ function singleItem(classes, index) {
                             </Grid>
                             <Grid item>
                                 <Typography variant="body2" style={{ cursor: 'pointer' }} >
-                                    <a href="./item">
-                                        See item
-                                    </a>    
+
+                                    <Link
+                                        to={{
+                                            pathname: "./item",
+                                            itemIndex: index
+                                        }}>
+                                        Rent this item
+                                    </Link>
+
+                                     
                                 </Typography>
                             </Grid>
                         </Grid>
@@ -195,3 +205,13 @@ function singleItem(classes, index) {
         </div>
     );
 }
+
+
+
+
+
+
+
+
+
+

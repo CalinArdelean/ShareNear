@@ -2,6 +2,7 @@ import React from 'react';
 import '../App.css';
 import ItemPic from '../assets/NewItem.png'
 import AppNavbarLoggedIn from './NavbarLoggedIn';
+import { Link } from 'react-router-dom';
 
 /* Component for a user to create a post and put an item up for rent */
 class newPost extends React.Component {
@@ -49,7 +50,7 @@ class newPost extends React.Component {
                         </select>
                         <input name='location' value={this.state.location} onChange={this.handleInputChange} type="text" placeholder="Location" />
                         <button>Upload Item Picture</button>
-                        <a href="./"><input type="submit" value="Create Post" /></a>
+                        <Link to={{pathname: './listings', data: this.state}}><input type="submit" value="Create Post" /></Link>
                     </div>
                 </div>
 

@@ -5,6 +5,7 @@ import PaulBlart from '../assets/paul_blart.jpg';
 import MarySmith from '../assets/adminpicture.jpg';
 import JacobJacobson from '../assets/louisCK.jpg';
 import AppNavbarLoggedIn from './NavbarLoggedIn';
+
 //import { user } from './LoginPage';
 
 var sellers = [
@@ -96,7 +97,7 @@ class Profile extends React.Component {
                     <button type="button">Create New Listing</button>
                 </a>
                 <br /> <br></br>
-                <a href="./">
+                <a href="./listings">
                     <button type="button">View Your Listings</button>
                 </a>
                 </div>

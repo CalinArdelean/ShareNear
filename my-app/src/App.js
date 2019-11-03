@@ -12,6 +12,7 @@ import Home from './components/Home';
 import Item from './components/ItemPage';
 import Post from './components/CreatePost';
 import Edit from './components/EditProfile';
+import Listings from './components/UserItems';
 
 class App extends React.Component {
     render() {
@@ -28,6 +29,7 @@ class App extends React.Component {
                             <Route exact path='/newpost' component={Post} />
                             <Route exact path='/item' component={Item} />
                             <Route exact path='/edit' component={Edit} />
+                            <Route exact path='/listings' component={Listings} />
                         </Switch>
                     </BrowserRouter>
                 </div>

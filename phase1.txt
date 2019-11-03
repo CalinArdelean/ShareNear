@@ -1,0 +1,39 @@
+Team 34--
+
+This project was bootstrapped with React. To run it please open the terminal and cd into my-app directory. 
+To ensure your machine has the required modules necessary to run the app, please type npm install, and 
+once this is done type npm start.
+Now that the app is running, if it is not automatically loaded you can open [http://localhost:3000] to view it in the browser.
+
+Home page:
+The app begins on a home page which lists items that have been posted up for rent (currently hardcoded). There is a navigaton
+bar at the top, and clicking on our app's logo takes you back to this home page. There is also a search bar with allows users
+to input names of products or a location filter to narrow down the list of items (currently the search button doesn't filter) 
+the items as we will need to filter our item dataset according to what is being searched. The navbar also has a login button
+which takes the user to a login page, or if a user is already logged in it will have a view profile button and a logout button, 
+which takes the user to their profile page, or to the home page logged out respectively.
+The user can see all the item listings on the home page and click to see each item to learn more about it and decide if they 
+want to rent it.
+
+Login Page:
+If the user reaches the login page, they can input their username and password to login and be taken back to the home page.
+Currently the credentials to login are username: user and password: user for a regular user account, or username: admin and
+password: admin for an admin account, so please login with one of these if for the login to work. There is also a button on
+this page to take a new user to a sign up page.
+
+Sign up page:
+A new user can input all their information in this page and then sign up. Currently the sign up page works without authenticating
+the information the user has typed, so this will be fixed for phase 2.
+
+View Profile Page:
+A user gets through this page by accessing the button on the top right of the Navbar after logging in.
+On this page a user can view their profile information and create a new listing to post on the site.
+
+Rent Form Page:
+This is the page that loads when the user is creating a new listing. They can input the information of the item they want to
+rent, and then 
+
+Admin views:
+If a user logs in as an admin then they will have access to
+
+

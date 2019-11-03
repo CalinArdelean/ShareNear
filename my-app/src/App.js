@@ -5,11 +5,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import Button from '@material-ui/core/Button';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
-import Login from './components/LoginForm';
+import Login from './components/LoginPage';
 import SignUp from './components/SignUpForm';
 import Profile from './components/UserProfile';
 import Home from './components/Home';
 import Item from './components/ItemPage';
+import Post from './components/CreatePost';
+import Edit from './components/EditProfile';
 
 class App extends React.Component {
     render() {
@@ -23,7 +25,9 @@ class App extends React.Component {
                             <Route exact path='/login' component={Login} />
                             <Route exact path='/signup' component={SignUp} />
                             <Route exact path='/profile' component={Profile} />
+                            <Route exact path='/newpost' component={Post} />
                             <Route exact path='/item' component={Item} />
+                            <Route exact path='/edit' component={Edit} />
                         </Switch>
                     </BrowserRouter>
                 </div>

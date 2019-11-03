@@ -8,6 +8,8 @@ import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Dotdotdot from 'react-dotdotdot';
 
+/* Component that makes a grid of the product listings to put on the home page */
+
 //hard coded pictures and listings of products (will need to change for phase 2)
 import bike from '../assets/bike.jpg';
 import snowblower from '../assets/snowblower.jpg';
@@ -19,6 +21,46 @@ import apartment from '../assets/apartment.jpg';
 import oculus from '../assets/oculus.jpg';
 import porsche from '../assets/porsche.jpg';
 import { borderColor } from '@material-ui/system';
+var listings = [
+    {
+        id: 0, image: bike, name: "Children\'s Bicycle",
+        description: "Brand new, my son uses it and he\'s eight, so I can guarantee that it\'s good for eight - year - olds.",
+        price: "15.00", location: "Markham, ON"
+    },
+    {
+        id: 1, image: chainsaw, name: "Chainsaw", description: "15-inch petrol chainsaw.", price: "11.00", 
+        location: "Mississauga, ON"
+    },
+    {
+        id: 2, image: snowblower, name: "Snow Blower", description: "This heavy duty snow blower powered by a 11 HP 120 Volt electric start engine transforms banks of snow into a clear path in a single pass.",
+        price: "20.00", location: "Toronto, ON"
+    },
+    {
+        id: 3, image: ps4, name: "Playstation 4", description: "Comes with the new Spiderman and God of War!",
+        price: "14.00", location: "Toronto, ON"
+    },
+    {
+        id: 4, image: airpods, name: "Air Pods", description: "You have to experience this.",
+        price: "8.00", location: "North York, ON"
+    },
+    {
+        id: 5, image: trampoline, name: "Trampoline", description: "5 meters in diameter.",
+        price: "35.00", location: "Toronto, ON"
+    },
+    {
+        id: 6, image: apartment, name: "Apartment for Rent", description: "Two-bedroom apartment for rent. $40.00 per person per night. Check out is at noon.",
+        price: "40.00", location: "Thornhill, ON"
+    },
+    {
+        id: 7, image: oculus, name: "Oculus Quest", description: "Quest headset and controllers with a bunch of games downloaded.",
+        price: "20.00", location: "Toronto, ON"
+    },
+    {
+        id: 8, image: porsche, name: "Porshe Rental", description: "2016 dark gray Porsche.",
+        price: "230.00", location: "Toronto, ON"
+    }
+]
+
 var images = [bike, chainsaw, snowblower, ps4, airpods, trampoline, apartment, oculus, porsche];
 var names = ['Children\'s Bicycle', 'Chainsaw', 'Snow Blower', 'PlayStation 4', 'Air Pods', 'Trampoline', 'Apartment for Rent', 'Oculus Quest', 'Porsche Rental'];
 var descriptions = ['Brand new, my son uses it and he\'s eight, so I can guarantee that it\'s good for eight - year - olds.',

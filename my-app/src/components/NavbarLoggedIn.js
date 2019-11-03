@@ -3,6 +3,8 @@ import '../App.css';
 import logo from '../logo.svg';
 import { Navbar, Nav, Form, FormControl, Container, Row, Col} from 'react-bootstrap';
 import Profile from './UserProfile';
+
+//component for the navbar once the user has logged in
 class AppNavbarLoggedIn extends React.Component {
 
   state = {
@@ -16,18 +18,17 @@ class AppNavbarLoggedIn extends React.Component {
   }
 
   render() {
-    if(this.state.clickedProfile === 1){
-      return (
+    // if(this.state.clickedProfile === 1){
+    //   return (
 
-        <div className="App">§
-          <Profile 
-            currentUser={this.props.currentUser}
-            />
-         
-        </div>
-      );
-    }
-    else{  
+    //     <div className="App">
+    //       <Profile 
+    //         currentUser={this.props.currentUser}
+    //         />
+    //     </div>
+    //   );
+    // }
+    // else {
       return (
           <Navbar variant="dark" className="App-navbar">
             <Navbar.Brand href="/">
@@ -49,9 +50,9 @@ class AppNavbarLoggedIn extends React.Component {
             </Form>
             <Navbar.Collapse className="justify-content-end">
               <Navbar.Text className="text-white">
-                {/* <a href="./Profile">View Profile
-                </a> */}
-                <button onClick={this.clickedProfile}> View Profile </button>
+                <a href="./Profile">View Profile
+                </a>
+                {/* <button onClick={this.clickedProfile}> View Profile </button> */}
                     &nbsp; &nbsp; &nbsp;
                 <a href="./">Logout
                     &nbsp; <i className="fas fa-user"></i>
@@ -60,7 +61,7 @@ class AppNavbarLoggedIn extends React.Component {
             </Navbar.Collapse>
           </Navbar>      
       );
-    }
+    //}
   }
 }
 

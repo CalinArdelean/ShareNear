@@ -1,11 +1,10 @@
-/*  Full Queue component */
-// Everything here was previously in the App component.
 import React from 'react';
 
 // Importing components
 import LoginForm from './LoginForm';
 import { bool } from 'prop-types';
 
+//component for the login page
 class LoginPage extends React.Component {
 
   ///  React 'state'.  

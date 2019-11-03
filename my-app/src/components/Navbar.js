@@ -3,6 +3,7 @@ import '../App.css';
 import logo from '../logo.svg';
 import { Navbar, Nav, Form, FormControl, Container, Row, Col} from 'react-bootstrap';
 
+//component for the navbar at the top of the home page
 class AppNavbar extends React.Component {
   render() {
     return (

@@ -2,8 +2,7 @@ import React from 'react';
 // import './Forms.css';
 import logo from '../logo.svg';
 
-/* Component to Login */
-
+/* Component to sign up */
 class SignUpForm extends React.Component {
     render() {
         return (

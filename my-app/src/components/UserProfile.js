@@ -11,18 +11,24 @@ class Profile extends React.Component {
                 <AppNavbarLoggedIn />
                 <div className="Profile">
                     <br></br>
-                <h3>Welcome to your profile {this.props.currentUser.fName}! </h3>
+                <h3>Welcome to your profile John! </h3>
+                {/*{this.props.currentUser.fName} */}
                 <br></br>                  
                   <br/>
+                  <div className ="UserForm">
                     <img
                         alt=""
                         src={profilepicture}
                         className="d-inline-block align-top"
                     ></img>
+                    </div>                    
                 <br></br> <br/>
-                <a href="./newPost">
+                <a href="./newpost">
                     <button type="button">Make a new listing</button>
                 </a>
+                    <a href="./edit">
+                        <button type="button">Edit Profile</button>
+                    </a>
                 </div>
             </div>
 

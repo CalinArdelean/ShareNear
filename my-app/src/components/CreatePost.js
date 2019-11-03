@@ -7,14 +7,29 @@ import AppNavbarLoggedIn from './NavbarLoggedIn';
 class newPost extends React.Component {
     render() {
         return (
-            <div className="App">
+            <div className="Edit">
                 <AppNavbarLoggedIn />
-                <br/>
-                <h3>Rent Form</h3>
-                <br/>
-                <a href="./">
-                    <button type="button">Create Post</button>
-                </a>
+
+                <div id="sc-edprofile">
+                    <h1>Post a New Item for Rent</h1>
+                    <div class="sc-container">
+                        <input type="text" placeholder="Name of Item" />
+                        <textarea placeholder="Description of Item" />
+                        <input type="text" placeholder="Price" />
+                        <select>
+                            <option value="">per hour</option>
+                            <option value="">per day</option>
+                            <option value="">per week</option>
+                            <option value="">per month</option>
+                            <option value="">other</option>
+                        </select>
+                        <input type="text" placeholder="Location" />
+                        <button>Upload Item Picture</button>
+                        <a href="./"><input type="submit" value="Create Post" /></a>
+                    </div>
+                </div>
+
+
             </div>
 
         );

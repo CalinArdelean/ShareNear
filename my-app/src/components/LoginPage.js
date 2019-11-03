@@ -4,6 +4,8 @@ import React from 'react';
 import LoginForm from './LoginForm';
 import { bool } from 'prop-types';
 
+var user = {};
+
 //component for the login page
 class LoginPage extends React.Component {
 
@@ -52,7 +54,7 @@ class LoginPage extends React.Component {
           }
       }
       console.log(valid)
-      const user = this.state.users[id];
+      user = this.state.users[id];
       console.log(user);
       this.setState({
         validUser: valid,
@@ -64,6 +66,7 @@ class LoginPage extends React.Component {
 
   render() {
     console.log(this.state.validUser)
+    user = this.state.currentUser;
     return (
 
       <div className="App">

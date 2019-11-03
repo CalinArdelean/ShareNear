@@ -82,17 +82,12 @@ div.Profile h3 {
 }
 
 div.Profile img {
-  position: absolute;
-  left: 70px;
+  position: relative;
   height: 200px;
   border-radius: 50%;
   border: 3px solid black;
 }
 
-div.UserForm {
-  border-radius: 10px;
-  background-color: grey;
-}
 
 div.Profile button {
   background-color: #10263b; 

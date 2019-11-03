@@ -81,6 +81,11 @@ div.Profile h3 {
   color: darkslateblue;
 }
 
+div.Profile h6 {
+  width: 50%;
+  margin-left: 350px;
+}
+
 div.Profile img {
   position: relative;
   height: 200px;

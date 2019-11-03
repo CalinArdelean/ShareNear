@@ -1,3 +1,5 @@
+Team 34--
+
 This project was bootstrapped with React. To run it please open the terminal and cd into my-app directory. 
 To ensure your machine has the required modules necessary to run the app, please type npm install, and 
 once this is done type npm start.

@@ -70,7 +70,14 @@ div.Profile {
 }
 
 div.Profile h3 {
-  color: darkblue;
+  color: darkslateblue;
+}
+
+div.Profile img {
+  height: 200px;
+  border-radius: 50%;
+  border: 3px;
+  border-color: solid white;
 }
 
 div.Profile button {

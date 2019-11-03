@@ -21,8 +21,12 @@ import { listings } from './HomeLayout';
 class ItemPage extends React.Component {
 
     render() {
-
-        var data = this.props.location.itemIndex;
+        //console.log(this.props.location);
+        
+        var data = 0;
+        if (typeof (this.props.location.itemIndex) !== 'undefined') {
+            data = this.props.location.itemIndex;
+        }
         console.log("PROPS IS: " + this.props.location.itemIndex);
 
         return (
@@ -59,6 +63,7 @@ class ItemPage extends React.Component {
                                     <Link
                                         to={{
                                             pathname: "./profile",
+                                            data: data
                                         }}>
                                     Rent this item
                                     </Link>

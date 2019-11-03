@@ -2,6 +2,7 @@ import React from 'react';
 import '../App.css';
 import profilepicture from '../assets/userpicture.jpg';
 import PaulBlart from '../assets/paul_blart.jpg';
+import MarySmith from '../assets/adminpicture.jpg';
 import JacobJacobson from '../assets/louisCK.jpg';
 import AppNavbarLoggedIn from './NavbarLoggedIn';
 
@@ -12,8 +13,9 @@ var sellers = [
         phoneNumber: '416-900-8555', email: 'JohnDoe123@hotmail.com', itemIDs: [], image: profilepicture
     },
     { id: 1, name: 'Paul Blart', address: 'Mississauga, ON', description: 'Hi, I\'m Paul. Hope you enjoy my stuff! Phone number below.', phoneNumber: '343-373-5121', email: 'paulsstuff@gmail.com', itemIDs: [0, 2, 3, 5], image: PaulBlart },
-    { id: 2, name: 'Jacob Jacobson', address: 'Toronto, ON', description: 'Hey, welcome to my profile. Feel free to call me any time of the day!', phoneNumber: '416-647-7644', email: 'jacobjacob@gmail.com', itemIDs: [1, 4, 6, 7, 8], image: JacobJacobson }
-    ]
+    { id: 2, name: 'Jacob Jacobson', address: 'Toronto, ON', description: 'Hey, welcome to my profile. Feel free to call me any time of the day!', phoneNumber: '416-647-7644', email: 'jacobjacob@gmail.com', itemIDs: [1, 4, 6, 7, 8], image: JacobJacobson },
+    { id: 3, name: 'Mary Smith', address: 'Oakville, ON', description: 'Proud to see ShareNear being used for frequently. Questions about the site? Please send me an email!', phoneNumber: '647-880-3325', email: 'MarySmithers@hotmail.com', itemIDs: [], image: MarySmith }
+]
 
 
 /* Component for the profile page */

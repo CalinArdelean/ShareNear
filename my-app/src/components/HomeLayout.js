@@ -23,7 +23,6 @@ import apartment from '../assets/apartment.jpg';
 import oculus from '../assets/oculus.jpg';
 import porsche from '../assets/porsche.jpg';
 import { borderColor } from '@material-ui/system';
-
 export var listings = [
     {
         id: 0, image: bike, name: "Children\'s Bicycle",
@@ -63,15 +62,6 @@ export var listings = [
         price: "230.00", location: "Toronto, ON", seller: "Jacob Jacobson", address: "123 Boulevard Ave"
     }
 ]
-
-var images = [bike, chainsaw, snowblower, ps4, airpods, trampoline, apartment, oculus, porsche];
-var names = ['Children\'s Bicycle', 'Chainsaw', 'Snow Blower', 'PlayStation 4', 'Air Pods', 'Trampoline', 'Apartment for Rent', 'Oculus Quest', 'Porsche Rental'];
-var descriptions = ['Brand new, my son uses it and he\'s eight, so I can guarantee that it\'s good for eight - year - olds.',
-    '15-inch petrol chainsaw.',
-    'This heavy duty snow blower powered by a 11 HP 120 Volt electric start engine transforms banks of snow into a clear path in a single pass.',
-    'Comes with the new Spiderman and God of War!', 'You have to experience this.', '5 meters in diameter.', 'Two-bedroom apartment for rent. $40.00 per person per night. Check out is at noon.', 'Quest headset and controllers with a bunch of games downloaded.', '2016 dark gray Porsche.'];
-var prices = ['15.00', '11.00', '20.00', '14.00', '8.00', '35.00', '40.00', '20.00', '230.00'];
-var cities = ['Markham, ON', 'Mississauga, ON', 'Toronto, ON', 'Toronto, ON', 'North York, ON', 'Toronto, ON', 'Thornhill, ON', 'Toronto, ON', 'Toronto, ON'];
 
 var numCols = 3;
 

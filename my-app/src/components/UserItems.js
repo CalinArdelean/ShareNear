@@ -21,8 +21,14 @@ class UserItems extends React.Component {
                     <br></br>
                     <h3>Your Listings:</h3>
                     <br></br>
-                    
-                    <p>Item: {item.name}</p>
+                    <img
+                        alt="item image"
+                        src={item.image}
+                        className="d-inline-block align-top"
+                    ></img>
+                    <p>{item.name}</p>
+                    <p>{item.description}</p>
+                    <p>{item.location}</p> <br></br>
                 </div>
             )
     }

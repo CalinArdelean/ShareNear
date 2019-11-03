@@ -1,8 +1,8 @@
 Team 34--
 
 This project was bootstrapped with React. To run it please open the terminal and cd into my-app directory. 
-To ensure your machine has the required modules necessary to run the app, please type npm install, and 
-once this is done type npm start.
+To ensure your machine has the required modules necessary to run the app, please type npm install in the terminal, 
+and once all modules have finished installing, type npm start.
 Now that the app is running, if it is not automatically loaded you can open [http://localhost:3000] to view it in the browser.
 
 Home page:

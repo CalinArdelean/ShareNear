@@ -60,12 +60,20 @@ class AppNavbarLoggedIn extends React.Component {
             </Form>
             <Navbar.Collapse className="justify-content-end">
               <Navbar.Text className="text-white">
+                        <Link
+                          to={{
+                              pathname: "./userlist",
+                              isValidUser: 1
+                          }}>View User List
+                      </Link>
+                    &nbsp; &nbsp; &nbsp;
+
                       <Link
                           to={{
                               pathname: "./profile",
                               isValidUser: 1
                           }}>View Profile
-                </Link>
+                      </Link>
                 {/* <button onClick={this.clickedProfile}> View Profile </button> */}
                     &nbsp; &nbsp; &nbsp;
                 <a href="./">Logout

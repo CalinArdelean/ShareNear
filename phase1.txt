@@ -5,35 +5,48 @@ To ensure your machine has the required modules necessary to run the app, please
 and once all modules have finished installing, type npm start.
 Now that the app is running, if it is not automatically loaded you can open [http://localhost:3000] to view it in the browser.
 
-Home page:
-The app begins on a home page which lists items that have been posted up for rent (currently hardcoded). There is a navigaton
-bar at the top, and clicking on our app's logo takes you back to this home page. There is also a search bar with allows users
-to input names of products or a location filter to narrow down the list of items (currently the search button doesn't filter) 
-the items as we will need to filter our item dataset according to what is being searched. The navbar also has a login button
-which takes the user to a login page, or if a user is already logged in it will have a view profile button and a logout button, 
-which takes the user to their profile page, or to the home page logged out respectively.
-The user can see all the item listings on the home page and click to see each item to learn more about it and decide if they 
-want to rent it.
+ShareNear is a web application service that allows its user to put up listings of items they want to rent out, and interact
+with other users to rent their items as well. 
 
-Login Page:
-If the user reaches the login page, they can input their username and password to login and be taken back to the home page.
-Currently the credentials to login are username: user and password: user for a regular user account, or username: admin and
-password: admin for an admin account, so please login with one of these if for the login to work. There is also a button on
-this page to take a new user to a sign up page.
+Demo to use the current version of our app-
 
-Sign up page:
-A new user can input all their information in this page and then sign up. Currently the sign up page works without authenticating
-the information the user has typed, so this will be fixed for phase 2.
+1. The app begins on the home page. Please click on the login button on the top right of the navigation bar to be taken to the 
+login page. A first time user would click on the sign up button at the bottom of the login form to be taken to a sign up page,
+where they would then fill out their information and sign up appropriately. Since this is only phase 1, our app does not store
+sign up data anywhere, so the sign up page isn't functional. You can click back on the login button at the bottom to be taken
+back to the login page. 
 
-View Profile Page:
-A user gets through this page by accessing the button on the top right of the Navbar after logging in.
-On this page a user can view their profile information and create a new listing to post on the site.
+2. From here you can login using username: user, password: user if you want to login as a regular user. Or you can 
+login using username: admin, password: admin, to login as an admin. Once logged in, you will be brought back to the home page.
 
-Rent Form Page:
-This is the page that loads when the user is creating a new listing. They can input the information of the item they want to
-rent, and then 
+3. Now that you are logged in, the navbar gives you the option of viewing your profile, and/or logging out. There is 
+also the option to search for items or filter by location with the search bar at the top, however, it is currently not
+functional and does not filter the listings. 
 
-Admin views:
-If a user logs in as an admin then they will have access to
+4. A logged in user can browse the items currently listed for rent, and click on each see item button to learn more 
+details about the item. Please click to see an item that you are interested in, and you will be taken to a single item page
+that lists more details about the specific item up for rent. 
 
+5. If a user is interested in renting the item, they can click the "rent this item" button, and they will be taken to a
+profile page of the user who created the post. Doing so allows you view the contact details of this 
+other user, and thus facilitate communication to begin the rental transaction. 
 
+6. The next thing a user can do, assuming they are logged in, is that they can click on their view profile button on the navbar.
+If you click there now you will see a hardcoded profile for the user already set up, which we will make more dynamic in 
+phase 2. The user can view their profile, and can do one of 3 things from here, either edit their profile, create a new listing
+or view their current list of items.
+
+7. If you click to edit profile, the user is taken to a form page to fill out their information. This part is currently not 
+functional, but pressing submit will take the user back to their profile page. 
+
+8. If you click the create new listing button, then the user is taken to a listings form to fill out information about the 
+item they have put up for rent. Right now this item doesn't get saved, but submitting it will edit the DOM to print out the
+new item created. 
+
+9. A user will be able to view their current listings as well, but this feature is not implemented yet. 
+
+10. Aside from these interactions, a user can log out, and will be taken back to the home page, where they can browse items
+up for rent even without an account. These types of users are only not given access to any of their own profile features.
+
+11. Finally, if you log in as an admin, the admin has all the same views as a regular user, but also currently has the option
+to see the list and information of all other users who have an account on the application. 

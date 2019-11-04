@@ -96,11 +96,18 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
+var isValid = 0;
 
-export default function ComplexGrid() {
+export default function ComplexGrid(props) {
     
     const classes = useStyles();
 
+    // Show 'View Profile' link on Navbar only if user is logged in
+    console.log("FILTERED: " + props);
+    if (typeof (props.isValidUser) !== 'undefined') {
+        isValid = props.isValidUser;
+        console.log("Should be 0 or 1 " + props.isValidUser);
+    }
 
     const items = [];
     let index = 0;
@@ -179,7 +186,8 @@ function singleItem(classes, index) {
                                     <Link
                                         to={{
                                             pathname: "./item",
-                                            itemIndex: index
+                                            itemIndex: index,
+                                            isValidUser: isValid
                                         }}>
                                         Rent this item
                                     </Link>

@@ -27,7 +27,7 @@ class AppNavbarLoggedIn extends React.Component {
     //     <div className="App">
     //       <Profile 
     //         currentUser={this.props.currentUser}
-    //         />
+    //         />r
     //     </div>
     //   );
     // }

@@ -20,6 +20,7 @@ import { listings } from './HomeLayout';
 
 let isValid = 0;
 
+//component to display a single item page
 class ItemPage extends React.Component {
 
 

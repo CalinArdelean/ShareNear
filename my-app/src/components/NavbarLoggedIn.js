@@ -50,6 +50,9 @@ class AppNavbarLoggedIn extends React.Component {
             </Form>
             <Navbar.Collapse className="justify-content-end">
               <Navbar.Text className="text-white">
+                <a href="./userlist">View User List
+                </a>
+                    &nbsp; &nbsp; &nbsp;
                 <a href="./Profile">View Profile
                 </a>
                 {/* <button onClick={this.clickedProfile}> View Profile </button> */}

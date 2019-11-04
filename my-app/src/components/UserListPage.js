@@ -3,13 +3,14 @@ import '../App.css';
 import AppNavbarLoggedIn from './NavbarLoggedIn';
 import { Table } from 'react-bootstrap';
 
-/* Component for a user to create a post and put an item up for rent */
+/* Component for an admin to check the list of users */
 class userList extends React.Component {
     render() {
         return (
-            <div className="Edit">
-                <AppNavbarLoggedIn />
 
+            <div className="UserList">
+                <AppNavbarLoggedIn />
+                
                 <Table striped bordered hover>
                     <thead>
                         <tr>
@@ -24,7 +25,7 @@ class userList extends React.Component {
                             <td>1</td>
                             <td>John</td>
                             <td>Doe</td>
-                            <td>@JohnDoe123@hotmail.com</td>
+                            <td>JohnDoe123@hotmail.com</td>
                         </tr>
                         <tr>
                             <td>2</td>

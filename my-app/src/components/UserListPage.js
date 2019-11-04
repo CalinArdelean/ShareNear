@@ -1,8 +1,7 @@
 import React from 'react';
 import '../App.css';
-
-
 import AppNavbarLoggedIn from './NavbarLoggedIn';
+import { Table } from 'react-bootstrap';
 
 /* Component for a user to create a post and put an item up for rent */
 class userList extends React.Component {

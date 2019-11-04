@@ -75,6 +75,11 @@ class ItemPage extends React.Component {
                         </Grid>
                     
                 </Paper>
+                <Link
+                    to={{
+                        pathname: "./",
+                        
+                    }}> Return to Listings </Link>
             </div>
         );
     }

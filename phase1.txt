@@ -50,4 +50,4 @@ up for rent even without an account. These types of users are only not given acc
 
 10. Finally, if you log in as an admin, the admin has all the same views as a regular user, but also currently has the option
 to see the list and information of all other users who have an account on the application, and they can access this through
-the navigation bar once logged in as well.  
+the navigation bar right after they log in. 

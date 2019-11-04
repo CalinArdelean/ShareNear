@@ -5,8 +5,7 @@ import PaulBlart from '../assets/paul_blart.jpg';
 import MarySmith from '../assets/adminpicture.jpg';
 import JacobJacobson from '../assets/louisCK.jpg';
 import AppNavbarLoggedIn from './NavbarLoggedIn';
-
-//import { user } from './LoginPage';
+import AppNavbar from './Navbar';
 
 var sellers = [
     { id: 0, name: 'John Doe', address: 'North York, ON', description: 'Hi I\'m John! I primarily rent out household items that I no longer have much use for. If you are interested in one of my listings, have questions or concerns, or would like to negotiate prices, feel free to contact me, preferably through my cell. Thanks in advance!', phoneNumber: '416-900-8555', email: 'JohnDoe123@hotmail.com', itemIDs: [], image: profilepicture },
@@ -19,11 +18,29 @@ var sellers = [
 /* Component for the profile page */
 class Profile extends React.Component {
 
+    renderNavbar() {
 
+        if (this.props.location.isValidUser === 1) {
+            return (
+                <div className="App">
+                    <AppNavbarLoggedIn
+                        currentUser={this.props.currentUser}
+                    />
+                </div>
+            );
+        }
+        else {
+            return (
+                <div className="App">
+                    <AppNavbar />
+                </div>
+            );
+        }
+    }
     
 
     render() {
-        //console.log(user);
+
         let data = this.props.location.data;
         this.props.location.state = this.props.location.data;
         console.log(this.props.location.state);
@@ -48,7 +65,7 @@ class Profile extends React.Component {
 
         return (
             <div>
-                <AppNavbarLoggedIn />
+                {this.renderNavbar()}
                 <div className="Profile">
                     <br></br>
                     {this.editProfileButton(data)}

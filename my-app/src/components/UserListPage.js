@@ -3,11 +3,7 @@ import '../App.css';
 import AppNavbarLoggedIn from './NavbarLoggedIn';
 import { Table } from 'react-bootstrap';
 
-<<<<<<< HEAD
 /* Component for an admin to view the list of users (currently hardcoded, but will need to read from a database) */
-=======
-/* Component for an admin to check the list of users */
->>>>>>> eda8b43f8fa602b9797193e7427016372f9f02f9
 class userList extends React.Component {
     render() {
         return (

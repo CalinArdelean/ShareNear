@@ -2,6 +2,7 @@ import React from 'react';
 import '../App.css';
 
 import AppNavbarLoggedIn from './NavbarLoggedIn';
+import { Link } from 'react-router-dom';
 
 /* Component for a user to create a post and put an item up for rent */
 class editProfile extends React.Component {
@@ -31,7 +32,11 @@ class editProfile extends React.Component {
                     <input type="text" placeholder="Google+ Profile URL" />
                     <input type="text" placeholder="LinkedIn Profile URL" />
                         <button>Upload Profile Picture</button>
-                    <a href="./profile"><input type="submit" value="Register" /></a>
+                        <Link
+                            to={{
+                                pathname: "./profile",
+                                isValidUser: 1
+                            }}><input type="submit" value="Register" /></Link>
                 </div>
             </div>
 

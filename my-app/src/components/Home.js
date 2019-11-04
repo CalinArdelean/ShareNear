@@ -17,7 +17,9 @@ class Home extends React.Component {
             <AppNavbarLoggedIn 
                 currentUser={this.props.currentUser}
             />
-            <ComplexGrid />
+            <ComplexGrid 
+              location={this.props.data}
+            />
             
         </div> 
           )

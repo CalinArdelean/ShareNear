@@ -13,7 +13,7 @@ import Item from './components/ItemPage';
 import Post from './components/CreatePost';
 import Edit from './components/EditProfile';
 import Listings from './components/UserItems';
-import UserList from './components/UserList';
+import UserList from './components/UserListPage';
 
 class App extends React.Component {
     render() {

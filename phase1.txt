@@ -20,8 +20,9 @@ back to the login page.
 login using username: admin, password: admin, to login as an admin. Once logged in, you will be brought back to the home page.
 
 3. Now that you are logged in, the navbar gives you the option of viewing your profile, and/or logging out. There is 
-also the option to search for items or filter by location with the search bar at the top, however, it is currently not
-functional and does not filter the listings. 
+also the option to search for items or filter by location with the search bar at the top. Currently, to use the search button
+please type Toronto in the location bar, and click the search. This will show a filtered version of the items that have locations
+based in Toronto. Other than this, the search bar is currently not functional. 
 
 4. A logged in user can browse the items currently listed for rent, and click on each see item button to learn more 
 details about the item. Please click to see an item that you are interested in, and you will be taken to a single item page
@@ -49,4 +50,5 @@ new item created.
 up for rent even without an account. These types of users are only not given access to any of their own profile features.
 
 11. Finally, if you log in as an admin, the admin has all the same views as a regular user, but also currently has the option
-to see the list and information of all other users who have an account on the application. 
+to see the list and information of all other users who have an account on the application, and they can access this through
+the navigation bar once logged in as well.  

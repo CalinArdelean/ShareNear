@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 /* Component for a user to create a post and put an item up for rent */
 class newPost extends React.Component {
-    
+    //will have to read information from a data base and push new item to database instead of this
     state = {
         id: 9,
         image: ItemPic,

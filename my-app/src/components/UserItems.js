@@ -9,10 +9,9 @@ import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Dotdotdot from 'react-dotdotdot';
 import { Link } from 'react-router-dom';
-
 import AppNavbarLoggedIn from './NavbarLoggedIn';
 
-
+//complex grid styles listed below
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
@@ -126,6 +125,8 @@ function singleItem(classes, item) {
 /* Component for user listings page */
 class UserItems extends React.Component {
     render() {
+        //will need to read from database to get all user listings
+        //instead of just one listing
         this.props.location.state = this.props.location.data;
         console.log(this.props.location.state);
         const item = this.props.location.state;
@@ -136,15 +137,16 @@ class UserItems extends React.Component {
                     <br></br>
                     <h3>Your Listings:</h3>
                     <br></br>
-                    <ComplexGrid item={item}></ComplexGrid>
-                    {/* <img
+                    {/* <ComplexGrid item={item}></ComplexGrid> */}
+                    <img
                         alt="item image"
                         src={item.image}
                         className="d-inline-block align-top"
                     ></img>
-                    <p>{item.name}</p>
-                    <p>{item.description}</p>
-                    <p>{item.location}</p> <br></br> */}
+                    <h4>{item.name}</h4>
+                    <h5>{item.description}</h5>
+                    <h4>{item.location}</h4> <br></br>
+                    <a href="./profile">Return to your profile</a>
                 </div>
             )
     }

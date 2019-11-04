@@ -10,12 +10,13 @@ var user = {};
 class LoginPage extends React.Component {
 
   ///  React 'state'.  
-  // Allows us to keep track of chagning data in this component.
+  // Allows us to keep track of changing data in this component.
   state = {
     userName: "",
     userPassword: "",
     currentUser: {},
     validUser: -1,
+    //hard coded values that will have to be read from a database
     users: [
       {id: 0, user: "user", pass: "user", fName: "John", lName: "Doe", num: "416-900-8555",
        email: "JohnDoe123@hotmail.com", location: "Toronto, ON" },

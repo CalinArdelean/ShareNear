@@ -112,6 +112,7 @@ class ItemPage extends React.Component {
                 <Link
                     to={{
                         pathname: "./",
+                        validUser: isValid
                         
                     }}> Return to Listings </Link>
             </div>

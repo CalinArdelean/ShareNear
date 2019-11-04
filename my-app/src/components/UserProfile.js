@@ -7,7 +7,11 @@ import JacobJacobson from '../assets/louisCK.jpg';
 import AppNavbarLoggedIn from './NavbarLoggedIn';
 import AppNavbar from './Navbar';
 
+<<<<<<< HEAD
 //hard coded data of sellers that we will need to read from a database
+=======
+//We will obtain seller data from servers
+>>>>>>> 42c3f15ba4f6e319e71e4254fb064520d18e9117
 var sellers = [
     { id: 0, name: 'John Doe', address: 'North York, ON', description: 'Hi I\'m John! I primarily rent out household items that I no longer have much use for. If you are interested in one of my listings, have questions or concerns, or would like to negotiate prices, feel free to contact me, preferably through my cell. Thanks in advance!', phoneNumber: '416-900-8555', email: 'JohnDoe123@hotmail.com', itemIDs: [], image: profilepicture },
     { id: 1, name: 'Paul Blart', address: 'Mississauga, ON', description: 'Hi, I\'m Paul. Hope you enjoy my stuff! Phone number below.', phoneNumber: '343-373-5121', email: 'paulsstuff@gmail.com', itemIDs: [0, 2, 3, 5], image: PaulBlart },
@@ -47,10 +51,11 @@ class Profile extends React.Component {
         console.log(this.props.location.state);
         //console.log("Item ID: " + this.props.location.data);
 
+        //This is our hardcoded user profile
         let seller = sellers[3];
 
         
-
+        //Seller data will be obtained from servers
         if (typeof (data) !== 'undefined') {
             console.log("TYPEOF: " + typeof (data));
             for (let i = 0; i < sellers.length; i++) {

@@ -12,6 +12,7 @@ class LoginPage extends React.Component {
   ///  React 'state'.  
   // Allows us to keep track of changing data in this component.
   state = {
+    admin: 0,
     userName: "",
     userPassword: "",
     currentUser: {},
@@ -47,19 +48,25 @@ class LoginPage extends React.Component {
       const pass = this.state.userPassword
       let valid = 0
       let id = -1
+      let usernum = 0;
 
       for(let i = 0; i < userList.length; i++){
           if(userList[i].user === username && userList[i].pass === pass){
-            valid = 1
+            valid = 1;
             id = i;
+            if (i === 1) {
+                usernum = 1;
+            }
           }
       }
       console.log(valid)
       user = this.state.users[id];
       console.log(user);
+      console.log(usernum)
       this.setState({
         validUser: valid,
-        currentUser: user
+        currentUser: user,
+        admin: usernum
       });
       
       
@@ -73,6 +80,7 @@ class LoginPage extends React.Component {
       <div className="App">
          
         <LoginForm 
+              admin={ this.state.admin }
               userName={ this.state.userName }
               userPassword={ this.state.userPassword }
               currentUser={ this.state.currentUser }

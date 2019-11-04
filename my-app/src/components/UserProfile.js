@@ -48,7 +48,9 @@ class Profile extends React.Component {
         //console.log("Item ID: " + this.props.location.data);
 
         //This is our hardcoded user profile
+        //if admin
         let seller = sellers[3];
+        //else let seller = sellers[0];
 
         
         //Seller data will be obtained from servers

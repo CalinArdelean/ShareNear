@@ -19,20 +19,9 @@ class AppNavbarLoggedIn extends React.Component {
     }
 
     render() {
-
-        console.log("PROP CURRENT USER: " + this.props.location);
-        // if(this.state.clickedProfile === 1){
-        //   return (
-
-        //     <div className="App">
-        //       <Profile 
-        //         currentUser={this.props.currentUser}
-        //         />
-        //     </div>
-        //   );
-        // }
-        // else {
-        return (
+      console.log(this.props.admin);
+        if (this.props.admin === 1) {
+          return (
             <Navbar variant="dark" className="App-navbar">
                 <Navbar.Brand>
 
@@ -90,8 +79,76 @@ class AppNavbarLoggedIn extends React.Component {
                 </Navbar.Collapse>
             </Navbar>
         );
+        }
+        //console.log("PROP CURRENT USER: " + this.props.location);
+        // if(this.state.clickedProfile === 1){
+        //   return (
+
+        //     <div className="App">
+        //       <Profile 
+        //         currentUser={this.props.currentUser}
+        //         />
+        //     </div>
+        //   );
+        // }
+        // else {
+        else {
+        return (
+            <Navbar variant="dark" className="App-navbar">
+                <Navbar.Brand>
+
+                    <Link
+                        to={{
+                            pathname: "./",
+                            validUser: 1
+                        }}>
+                        <img
+                            alt=""
+                            src={logo}
+                            width="75px"
+                            // height="5px"
+                            className="d-inline-block align-top"
+                        />
+                    </Link>
+                </Navbar.Brand>
+                <Form inline className="text-white">
+                    <FormControl type="text" placeholder="Item" className="ml-4 text-white rounded-0 bg-transparent border-left-0 border-right-0 border-top-0" />
+                    <FormControl type="text" placeholder="Location" className="ml-4 text-white rounded-0 bg-transparent border-left-0 border-right-0 border-top-0" />
+                    &nbsp; &nbsp; &nbsp; &nbsp;
+                   
+      
+                <Link
+                        to={{
+                            pathname: "./HomeFiltered",
+                            isValidUser: 1
+                        }}><i className="fas fa-search"></i>
+                    </Link>
+
+
+                </Form>
+                <Navbar.Collapse className="justify-content-end">
+                    <Navbar.Text className="text-white">
+                        &nbsp; &nbsp; &nbsp;
+                          
+                      <Link
+                            to={{
+                                pathname: "./profile",
+                                isValidUser: 1
+                            }}>View Profile
+                      </Link>
+                        {/* <button onClick={this.clickedProfile}> View Profile </button> */}
+                        &nbsp; &nbsp; &nbsp;
+                <a href="./">Logout
+                    &nbsp; <i className="fas fa-user"></i>
+                        </a>
+                    </Navbar.Text>
+                </Navbar.Collapse>
+            </Navbar>
+        );
         //}
     }
+  }
+
 }
 
 export default AppNavbarLoggedIn;

@@ -19,6 +19,7 @@ class LoginForm extends React.Component {
           <Home 
             validUser={this.props.validUser}
             currentUser={this.props.currentUser}
+            admin={this.props.admin}
             />
          
         </div>

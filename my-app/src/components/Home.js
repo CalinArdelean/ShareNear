@@ -25,6 +25,7 @@ class Home extends React.Component {
             <div className="App">
             <AppNavbarLoggedIn 
                 currentUser={this.props.currentUser}
+                admin={this.props.admin}
             />
                   <HomeLayout
                       currentUser={this.props.validUser || this.props.location.validUser}

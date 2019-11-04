@@ -1,6 +1,5 @@
 import React from 'react';
 // import './Forms.css';
-import placeholder from '../assets/chainsaw.jpg';
 
 //same imports as HomeLayout
 import { makeStyles } from '@material-ui/core/styles';
@@ -11,6 +10,7 @@ import ButtonBase from '@material-ui/core/ButtonBase';
 import Dotdotdot from 'react-dotdotdot';
 import './ItemPage.css';
 import AppNavbar from './Navbar';
+import AppNavbarLoggedIn from './NavbarLoggedIn';
 import { spacing } from '@material-ui/system';
 import { Link } from 'react-router-dom';
 
@@ -18,9 +18,42 @@ import { Link } from 'react-router-dom';
 
 import { listings } from './HomeLayout';
 
+let isValid = 0;
+
 class ItemPage extends React.Component {
 
+
+    renderNavbar() {
+        
+        if (this.props.location.isValidUser === 1) {
+            return (
+                <div className="App">
+                    <AppNavbarLoggedIn
+                        currentUser={this.props.currentUser}
+                    />
+                </div>
+            );
+        }
+        else {
+            return (
+                <div className="App">
+                    <AppNavbar />
+                </div>
+            );
+        }
+    }
+
+
     render() {
+
+        // Show 'View Profile' link on Navbar only if user is logged in
+        if (typeof (this.props.location.isValidUser) !== 'undefined') {
+            isValid = this.props.location.isValidUser;
+            console.log("ItemPage isValid " + isValid);
+        }
+
+
+
         //console.log(this.props.location);
         
         var data = 0;
@@ -31,7 +64,7 @@ class ItemPage extends React.Component {
 
         return (
             <div className="root">
-                <AppNavbar />
+                {this.renderNavbar()}
                 <Paper className="paper">
                     
                         <Grid item container direction="row" justify="space-evenly" className="item">
@@ -63,7 +96,8 @@ class ItemPage extends React.Component {
                                     <Link
                                         to={{
                                             pathname: "./profile",
-                                            data: data
+                                            data: data,
+                                            isValidUser: isValid
                                         }}>
                                     Rent this item
                                     </Link>
@@ -78,6 +112,7 @@ class ItemPage extends React.Component {
                 <Link
                     to={{
                         pathname: "./",
+                        validUser: isValid
                         
                     }}> Return to Listings </Link>
             </div>

@@ -136,7 +136,7 @@ class UserItems extends React.Component {
                     <br></br>
                     <h3>Your Listings:</h3>
                     <br></br>
-                    <ComplexGrid>{item}</ComplexGrid>
+                    <ComplexGrid item={item}></ComplexGrid>
                     {/* <img
                         alt="item image"
                         src={item.image}

@@ -13,6 +13,8 @@ import Item from './components/ItemPage';
 import Post from './components/CreatePost';
 import Edit from './components/EditProfile';
 import Listings from './components/UserItems';
+import HomeFiltered from './components/HomeFiltered';
+import HomeLayoutFiltered from './components/HomeLayoutFiltered';
 import UserList from './components/UserListPage';
 
 class App extends React.Component {
@@ -31,6 +33,8 @@ class App extends React.Component {
                             <Route exact path='/item' component={Item} />
                             <Route exact path='/edit' component={Edit} />
                             <Route exact path='/listings' component={Listings} />
+                            <Route exact path='/HomeFiltered' component={HomeFiltered} />
+                            <Route exact path='/HomeLayoutFiltered' component={HomeLayoutFiltered} />
                             <Route exact path='/userlist' component={UserList} />
                         </Switch>
                     </BrowserRouter>

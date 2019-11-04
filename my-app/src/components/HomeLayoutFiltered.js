@@ -96,19 +96,11 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-var isValid = 0;
 
-export default function ComplexGrid(props) {
-
-    const classes = useStyles();
-    console.log(props);
-
-    // Show 'View Profile' link on Navbar only if user is logged in
-    if (typeof (props.currentUser) !== 'undefined') {
-        isValid = props.currentUser;
-        console.log("Should be 0 or 1 " + props.currentUser);
-    }
+export default function ComplexGrid() {
     
+    const classes = useStyles();
+
 
     const items = [];
     let index = 0;
@@ -120,8 +112,9 @@ export default function ComplexGrid(props) {
             //if (j % numCols == 0) {
              //   items.push(singleItem(classes));
             //}
-            items.push(singleItem(classes, index));
-            
+            if(listings[index].location === "Toronto, ON"){
+                items.push(singleItem(classes, index));
+            }
             //if (j % numCols == numCols - 1) {
              //   items.push(singleItem(classes));
             //}
@@ -186,8 +179,7 @@ function singleItem(classes, index) {
                                     <Link
                                         to={{
                                             pathname: "./item",
-                                            itemIndex: index,
-                                            isValidUser: isValid
+                                            itemIndex: index
                                         }}>
                                         Rent this item
                                     </Link>

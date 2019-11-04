@@ -3,7 +3,7 @@ import '../App.css';
 import AppNavbarLoggedIn from './NavbarLoggedIn';
 import { Table } from 'react-bootstrap';
 
-/* Component for a user to create a post and put an item up for rent */
+/* Component for an admin to view the list of users (currently hardcoded, but will need to read from a database) */
 class userList extends React.Component {
     render() {
         return (

@@ -1,10 +1,9 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-//import Button from 'react-bootstrap/Button';
-// import Button from '@material-ui/core/Button';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
+//components (pages) used in our app
 import Login from './components/LoginPage';
 import SignUp from './components/SignUpForm';
 import Profile from './components/UserProfile';
@@ -17,6 +16,7 @@ import HomeFiltered from './components/HomeFiltered';
 import HomeLayoutFiltered from './components/HomeLayoutFiltered';
 import UserList from './components/UserListPage';
 
+/* Main JavaScript component for our app, linking all other components to each other */
 class App extends React.Component {
     render() {
         return (

@@ -146,7 +146,15 @@ class UserItems extends React.Component {
                     <h4>{item.name}</h4>
                     <h5>{item.description}</h5>
                     <h4>{item.location}</h4> <br></br>
-                    <a href="./profile">Return to your profile</a>
+
+                    <Link
+                        to={{
+                            pathname: "./profile",
+                            isValidUser: 1
+                        }}>Return to your profile
+                      </Link>
+
+                    
                 </div>
             )
     }

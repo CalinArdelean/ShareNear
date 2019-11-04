@@ -115,10 +115,7 @@ class Profile extends React.Component {
                 <a href="./newpost">
                     <button type="button">Create New Listing</button>
                 </a>
-                <br /> <br></br>
-                <a href="./listings">
-                    <button type="button">View Your Listings</button>
-                </a>
+                <br /> 
                 </div>
             );
         }

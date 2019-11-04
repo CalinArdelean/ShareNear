@@ -137,15 +137,16 @@ class UserItems extends React.Component {
                     <br></br>
                     <h3>Your Listings:</h3>
                     <br></br>
-                    <ComplexGrid item={item}></ComplexGrid>
-                    {/* <img
+                    {/* <ComplexGrid item={item}></ComplexGrid> */}
+                    <img
                         alt="item image"
                         src={item.image}
                         className="d-inline-block align-top"
                     ></img>
-                    <p>{item.name}</p>
-                    <p>{item.description}</p>
-                    <p>{item.location}</p> <br></br> */}
+                    <h4>{item.name}</h4>
+                    <h5>{item.description}</h5>
+                    <h4>{item.location}</h4> <br></br>
+                    <a href="./profile">Return to your profile</a>
                 </div>
             )
     }

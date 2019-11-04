@@ -14,28 +14,29 @@ Demo to use the current version of our app-
 login page. A first time user would click on the sign up button at the bottom of the login form to be taken to a sign up page,
 where they would then fill out their information and sign up appropriately. Since this is only phase 1, our app does not store
 sign up data anywhere, so the sign up page isn't functional. You can click back on the login button at the bottom to be taken
-back to the login page. 
+back to the login page. In our phase 2 we will store the list of users in a database, and push to it when new user signs up.
+Then we can read from there to check user authentication/authorization.
 
 2. From here you can login using username: user, password: user if you want to login as a regular user. Or you can 
 login using username: admin, password: admin, to login as an admin. Once logged in, you will be brought back to the home page.
 
 3. Now that you are logged in, the navbar gives you the option of viewing your profile, and/or logging out. There is 
 also the option to search for items or filter by location with the search bar at the top. Currently, to use the search button
-please type Toronto in the location bar, and click the search. This will show a filtered version of the items that have locations
-based in Toronto. Other than this, the search bar is currently not functional. 
+please type Toronto in the location bar, and click the search icon. This will show a filtered version of the items that have 
+locations based in Toronto. Other than this, the search bar is currently not functional. 
 
 4. A logged in user can browse the items currently listed for rent, and click on each see item button to learn more 
 details about the item. Please click to see an item that you are interested in, and you will be taken to a single item page
 that lists more details about the specific item up for rent. 
 
 5. If a user is interested in renting the item, they can click the "rent this item" button, and they will be taken to a
-profile page of the user who created the post. Doing so allows you view the contact details of this 
-other user, and thus facilitate communication to begin the rental transaction. 
+profile page of the user who created the post. Doing so allows you view the contact details of this other user, and 
+thus facilitate communication to begin the rental transaction. 
 
 6. The next thing a user can do, assuming they are logged in, is that they can click on their view profile button on the navbar.
 If you click there now you will see a hardcoded profile for the user already set up, which we will make more dynamic in 
-phase 2. The user can view their profile, and can do one of 3 things from here, either edit their profile, create a new listing
-or view their current list of items.
+phase 2. The user can view their profile, and can do one of 2 things from here, either edit their profile, or create a new
+listing to post.
 
 7. If you click to edit profile, the user is taken to a form page to fill out their information. This part is currently not 
 functional, but pressing submit will take the user back to their profile page. 
@@ -44,11 +45,9 @@ functional, but pressing submit will take the user back to their profile page.
 item they have put up for rent. Right now this item doesn't get saved, but submitting it will edit the DOM to print out the
 new item created. 
 
-9. A user will be able to view their current listings as well, but this feature is not implemented yet. 
-
-10. Aside from these interactions, a user can log out, and will be taken back to the home page, where they can browse items
+9. Aside from these interactions, a user can log out, and will be taken back to the home page, where they can browse items
 up for rent even without an account. These types of users are only not given access to any of their own profile features.
 
-11. Finally, if you log in as an admin, the admin has all the same views as a regular user, but also currently has the option
+10. Finally, if you log in as an admin, the admin has all the same views as a regular user, but also currently has the option
 to see the list and information of all other users who have an account on the application, and they can access this through
 the navigation bar once logged in as well.  

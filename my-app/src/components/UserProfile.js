@@ -29,7 +29,7 @@ class Profile extends React.Component {
         console.log(this.props.location.state);
         //console.log("Item ID: " + this.props.location.data);
 
-        let seller = sellers[0];
+        let seller = sellers[3];
 
         
 

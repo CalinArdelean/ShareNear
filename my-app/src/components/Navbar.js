@@ -1,17 +1,12 @@
 import React from 'react'
 import '../App.css';
 import logo from '../logo.svg';
-<<<<<<< HEAD
-import { Navbar, Nav, Form, FormControl, Container, Row, Col} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-=======
 import { Navbar, Nav, Form, FormControl, Container, Row, Col } from 'react-bootstrap';
->>>>>>> b97191a06ba532fee3fa241e6a2a3fdb2a78e7ad
 
 
 //component for the navbar at the top of the home page
 class AppNavbar extends React.Component {
-<<<<<<< HEAD
 
   state = {
     location: ""
@@ -29,10 +24,6 @@ class AppNavbar extends React.Component {
 }
 
   render() {
-=======
-    render() {
-        
->>>>>>> b97191a06ba532fee3fa241e6a2a3fdb2a78e7ad
     return (
         <Navbar variant="dark" className="App-navbar">
             <Navbar.Brand href="/">

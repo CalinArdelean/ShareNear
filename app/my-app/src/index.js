@@ -3,6 +3,15 @@ import ReactDOM from 'react-dom';
 import './App.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { startLogging } from "statezero";
+import { setEmptyState } from "./actions/helpers";
+
+// Initially set all state paths needed in your app as empty.
+setEmptyState();
+
+// startLogging from statezero logs updated state paths to the console
+// as your app sets/unsets state path values (very useful for debugging)
+startLogging();
 
 //Starting point entry for our app
 ReactDOM.render(<App />, document.getElementById('root'));

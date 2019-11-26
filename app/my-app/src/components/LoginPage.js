@@ -43,9 +43,9 @@ class LoginPage extends React.Component {
   checkUser = () => {
 
 
-    const [screen, setScreen] = useState("noAuth");
-		const [username, setUsername] = useState();
-		const [password, setPassword] = useState();
+		//const [screen, setScreen] = useState("noAuth");
+		//const [username, setUsername] = useState();
+		//const [password, setPassword] = useState();
 		console.log("test");
 		//const auth = () => {
 		// Create our request constructor with all the parameters we need
@@ -68,8 +68,8 @@ class LoginPage extends React.Component {
 			})
 			.then(json => {
 			if (json.screen !== undefined) {
-        console.log("why");
-				setScreen(json.screen);
+				console.log("why");
+				//setScreen(json.screen);
 			}
 			})
 			.catch(error => {
@@ -82,7 +82,7 @@ class LoginPage extends React.Component {
 
     console.log("checking user")
 
-      const userList = this.state.users
+      /*const userList = this.state.users
       const username = this.state.userName
       const pass = this.state.userPassword
       let valid = 0
@@ -106,7 +106,7 @@ class LoginPage extends React.Component {
         validUser: valid,
         currentUser: user,
         admin: usernum
-      });
+      });*/
       
       
   }

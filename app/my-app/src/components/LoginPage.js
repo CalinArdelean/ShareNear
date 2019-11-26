@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from "react";
 
 // Importing components
 import LoginForm from './LoginForm';
@@ -43,9 +43,9 @@ class LoginPage extends React.Component {
   checkUser = () => {
 
 
-  //const [screen, setScreen] = useState("noAuth");
-		//const [username, setUsername] = useState();
-		//const [password, setPassword] = useState();
+    const [screen, setScreen] = useState("noAuth");
+		const [username, setUsername] = useState();
+		const [password, setPassword] = useState();
 		console.log("test");
 		//const auth = () => {
 		// Create our request constructor with all the parameters we need
@@ -66,11 +66,12 @@ class LoginPage extends React.Component {
 				return res.json();
 			}
 			})
-			//.then(json => {
-			//if (json.screen !== undefined) {
-			//	setScreen(json.screen);
-			//}
-			//})
+			.then(json => {
+			if (json.screen !== undefined) {
+        console.log("why");
+				setScreen(json.screen);
+			}
+			})
 			.catch(error => {
 			console.log("We have failed");
 			console.log(error);

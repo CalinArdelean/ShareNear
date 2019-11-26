@@ -10,7 +10,7 @@ const app = express();
 const { mongoose } = require('./db/mongoose')
 
 // import the mongoose models
-const { Student } = require('./models/student')
+const { Item } = require('./models/item')
 const { User } = require('./models/user')
 
 // to validate object IDs
@@ -103,7 +103,7 @@ app.post('/students', (req, res) => {
 	// log(req.body)
 
 	// Create a new student using the Student mongoose model
-	const student = new Student({
+	const item = new Item({
 		name: req.body.name,
 		year: req.body.year
 	})
@@ -117,7 +117,7 @@ app.post('/students', (req, res) => {
 })
 
 // a GET route to get all students
-app.get('/students', (req, res) => {
+app.get('/items', (req, res) => {
 	Student.find().then((students) => {
 		log()
 		res.send({ students }) // can wrap in object if want to add more properties
@@ -129,7 +129,7 @@ app.get('/students', (req, res) => {
 /// a GET route to get a student by their id.
 // id is treated as a wildcard parameter, which is why there is a colon : beside it.
 // (in this case, the database id, but you can make your own id system for your project)
-app.get('/students/:id', (req, res) => {
+app.get('/items/:id', (req, res) => {
 	/// req.params has the wildcard parameters in the url, in this case, id.
 	// log(req.params.id)
 	const id = req.params.id
@@ -140,7 +140,7 @@ app.get('/students/:id', (req, res) => {
 	}
 
 	// Otherwise, findById
-	Student.findById(id).then((student) => {
+	Item.findById(id).then((student) => {
 		if (!student) {
 			res.status(404).send()  // could not find this student
 		} else {
@@ -155,7 +155,7 @@ app.get('/students/:id', (req, res) => {
 })
 
 /// a DELETE route to remove a student by their id.
-app.delete('/students/:id', (req, res) => {
+app.delete('/items/:id', (req, res) => {
 	const id = req.params.id
 
 	// Validate id
@@ -164,7 +164,7 @@ app.delete('/students/:id', (req, res) => {
 	}
 
 	// Delete a student by their id
-	Student.findByIdAndRemove(id).then((student) => {
+	Item.findByIdAndRemove(id).then((student) => {
 		if (!student) {
 			res.status(404).send()
 		} else {   
@@ -177,7 +177,7 @@ app.delete('/students/:id', (req, res) => {
 
 // a PATCH route for changing properties of a resource.
 // (alternatively, a PUT is used more often for replacing entire resources).
-app.patch('/students/:id', (req, res) => {
+app.patch('/items/:id', (req, res) => {
 	const id = req.params.id
 
 	// get the updated name and year only from the request body.

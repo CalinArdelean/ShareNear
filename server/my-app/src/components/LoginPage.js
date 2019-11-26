@@ -41,6 +41,44 @@ class LoginPage extends React.Component {
   // Function to check if user is valid.  
   // Does not need parameters since it only uses and changes the state.
   checkUser = () => {
+
+
+  //const [screen, setScreen] = useState("noAuth");
+		//const [username, setUsername] = useState();
+		//const [password, setPassword] = useState();
+		console.log("test");
+		//const auth = () => {
+		// Create our request constructor with all the parameters we need
+		const request = new Request("/users", {
+			method: "post",
+			body: JSON.stringify({ email: "bigboy@gmail.com", password: "10101010" }),
+			headers: {
+			Accept: "application/json, text/plain, */*",
+			"Content-Type": "application/json"
+			}
+		});
+		
+		// Send the request with fetch()
+		fetch(request)
+			.then(res => {
+			if (res.status === 200) {
+				console.log("YOO WE DID IT");
+				return res.json();
+			}
+			})
+			//.then(json => {
+			//if (json.screen !== undefined) {
+			//	setScreen(json.screen);
+			//}
+			//})
+			.catch(error => {
+			console.log("We have failed");
+			console.log(error);
+			});
+		//};
+
+
+
     console.log("checking user")
 
       const userList = this.state.users

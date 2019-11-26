@@ -10,7 +10,7 @@ const app = express();
 const { mongoose } = require('./db/mongoose')
 
 // import the mongoose models
-const { Item } = require('./models/item')
+const { Student } = require('./models/student')
 const { User } = require('./models/user')
 
 // to validate object IDs
@@ -40,7 +40,7 @@ app.use(session({
 // an active user on the session cookie (indicating a logged in user.)
 const sessionChecker = (req, res, next) => {
     if (req.session.user) {
-        res.redirect('/home'); // redirect to dashboard if logged in.
+        res.redirect('/dashboard'); // redirect to dashboard if logged in.
     } else {
         next(); // next() moves on to the route.
     }    
@@ -99,11 +99,11 @@ app.get('/users/check-session', (req, res) => {
 
 /** Student resource routes **/
 // a POST route to *create* a student
-app.post('/items', (req, res) => {
+app.post('/students', (req, res) => {
 	// log(req.body)
 
 	// Create a new student using the Student mongoose model
-	const item = new Item({
+	const student = new Student({
 		name: req.body.name,
 		year: req.body.year
 	})
@@ -117,10 +117,10 @@ app.post('/items', (req, res) => {
 })
 
 // a GET route to get all students
-app.get('/items', (req, res) => {
-	Student.find().then((items) => {
+app.get('/students', (req, res) => {
+	Student.find().then((students) => {
 		log()
-		res.send({ items }) // can wrap in object if want to add more properties
+		res.send({ students }) // can wrap in object if want to add more properties
 	}, (error) => {
 		res.status(500).send(error) // server error
 	})
@@ -129,7 +129,7 @@ app.get('/items', (req, res) => {
 /// a GET route to get a student by their id.
 // id is treated as a wildcard parameter, which is why there is a colon : beside it.
 // (in this case, the database id, but you can make your own id system for your project)
-app.get('/items/:id', (req, res) => {
+app.get('/students/:id', (req, res) => {
 	/// req.params has the wildcard parameters in the url, in this case, id.
 	// log(req.params.id)
 	const id = req.params.id
@@ -140,13 +140,13 @@ app.get('/items/:id', (req, res) => {
 	}
 
 	// Otherwise, findById
-	Student.findById(id).then((item) => {
-		if (!item) {
+	Student.findById(id).then((student) => {
+		if (!student) {
 			res.status(404).send()  // could not find this student
 		} else {
 			/// sometimes we wrap returned object in another object:
 			//res.send({student})   
-			res.send(item)
+			res.send(student)
 		}
 	}).catch((error) => {
 		res.status(500).send()  // server error
@@ -155,7 +155,7 @@ app.get('/items/:id', (req, res) => {
 })
 
 /// a DELETE route to remove a student by their id.
-app.delete('/items/:id', (req, res) => {
+app.delete('/students/:id', (req, res) => {
 	const id = req.params.id
 
 	// Validate id
@@ -164,8 +164,8 @@ app.delete('/items/:id', (req, res) => {
 	}
 
 	// Delete a student by their id
-	Item.findByIdAndRemove(id).then((item) => {
-		if (!item) {
+	Student.findByIdAndRemove(id).then((student) => {
+		if (!student) {
 			res.status(404).send()
 		} else {   
 			res.send(student)
@@ -177,7 +177,7 @@ app.delete('/items/:id', (req, res) => {
 
 // a PATCH route for changing properties of a resource.
 // (alternatively, a PUT is used more often for replacing entire resources).
-app.patch('/items/:id', (req, res) => {
+app.patch('/students/:id', (req, res) => {
 	const id = req.params.id
 
 	// get the updated name and year only from the request body.
@@ -189,11 +189,11 @@ app.patch('/items/:id', (req, res) => {
 	}
 
 	// Update the student by their id.
-	Item.findByIdAndUpdate(id, {$set: body}, {new: true}).then((item) => {
-		if (!item) {
+	Student.findByIdAndUpdate(id, {$set: body}, {new: true}).then((student) => {
+		if (!student) {
 			res.status(404).send()
 		} else {   
-			res.send(item)
+			res.send(student)
 		}
 	}).catch((error) => {
 		res.status(400).send() // bad request for changing the student.

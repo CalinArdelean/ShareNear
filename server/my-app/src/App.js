@@ -15,10 +15,14 @@ import Listings from './components/UserItems';
 import HomeFiltered from './components/HomeFiltered';
 import HomeLayoutFiltered from './components/HomeLayoutFiltered';
 import UserList from './components/UserListPage';
+import { useState } from "react";
 
 /* Main JavaScript component for our app, linking all other components to each other */
 class App extends React.Component {
+	
     render() {
+		
+
         return (
             <div className="App">
                 <div>

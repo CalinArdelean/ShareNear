@@ -51,3 +51,33 @@ up for rent even without an account. These types of users are only not given acc
 10. Finally, if you log in as an admin, the admin has all the same views as a regular user, but also currently has the option
 to see the list and information of all other users who have an account on the application, and they can access this through
 the navigation bar right after they log in. 
+
+
+
+//
+The overall layout of the website can be improved. Some of the pages like the
+profile page, the elements are not aligned correctly. (-2) The theme is generally
+consistent throughout the website, however, there are minor inconsistencies
+that need to be fixed. Another one is that the size of the text boxes are not
+identical (for example in the creating new post page) (-2)
+
+
+The upload item picture is not functional. The user cannot view their own
+listing. (-2.5)
+
+In the proposal it was mentioned that the admin is able to view modify the
+users password but currently it can only list the users and there is not any
+action involved. (-1.5)
+
+In the proposal it was mentioned that the users are able to view the listings
+which was not the case here.
+
+I strongly suggest that you go through your project proposal and try to
+implement them for phase 2. The features that are missing currently is the
+current balance, items being rented, viewing the users listings, searching for
+the users, searching for the items and more. This is the reason the I deduced
+the complexity mark from the project.
+
+All of the components are placed inside the same folder. This can make
+the project management hard as the code base gets larger. (-1)
+

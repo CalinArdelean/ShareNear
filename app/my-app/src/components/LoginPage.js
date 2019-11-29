@@ -49,9 +49,9 @@ class LoginPage extends React.Component {
 		console.log("test");
 		//const auth = () => {
 		// Create our request constructor with all the parameters we need
-		const request = new Request("/users", {
+		const request = new Request("/students", {
 			method: "post",
-			body: JSON.stringify({ email: "bigboy@gmail.com", password: "10101010" }),
+			body: JSON.stringify({ name: "bigboy@gmail.com", year: "10101010" }),
 			headers: {
 			Accept: "application/json, text/plain, */*",
 			"Content-Type": "application/json"

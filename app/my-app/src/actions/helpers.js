@@ -1,5 +1,5 @@
 import set from "lodash-es/set";
-import { action } from "statezero";
+import { action, setState} from "statezero";
 
 // Initialize all state paths used by your app as empty.
 // These are the states that you can filter using filterState()

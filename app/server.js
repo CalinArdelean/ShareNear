@@ -99,7 +99,7 @@ app.get('/users/check-session', (req, res) => {
 
 /** Student resource routes **/
 // a POST route to *create* a student
-app.post('/students', (req, res) => {
+app.post('/items', (req, res) => {
 	// log(req.body)
 
 	// Create a new student using the Student mongoose model

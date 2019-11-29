@@ -6,14 +6,10 @@ import { action } from "statezero";
 // as needed by specific components.
 
 export const setEmptyState = () => {
-    setState("CurrentUser", { username: "", password: "" });
-    setState("ItemList", []);
+    setState("CurrentUser", null);
+    setState("loginForm", { email: "", password: "" })
+
+    setState("itemList", []);
+    setState("itemForm", {name: "", price:""})
     setState("message", { type: "", body: "" });
 };
-
-// Helper method to set a state path.
-// Usage: setState(STATE_PATH_NAME, STATE_PATH_VALUE);
-export const setState = action(({ commit, state }, path, value) => {
-    set(state, path, value);
-    commit(state);
-});

@@ -8,7 +8,7 @@ const Item = mongoose.model('Item', {
 		minlegth: 1,
 		trim: true
 	},
-	year: {
+	price: {
 		type: Number,
 		required: true,
 		// default: 1

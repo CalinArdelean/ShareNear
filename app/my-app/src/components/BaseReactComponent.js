@@ -20,7 +20,8 @@ class BaseReactComponent extends React.Component {
     }
 
     filterState() {
-        return {};
+        // Sub-classes must override this method.
+        throw new Error("filterState() is not implemented");
     }
 }
 

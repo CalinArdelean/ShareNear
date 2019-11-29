@@ -19,6 +19,7 @@ import HomeLayoutFiltered from './components/HomeLayoutFiltered';
 import UserList from './components/UserListPage';
 import BaseReactComponent from './components/BaseReactComponent';
 import { useState } from "react";
+import MainView from './MainView';
 
 /* Main JavaScript component for our app, linking all other components to each other */
 class App extends BaseReactComponent {
@@ -36,7 +37,7 @@ class App extends BaseReactComponent {
 		
         const { currentUser } = this.state;
         return (
-            <div className="app">{!currentUser ? <Login /> : <Home />}</div>
+            <div className="app">{!currentUser ? <Login /> : <MainView />}</div>
             // <div className="App">
             //     <div>
             //         <BrowserRouter>

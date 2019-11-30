@@ -82,7 +82,7 @@ class Profile extends React.Component {
                     ></img>
                     <br></br>
                     <h5>{seller.address}</h5>
-                    <h6>{seller.description}</h6>                  
+                    <h6 className="text-center">{seller.description}</h6>                  
                     <br></br>
                     <i class="fas fa-phone-square-alt"></i> <p>{seller.phoneNumber}</p>
                     <i class="far fa-envelope"></i> <p>{seller.email}</p>

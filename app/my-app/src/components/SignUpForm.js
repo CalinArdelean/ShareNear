@@ -2,11 +2,42 @@ import React from 'react';
 // import './Forms.css';
 import logo from '../logo.svg';
 import TextField from "@material-ui/core/TextField";
-import { updateLoginForm } from './LoginPage';
+import { updateSignupForm } from './LoginPage';
 
 /* Component to sign up */
 class SignUpForm extends React.Component {
+
     render() {
+
+
+
+
+		const request = new request("/users", {
+		 	method: "post",
+		 	body: json.stringify(getstate("signupForm")),
+		 	headers: {
+		 	accept: "application/json, text/plain, /",
+		 	"content-type": "application/json"
+		 	}
+		});
+		
+		 //send the request with fetch()
+		 fetch(request)
+		 	.then(res => {
+		 	if (res.status === 200) {
+		 		console.log("yoo we did it");
+		 		return res.json();
+		 	}
+		 	})
+
+		 	.catch(error => {
+		 	console.log("we have failed");
+		 	console.log(error);
+		 	});
+
+
+
+
         return (
             <div className="Form">
                 <br></br>

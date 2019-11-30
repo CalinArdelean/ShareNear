@@ -12,6 +12,11 @@ export const updateLoginForm = field => {
     setState(`loginForm.${name}`, value);
 };
 
+export const updateSignupForm = field => {
+    const { name, value } = field;
+    setState(`signupForm.${name}`, value);
+};
+
 //component for the login page
 class LoginPage extends React.Component {
 

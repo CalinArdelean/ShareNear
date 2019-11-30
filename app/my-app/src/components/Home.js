@@ -10,9 +10,12 @@ import HomeLayout from './HomeLayout';
 
 /* Component for the Home page */ 
 class Home extends React.Component {
-    
+    constructor(props) {
+        super(props);
+        this.props.history.push("/");
+    }  
     render() {
-        
+        const { history } = this.props;
         let isValid = 0;
         if (typeof (this.props.location) !== 'undefined') {
             console.log("Location: " + this.props.location.validUser);

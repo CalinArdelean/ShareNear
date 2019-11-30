@@ -8,6 +8,7 @@ import { action, setState} from "statezero";
 export const setEmptyState = () => {
     setState("CurrentUser", null);
     setState("loginForm", { email: "", password: "" })
+	setState("signupForm", { email: "", password: "" })
 
     setState("itemList", []);
     setState("itemForm", {name: "", price:""})

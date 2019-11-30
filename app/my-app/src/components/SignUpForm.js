@@ -10,8 +10,8 @@ class SignUpForm extends React.Component {
 
 	postUser = () => {
 
-
-		const request = new request("/users", {
+		console.log(getState("signupForm"));
+		const request = new Request("/users", {
 		 	method: "post",
 		 	body: JSON.stringify(getState("signupForm")),
 		 	headers: {
@@ -147,9 +147,9 @@ class SignUpForm extends React.Component {
                 </div>
                 <br />
                 <br />
-                <a href="./">
-                    <button type="button">Sign Up</button>
-                </a>
+                
+                    <button type="button" onClick={ this.postUser }>Sign Up</button>
+                
                 <br></br>
                 <br></br>
                 <a href="./login">Already have an account? Login Here</a>

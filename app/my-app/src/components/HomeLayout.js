@@ -86,7 +86,7 @@ const useStyles = makeStyles(theme => ({
         maxHeight: '100%',
     },
     item: {
-        background: 'beige',
+        background: '#EAEAEA',
         width: 400,
         height: 180
     },

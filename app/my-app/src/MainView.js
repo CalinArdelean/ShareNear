@@ -13,7 +13,7 @@ class MainView extends React.Component {
                 <Switch>
                     <Route
                         exact
-                        path={["/", "/home"]}
+                        path={["/"]}
                         render={({ history }) => (
                             <Home history={history} />
                         )}

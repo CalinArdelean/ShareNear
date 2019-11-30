@@ -37,7 +37,7 @@ class App extends BaseReactComponent {
 		
         const { currentUser } = this.state;
         return (
-            // <div className="app">{!currentUser ? <Login /> : <Home />}</div>
+            // <div className="app">{!currentUser ? <Login /> : <MainView />}</div>
             <div className="App">
                 <div>
                     <BrowserRouter>

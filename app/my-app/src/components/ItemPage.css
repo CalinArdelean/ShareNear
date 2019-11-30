@@ -23,7 +23,7 @@
 }
 
 .item {
-    background: beige;
+    background: #EAEAEA;
     min-height: 50vh;
 }
 
@@ -67,4 +67,9 @@
 
 .renter {
     font-size: 22px;
+}
+
+.return {
+    font-size: 22px;
+    text-align: center;
 }

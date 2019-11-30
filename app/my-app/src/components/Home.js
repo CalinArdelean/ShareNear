@@ -12,8 +12,8 @@ import HomeLayout from './HomeLayout';
 class Home extends React.Component {
     constructor(props) {
         super(props);
-        this.props.history.push("/home");
-    }
+        this.props.history.push("/");
+    }  
     render() {
         const { history } = this.props;
         let isValid = 0;

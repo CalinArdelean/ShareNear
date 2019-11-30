@@ -26,55 +26,46 @@ class SignUpForm extends React.Component {
                 <div className="input">
 				<TextField
                         name="firstname"
-                        label="firstname"
+                        label="First Name"
                         type="firstname"
-                        className="login__input app__input app__horizontal-center"
+                        className="textfield login__input app__input app__horizontal-center"
                         margin="normal"
                         onChange={e => updateLoginForm(e.target)}
                     />
-                <input firstname='firstname'
-                    type="text"
-                    placeholder="First Name" />
+                
                 </div>
                 <div className="input">
 				<TextField
                         name="lastname"
-                        label="lastname"
+                        label="Last Name"
                         type="lastname"
-                        className="login__input app__input app__horizontal-center"
+                        className="textfield login__input app__input app__horizontal-center"
                         margin="normal"
                         onChange={e => updateLoginForm(e.target)}
                     />
-                <input lastname='lastname'
-                    type="text"
-                    placeholder="Last Name" />
+                
                 </div>
                 <br></br>
                 <div className="input">
 				<TextField
                         name="phonenumber"
-                        label="phonenumber"
+                        label="Phone Number"
                         type="phonenumber"
-                        className="login__input app__input app__horizontal-center"
+                        className="textfield login__input app__input app__horizontal-center"
                         margin="normal"
                         onChange={e => updateLoginForm(e.target)}
                     />
-                <input phonenumber='phonenumber'
-                    type="text"
-                    placeholder="Phone Number" />
+              
                 </div>
                 <div className="input">
 				<TextField
                         name="email"
-                        label="email"
+                        label="Email Address"
                         type="email"
-                        className="login__input app__input app__horizontal-center"
+                        className="textfield login__input app__input app__horizontal-center"
                         margin="normal"
                         onChange={e => updateLoginForm(e.target)}
                     />
-                <input email='email'
-                    type="text"
-                    placeholder="Email Address" />
                 </div>
                 <br></br>
                 <div className="input">
@@ -82,53 +73,45 @@ class SignUpForm extends React.Component {
                         name="location"
                         label="Location"
                         type="Location"
-                        className="login__input app__input app__horizontal-center"
+                        className="textfield login__input app__input app__horizontal-center"
                         margin="normal"
                         onChange={e => updateLoginForm(e.target)}
                     />
-                <input location='location'
-                    type="text"
-                    placeholder="Location" />
+                
                 </div>
                 <div className="input">
 				<TextField
                         name="username"
-                        label="username"
+                        label="Username"
                         type="username"
-                        className="login__input app__input app__horizontal-center"
+                        className="textfield login__input app__input app__horizontal-center"
                         margin="normal"
                         onChange={e => updateLoginForm(e.target)}
                     />
-                <input username='username'
-                    type="text"
-                    placeholder="Username" />   
+                
                 </div>             
                 <br></br>
                 <div className="input">            
 				<TextField
                         name="password"
-                        label="password"
+                        label="Password"
                         type="password"
-                        className="login__input app__input app__horizontal-center"
+                        className="textfield login__input app__input app__horizontal-center"
                         margin="normal"
                         onChange={e => updateLoginForm(e.target)}
                     />
-                <input password='password'
-                    type="text"
-                    placeholder="Password" />
+                
                 </div>
                 <div className="input">
 				<TextField
                         name="password"
-                        label="password"
+                        label="Confirm Password"
                         type="password"
-                        className="login__input app__input app__horizontal-center"
+                        className="textfield login__input app__input app__horizontal-center"
                         margin="normal"
                         onChange={e => updateLoginForm(e.target)}
                     />
-                <input password='password'
-                    type="text"
-                    placeholder="Confirm Password" />
+                
                 </div>
                 <br />
                 <br />

@@ -110,37 +110,28 @@ class LoginForm extends React.Component {
         <p>Your One-Stop Online Rent Marketplace</p>
         <br></br>
 
-        <input name='userName' 
-    	         value={ this.props.userName } 
-    	         onChange={this.props.handleChange} 
-    	         type="text" 
-    	         placeholder="username" />
-
-        <br></br>
         <br></br>
 
+		<div className="input">
 		<TextField
             name="email"
-            label="Email"
-            className="login__input app__input app__horizontal-center"
+            label="Username"
+            className="textfield login__input app__input app__horizontal-center"
             margin="normal"
             onChange={e => updateLoginForm(e.target)}
         />
-
+		</div>
+		<div className="input">
 		<TextField
                         name="password"
                         label="Password"
                         type="password"
-                        className="login__input app__input app__horizontal-center"
+                        className="textfield login__input app__input app__horizontal-center"
                         margin="normal"
                         onChange={e => updateLoginForm(e.target)}
                     />
-
-        <input name='userPassword' 
-    	         value={ this.props.userPassword } 
-    	         onChange={this.props.handleChange} 
-    	         type="text" 
-    	         placeholder="password" />
+		</div>
+     
 
         <br></br>
         <br></br>

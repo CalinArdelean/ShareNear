@@ -108,14 +108,15 @@ class ItemPage extends React.Component {
                                 
                             </Grid>
                         </Grid>
+						<Link className="return"
+						to={{
+							pathname: "./",
+							validUser: isValid
+                        
+						}}> Return to Listings </Link>
+            
                     
                 </Paper>
-                <Link
-                    to={{
-                        pathname: "./",
-                        validUser: isValid
-                        
-                    }}> Return to Listings </Link>
             </div>
         );
     }

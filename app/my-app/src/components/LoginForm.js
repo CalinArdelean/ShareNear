@@ -5,6 +5,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import logo from '../logo.svg';
 import Home from './Home'
 
+import { updateLoginForm } from './LoginPage';
+import TextField from "@material-ui/core/TextField";
 
 /* Component to Login */
 
@@ -47,16 +49,32 @@ class LoginForm extends React.Component {
 
         <input name='userName' 
     	         value={ this.props.userName } 
-    	         onChange={this.props.handleChange} 
+    	         onChange={e => updateLoginForm(e.target)} 
     	         type="text" 
     	         placeholder="username" />
 
         <br></br>
         <br></br>
+		<TextField
+            name="email"
+            label="Email"
+            className="login__input app__input app__horizontal-center"
+            margin="normal"
+            onChange={e => updateLoginForm(e.target)}
+        />
+
+		<TextField
+                        name="password"
+                        label="Password"
+                        type="password"
+                        className="login__input app__input app__horizontal-center"
+                        margin="normal"
+                        onChange={e => updateLoginForm(e.target)}
+                    />
 
         <input name='userPassword' 
     	         value={ this.props.userPassword } 
-    	         onChange={this.props.handleChange} 
+    	         onChange={e => updateLoginForm(e.target)} 
     	         type="text" 
     	         placeholder="password" />
 
@@ -100,6 +118,23 @@ class LoginForm extends React.Component {
 
         <br></br>
         <br></br>
+
+		<TextField
+            name="email"
+            label="Email"
+            className="login__input app__input app__horizontal-center"
+            margin="normal"
+            onChange={e => updateLoginForm(e.target)}
+        />
+
+		<TextField
+                        name="password"
+                        label="Password"
+                        type="password"
+                        className="login__input app__input app__horizontal-center"
+                        margin="normal"
+                        onChange={e => updateLoginForm(e.target)}
+                    />
 
         <input name='userPassword' 
     	         value={ this.props.userPassword } 

@@ -4,7 +4,7 @@ import React from "react";
 // Importing react-router-dom to use the React Router
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 
-import Dashboard from "./react-components/Dashboard";
+import Home from "./components/Home";
 
 class MainView extends React.Component {
     render() {
@@ -15,7 +15,7 @@ class MainView extends React.Component {
                         exact
                         path={["/", "/home"]}
                         render={({ history }) => (
-                            <Dashboard history={history} />
+                            <Home history={history} />
                         )}
                     />
                     <Route render={() => <div>ERROR: 404 Not found</div>} />

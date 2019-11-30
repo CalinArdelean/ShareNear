@@ -3,8 +3,14 @@ import React, { useState } from "react";
 // Importing components
 import LoginForm from './LoginForm';
 import { bool } from 'prop-types';
+import { getState, setState } from "statezero";
 
 var user = {};
+
+export const updateLoginForm = field => {
+    const { name, value } = field;
+    setState(`loginForm.${name}`, value);
+};
 
 //component for the login page
 class LoginPage extends React.Component {
@@ -27,7 +33,7 @@ class LoginPage extends React.Component {
   }
   // Generic handler for whenever we type in an input box.
   // We change the state for the particular property bound to the textbox from the event.
-  handleInputChange = (event) => {
+  /*handleInputChange = (event) => {
     const target = event.target
     const value = target.value
     const name = target.name
@@ -36,7 +42,12 @@ class LoginPage extends React.Component {
       [name]: value  
     })
 
-  }
+	//const { name, value } = event.target;
+    setState(`loginForm.${name}`, value);
+
+  }*/
+
+  
 
   // Function to check if user is valid.  
   // Does not need parameters since it only uses and changes the state.
@@ -51,7 +62,7 @@ class LoginPage extends React.Component {
 		// Create our request constructor with all the parameters we need
 		const request = new Request("/students", {
 			method: "post",
-			body: JSON.stringify({ name: "bigboy@gmail.com", year: "10101010" }),
+			body: JSON.stringify(getState("loginForm")),
 			headers: {
 			Accept: "application/json, text/plain, */*",
 			"Content-Type": "application/json"
@@ -66,12 +77,12 @@ class LoginPage extends React.Component {
 				return res.json();
 			}
 			})
-			.then(json => {
-			if (json.screen !== undefined) {
-				console.log("why");
-				//setScreen(json.screen);
-			}
-			})
+			//.then(json => {
+			//if (json.screen !== undefined) {
+			//	console.log("why");
+			//	setScreen(json.screen);
+			//}
+			//})
 			.catch(error => {
 			console.log("We have failed");
 			console.log(error);

@@ -61,7 +61,7 @@ class SignUpForm extends React.Component {
                         type="firstname"
                         className="textfield login__input app__input app__horizontal-center"
                         margin="normal"
-                        onChange={e => updateLoginForm(e.target)}
+                        onChange={e => updateSignupForm(e.target)}
                     />
                 
                 </div>
@@ -72,7 +72,7 @@ class SignUpForm extends React.Component {
                         type="lastname"
                         className="textfield login__input app__input app__horizontal-center"
                         margin="normal"
-                        onChange={e => updateLoginForm(e.target)}
+                        onChange={e => updateSignupForm(e.target)}
                     />
                 
                 </div>
@@ -84,7 +84,7 @@ class SignUpForm extends React.Component {
                         type="phonenumber"
                         className="textfield login__input app__input app__horizontal-center"
                         margin="normal"
-                        onChange={e => updateLoginForm(e.target)}
+                        onChange={e => updateSignupForm(e.target)}
                     />
               
                 </div>
@@ -95,7 +95,7 @@ class SignUpForm extends React.Component {
                         type="email"
                         className="textfield login__input app__input app__horizontal-center"
                         margin="normal"
-                        onChange={e => updateLoginForm(e.target)}
+                        onChange={e => updateSignupForm(e.target)}
                     />
                 </div>
                 <br></br>
@@ -106,7 +106,7 @@ class SignUpForm extends React.Component {
                         type="Location"
                         className="textfield login__input app__input app__horizontal-center"
                         margin="normal"
-                        onChange={e => updateLoginForm(e.target)}
+                        onChange={e => updateSignupForm(e.target)}
                     />
                 
                 </div>
@@ -117,7 +117,7 @@ class SignUpForm extends React.Component {
                         type="username"
                         className="textfield login__input app__input app__horizontal-center"
                         margin="normal"
-                        onChange={e => updateLoginForm(e.target)}
+                        onChange={e => updateSignupForm(e.target)}
                     />
                 
                 </div>             
@@ -129,7 +129,7 @@ class SignUpForm extends React.Component {
                         type="password"
                         className="textfield login__input app__input app__horizontal-center"
                         margin="normal"
-                        onChange={e => updateLoginForm(e.target)}
+                        onChange={e => updateSignupForm(e.target)}
                     />
                 
                 </div>
@@ -140,7 +140,7 @@ class SignUpForm extends React.Component {
                         type="password"
                         className="textfield login__input app__input app__horizontal-center"
                         margin="normal"
-                        onChange={e => updateLoginForm(e.target)}
+                        onChange={e => updateSignupForm(e.target)}
                     />
                 
                 </div>

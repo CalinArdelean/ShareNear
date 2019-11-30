@@ -3,18 +3,17 @@ import React from 'react';
 import logo from '../logo.svg';
 import TextField from "@material-ui/core/TextField";
 import { updateSignupForm } from './LoginPage';
+import { getState, setState } from "statezero";
 
 /* Component to sign up */
 class SignUpForm extends React.Component {
 
-    render() {
-
-
+	postUser = () => {
 
 
 		const request = new request("/users", {
 		 	method: "post",
-		 	body: json.stringify(getstate("signupForm")),
+		 	body: JSON.stringify(getState("signupForm")),
 		 	headers: {
 		 	accept: "application/json, text/plain, /",
 		 	"content-type": "application/json"
@@ -35,8 +34,10 @@ class SignUpForm extends React.Component {
 		 	console.log(error);
 		 	});
 
+	}
 
 
+    render() {
 
         return (
             <div className="Form">

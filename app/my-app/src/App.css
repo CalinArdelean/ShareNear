@@ -180,9 +180,9 @@ div#sc-edprofile textarea {
   color: #555;
 }
 
-div#sc-edprofile select {
+/* div#sc-edprofile select {
   width: 100%;
-}
+} */
 
 div#sc-edprofile textarea {
   height: 100px;

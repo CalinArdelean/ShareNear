@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Dotdotdot from 'react-dotdotdot';
 import { Link } from 'react-router-dom';
+import Item from './ItemPage';
 
 
 /* Component that makes a grid of the product listings to put on the home page */
@@ -176,14 +177,16 @@ function singleItem(classes, index) {
                             <Grid item>
                                 <Typography variant="body2" style={{ cursor: 'pointer' }} >
 
-                                    <Link
+                                    {/* <Item>Rent this Item</Item> */}
+                                    {/* <Link
                                         to={{
                                             pathname: "./item",
                                             itemIndex: index,
                                             //isValidUser: isValid
                                         }}>
                                         Rent this item
-                                    </Link>
+                                    </Link> */}
+                                    Rent this Item
 
                                      
                                 </Typography>

@@ -96,7 +96,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-var isValid = 0;
+//var isValid = 0;
 
 export default function ComplexGrid() {
 
@@ -180,7 +180,7 @@ function singleItem(classes, index) {
                                         to={{
                                             pathname: "./item",
                                             itemIndex: index,
-                                            isValidUser: isValid
+                                            //isValidUser: isValid
                                         }}>
                                         Rent this item
                                     </Link>

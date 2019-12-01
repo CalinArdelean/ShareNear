@@ -80,6 +80,9 @@ class LoginPage extends BaseReactComponent {
             if(res){
               setState("currentUser", allUsers[i])
               }
+            else {
+              console.log("Wrong email or password.");
+            }
             }
            )
         }

@@ -11,6 +11,7 @@ class Home extends React.Component {
           return (
             <div>
             <AppNavbar />
+            <HomeLayout />
             </div>)
             
     }

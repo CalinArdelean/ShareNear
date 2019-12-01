@@ -18,40 +18,44 @@ import { Link } from 'react-router-dom';
 
 import { listings } from './HomeLayout';
 
-let isValid = 0;
+//let isValid = 0;
 
 //component to display a single item page
 class ItemPage extends React.Component {
 
 
     renderNavbar() {
-        
-        if (this.props.location.isValidUser === 1) {
-            return (
-                <div className="App">
-                    <AppNavbarLoggedIn
-                        currentUser={this.props.currentUser}
-                    />
-                </div>
-            );
-        }
-        else {
-            return (
-                <div className="App">
-                    <AppNavbar />
-                </div>
-            );
-        }
+        return (
+            <div className="App">
+                <AppNavbar />
+            </div>
+        );
+        // if (this.props.location.isValidUser === 1) {
+        //     return (
+        //         <div className="App">
+        //             <AppNavbarLoggedIn
+        //                 currentUser={this.props.currentUser}
+        //             />
+        //         </div>
+        //     );
+        // }
+        // else {
+        //     return (
+        //         <div className="App">
+        //             <AppNavbar />
+        //         </div>
+        //     );
+        // }
     }
 
 
     render() {
 
         // Show 'View Profile' link on Navbar only if user is logged in
-        if (typeof (this.props.location.isValidUser) !== 'undefined') {
-            isValid = this.props.location.isValidUser;
-            console.log("ItemPage isValid " + isValid);
-        }
+        // if (typeof (this.props.location.isValidUser) !== 'undefined') {
+        //     isValid = this.props.location.isValidUser;
+        //     console.log("ItemPage isValid " + isValid);
+        // }
 
 
 
@@ -61,7 +65,7 @@ class ItemPage extends React.Component {
         if (typeof (this.props.location.itemIndex) !== 'undefined') {
             data = this.props.location.itemIndex;
         }
-        console.log("PROPS IS: " + this.props.location.itemIndex);
+        //console.log("PROPS IS: " + this.props.location.itemIndex);
 
         return (
             <div className="root">
@@ -94,26 +98,26 @@ class ItemPage extends React.Component {
                                     
                                 </Grid>
                                 <Grid item className="rent">
-                                    <Link
+                                    {/* <Link
                                         to={{
                                             pathname: "./profile",
                                             data: data,
-                                            isValidUser: isValid
+                                            //isValidUser: isValid
                                         }}>
                                     Rent this item
-                                    </Link>
+                                    </Link> */}
                                 </Grid>
                             </Grid>
                             <Grid item>
                                 
                             </Grid>
                         </Grid>
-						<Link className="return"
+						{/* <Link className="return"
 						to={{
 							pathname: "./",
-							validUser: isValid
+							//validUser: isValid
                         
-						}}> Return to Listings </Link>
+						}}> Return to Listings </Link> */}
             
                     
                 </Paper>

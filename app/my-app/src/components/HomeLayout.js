@@ -177,7 +177,6 @@ function singleItem(classes, index) {
                             <Grid item>
                                 <Typography variant="body2" style={{ cursor: 'pointer' }} >
 
-                                    {/* <Item>Rent this Item</Item> */}
                                     {/* <Link
                                         to={{
                                             pathname: "./item",
@@ -187,7 +186,6 @@ function singleItem(classes, index) {
                                         Rent this item
                                     </Link> */}
                                     Rent this Item
-
                                      
                                 </Typography>
                             </Grid>

@@ -46,7 +46,7 @@ class AppNavbar extends React.Component {
           </Form> 
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text className="text-white">
-              <a href="./login">Login
+              <a href="./login">Logout
               &nbsp; <i className="fas fa-user"></i>
               </a>
             </Navbar.Text>

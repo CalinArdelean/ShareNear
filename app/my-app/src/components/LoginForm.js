@@ -7,6 +7,7 @@ import Home from './Home'
 
 import { updateLoginForm } from './LoginPage';
 import TextField from "@material-ui/core/TextField";
+// const bcrypt = require('bcryptjs')
 
 /* Component to Login */
 

@@ -98,16 +98,9 @@ const useStyles = makeStyles(theme => ({
 
 var isValid = 0;
 
-export default function ComplexGrid(props) {
+export default function ComplexGrid() {
 
     const classes = useStyles();
-    console.log(props);
-
-    // Show 'View Profile' link on Navbar only if user is logged in
-    if (typeof (props.currentUser) !== 'undefined') {
-        isValid = props.currentUser;
-        console.log("Should be 0 or 1 " + props.currentUser);
-    }
     
 
     const items = [];

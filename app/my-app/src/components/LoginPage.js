@@ -51,19 +51,17 @@ class LoginPage extends BaseReactComponent {
           bcrypt.compare(inputPassword, allUsers[i].password, (err, res) => { 
             if(res){
               setState("currentUser", allUsers[i])
-              }
+            }
             else {
               console.log("Wrong email or password.");
             }
-            }
-           )
+          })
         }
         
       }
-      
   }).catch((error) => {
       console.log(error)
-  })
+  });
 
   }
 
@@ -71,7 +69,6 @@ class LoginPage extends BaseReactComponent {
     return (
 
       <div className="App">
-         
         <LoginForm 
               checkUser={ this.checkUser } 
        />

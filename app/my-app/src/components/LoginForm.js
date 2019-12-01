@@ -13,7 +13,7 @@ import TextField from "@material-ui/core/TextField";
 
 class LoginForm extends React.Component {
   render() {
-    console.log()
+    console.log("here we are");
     if(this.props.validUser === 1){
       return (
 

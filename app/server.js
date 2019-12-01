@@ -46,6 +46,14 @@ const sessionChecker = (req, res, next) => {
     }    
 };
 
+app.get('/users', (req, res) => {
+	User.find().then((users) => {
+		res.send({ users }) // can wrap in object if want to add more properties
+	}, (error) => {
+		res.status(500).send(error) // server error
+	})
+})
+
 // A route to login and create a session
 app.post('/users/login', (req, res) => {
 	const email = req.body.email

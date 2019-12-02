@@ -62,9 +62,12 @@ class ItemPage extends React.Component {
         //console.log(this.props.location);
         
         var data = 0;
-        if (typeof (this.props.location.itemIndex) !== 'undefined') {
-            data = this.props.location.itemIndex;
-        }
+        //if (typeof (this.props.location.itemIndex) !== 'undefined') {
+        //    data = this.props.location.itemIndex;
+        //}
+
+
+
         //console.log("PROPS IS: " + this.props.location.itemIndex);
 
         return (

@@ -24,6 +24,42 @@ const UserSchema = new mongoose.Schema({
 		required: true,
 		minlength: 6
 	}
+	// username: {
+	// 	type: String,
+	// 	required: true,
+	// 	minlength: 1,
+	// 	trim: true
+	// },
+	// firstname: {
+	// 	type: String,
+	// 	required: true,
+	// 	minlength: 1,
+	// 	trim: true
+	// },
+	// lastname: {
+	// 	type: String,
+	// 	required: true,
+	// 	minlength: 1,
+	// 	trim: true
+	// },
+	// usertype: {
+	// 	type: Boolean,
+	// 	required: true,
+	// 	minlength: 1,
+	// 	trim: true,
+	// }, 
+	// phonenumber: {
+	// 	type: String,
+	// 	required: true,
+	// 	minlength: 1,
+	// 	trim: true
+	// }
+	// location: {
+	// 	type: String,
+	// 	required: true,
+	// 	minlength: 1,
+	// 	trim: true,
+	// }
 })
 
 // An example of Mongoose middleware.

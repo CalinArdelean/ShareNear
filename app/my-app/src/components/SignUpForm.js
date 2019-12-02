@@ -13,13 +13,20 @@ class SignUpForm extends React.Component {
 		console.log(getState("signupForm"));
 		const request = new Request("/users", {
 		 	method: "post",
-		 	body: JSON.stringify(getState("signupForm")),
+            body: JSON.stringify({
+                firstname: getState("signupForm").firstname,
+                lastname: getState("signupForm").lastname,
+                phonenumber: getState("signupForm").phonenumber,
+                email: getState("signupForm").email,
+                location: getState("signupForm").location,
+                username: getState("signupForm").username,
+                password: getState("signupForm").password,
+                usertype: false }),
 		 	headers: {
 		 	accept: "application/json, text/plain, /",
 		 	"content-type": "application/json"
 		 	}
 		});
-		
 		 //send the request with fetch()
 		 fetch(request)
 		 	.then(res => {
@@ -137,12 +144,12 @@ class SignUpForm extends React.Component {
                 </div>
                 <div className="input">
 				<TextField
-                        name="password"
+                        name="confirmpassword"
                         label="Confirm Password"
                         type="password"
                         className="textfield login__input app__input app__horizontal-center"
                         margin="normal"
-                        onChange={e => updateSignupForm(e.target)}
+                        // onChange={e => updateSignupForm(e.target)}
                     />
                 
                 </div>

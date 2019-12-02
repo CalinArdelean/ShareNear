@@ -8,6 +8,24 @@ const bcrypt = require('bcryptjs')
 // Making a Mongoose model a little differently: a Mongoose Schema
 // Allows us to add additional functionality.
 const UserSchema = new mongoose.Schema({
+	firstname: {
+		type: String,
+		required: true,
+		minlength: 1,
+		trim: true
+	},
+	lastname: {
+		type: String,
+		required: true,
+		minlength: 1,
+		trim: true
+	},
+	phonenumber: {
+		type: String,
+		required: true,
+		minlength: 1,
+		trim: true
+	},
 	email: {
 		type: String,
 		required: true,
@@ -19,45 +37,27 @@ const UserSchema = new mongoose.Schema({
 			message: 'Not valid email'
 		}
 	}, 
+	location: {
+		type: String,
+		required: true,
+		minlength: 1,
+		trim: true,
+	},
+	username: {
+		type: String,
+		required: true,
+		minlength: 1,
+		trim: true
+	},
 	password: {
 		type: String,
 		required: true,
 		minlength: 6
+	},
+	usertype: {
+		type: Boolean,
+		default: false
 	}
-	// username: {
-	// 	type: String,
-	// 	required: true,
-	// 	minlength: 1,
-	// 	trim: true
-	// },
-	// firstname: {
-	// 	type: String,
-	// 	required: true,
-	// 	minlength: 1,
-	// 	trim: true
-	// },
-	// lastname: {
-	// 	type: String,
-	// 	required: true,
-	// 	minlength: 1,
-	// 	trim: true
-	// },
-	// usertype: {
-	// 	type: Boolean,
-	// 	default: false
-	// }, 
-	// phonenumber: {
-	// 	type: String,
-	// 	required: true,
-	// 	minlength: 1,
-	// 	trim: true
-	// },
-	// location: {
-	// 	type: String,
-	// 	required: true,
-	// 	minlength: 1,
-	// 	trim: true,
-	// }
 })
 
 // An example of Mongoose middleware.

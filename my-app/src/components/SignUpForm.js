@@ -21,8 +21,7 @@ class SignUpForm extends React.Component {
                 location: getState("signupForm").location,
                 username: getState("signupForm").username,
                 password: getState("signupForm").password,
-                usertype: false,
-                itemlist: []}),
+                usertype: false }),
 		 	headers: {
 		 	accept: "application/json, text/plain, /",
 		 	"content-type": "application/json"
@@ -33,7 +32,7 @@ class SignUpForm extends React.Component {
 		 	.then(res => {
 		 	if (res.status === 200) {
                  console.log("yoo we did it");
-                 setState("currentUser", getState("signupForm"))
+                 setState("currentView", "Login")
 		 		return res.json();
 		 	}
 		 	})

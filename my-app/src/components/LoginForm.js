@@ -7,11 +7,23 @@ import Home from './Home'
 
 import { updateLoginForm } from './LoginPage';
 import TextField from "@material-ui/core/TextField";
+import { getState, setState } from "statezero";
+import BaseReactComponent from './BaseReactComponent';
+
 // const bcrypt = require('bcryptjs')
 
 /* Component to Login */
 
-class LoginForm extends React.Component {
+class LoginForm extends BaseReactComponent {
+
+  filterState({ currentUser}){
+    return { currentUser };
+}
+
+  signUp = () => {
+    setState("currentView", "SignUp")
+  }
+ 
   render() {
     console.log("here we are");
     if(this.props.validUser === 1){
@@ -139,7 +151,7 @@ class LoginForm extends React.Component {
           <button onClick={ this.props.checkUser }>Sign In</button>
         <br></br>
         <br></br>
-        <a href="./signup">Don't have an account already? Sign Up</a>
+        <button onClick={this.signUp}>Don't have an account already? Sign Up</button>
         <br/>
         <a href="./signup">Forgot your password?</a>
       </div>

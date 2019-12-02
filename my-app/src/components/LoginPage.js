@@ -22,7 +22,7 @@ export const updateSignupForm = field => {
 
 //component for the login page
 class LoginPage extends BaseReactComponent {
-  filterState({ currentUser }){
+  filterState({ currentUser}){
     return { currentUser };
 }
 

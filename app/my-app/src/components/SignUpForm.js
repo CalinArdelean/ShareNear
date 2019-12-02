@@ -24,7 +24,8 @@ class SignUpForm extends React.Component {
 		 fetch(request)
 		 	.then(res => {
 		 	if (res.status === 200) {
-		 		console.log("yoo we did it");
+                 console.log("yoo we did it");
+                 setState("currentUser", getState("signupForm"))
 		 		return res.json();
 		 	}
 		 	})

@@ -44,16 +44,14 @@ const UserSchema = new mongoose.Schema({
 	// },
 	// usertype: {
 	// 	type: Boolean,
-	// 	required: true,
-	// 	minlength: 1,
-	// 	trim: true,
+	// 	default: false
 	// }, 
 	// phonenumber: {
 	// 	type: String,
 	// 	required: true,
 	// 	minlength: 1,
 	// 	trim: true
-	// }
+	// },
 	// location: {
 	// 	type: String,
 	// 	required: true,

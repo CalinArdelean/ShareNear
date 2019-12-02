@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 // Importing components
 import LoginForm from './LoginForm';
+import Home from './Home';
 import { getState, setState } from "statezero";
 import BaseReactComponent from './BaseReactComponent';
 
@@ -51,7 +52,8 @@ class LoginPage extends BaseReactComponent {
           bcrypt.compare(inputPassword, allUsers[i].password, (err, res) => { 
             if(res){
               setState("currentUser", allUsers[i])
-            }
+              // setState("currentView", <Home />)
+            } 
             else {
               console.log("Wrong email or password.");
             }

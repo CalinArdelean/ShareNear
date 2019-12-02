@@ -25,8 +25,8 @@ import MainView from './MainView';
 /* Main JavaScript component for our app, linking all other components to each other */
 class App extends BaseReactComponent {
     
-    filterState({ currentUser, viewProfile, currentView }){
-        return { currentUser, viewProfile, currentView };
+    filterState({ currentUser,  currentView }){
+        return { currentUser, currentView };
     }
 
     constructor(props) {
@@ -36,65 +36,35 @@ class App extends BaseReactComponent {
 
     render() {
 		
-        const { currentUser, viewProfile, currentView } = this.state;
-		let view = <Login/>;
-		
-		if (viewProfile){
-			view = <Profile/>;
-		}
-		else {
-			if(currentUser){
-				view = <Home/>
-			}
-			else {
-				view = <Login/>;
-			}
-		}
+        const { currentUser} = this.state;
+        let view = <Login/>;
+        
+        if(!currentUser && getState("currentView") !== "SignUp"){
+            view = <Login/>
+        }
+        else if(getState("currentView") === "UserProfile"){
+            view = <Profile />
+        }
+        else if(getState("currentView") === "Login"){
+            view = <Login />
+        }
+        else if(getState("currentView") === "Home"){
+            view = <Home />
+        }
+        else if(getState("currentView") === "SignUp"){
+            view = <SignUp />
+        }
+        else if(getState("currentView") === "CreatePost"){
+            view = <Post />
+        }
+        else if(getState("currentView") === "EditProfile"){
+            view = <Edit />
+        }
 
         return (
             <div className="app">
-            {/* {!currentUser ? <Login /> : <Home />} */}
-            {/* {console.log(getState("currentView"))} */}
-            {/*viewProfile ? <Profile /> : (!currentUser ? <Login /> : <Home />)*/ view }
-            <div>
-                    <BrowserRouter>
-                        <Switch> { /* Similar to a switch statement - shows the component depending on the URL path */}
-                            { /* Each Route below shows a different component depending on the exact path in the URL  */}
-                            {/* <Route exact path='/' component={Home}/>
-                            <Route exact path='/login' component={Login} /> */}
-                            <Route exact path='/signup' component={SignUp} />
-                            {/* <Route exact path='/profile' component={Profile} />
-                            <Route exact path='/newpost' component={Post} />
-                            <Route exact path='/item' component={Item} />
-                            <Route exact path='/edit' component={Edit} />
-                            <Route exact path='/listings' component={Listings} />
-                            <Route exact path='/HomeFiltered' component={HomeFiltered} />
-                            <Route exact path='/HomeLayoutFiltered' component={HomeLayoutFiltered} />
-                            <Route exact path='/userlist' component={UserList} /> */}
-                        </Switch>
-                    </BrowserRouter>
-                </div>
+            {view}
             </div>
-            // <div className="App">
-                // <div>
-                //     <BrowserRouter>
-                //         <Switch> { /* Similar to a switch statement - shows the component depending on the URL path */}
-                //             { /* Each Route below shows a different component depending on the exact path in the URL  */}
-                //             <Route exact path='/' component={Home}/>
-                //             <Route exact path='/login' component={Login} />
-                //             <Route exact path='/signup' component={SignUp} />
-                //             <Route exact path='/profile' component={Profile} />
-                //             <Route exact path='/newpost' component={Post} />
-                //             <Route exact path='/item' component={Item} />
-                //             <Route exact path='/edit' component={Edit} />
-                //             <Route exact path='/listings' component={Listings} />
-                //             <Route exact path='/HomeFiltered' component={HomeFiltered} />
-                //             <Route exact path='/HomeLayoutFiltered' component={HomeLayoutFiltered} />
-                //             <Route exact path='/userlist' component={UserList} />
-                //         </Switch>
-                //     </BrowserRouter>
-                // </div>
-            // </div>
         );
     }
 }

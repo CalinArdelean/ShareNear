@@ -217,8 +217,14 @@ app.post('/users', (req, res) => {
 
 	// Create a new user
 	const user = new User({
+		firstname: req.body.firstname,
+		lastname: req.body.lastname,
+		phonenumber: req.body.phonenumber,
 		email: req.body.email,
-		password: req.body.password
+		location: req.body.location,
+		username: req.body.username,
+		password: req.body.password,
+		usertype: false
 	})
 
 	// Save the user

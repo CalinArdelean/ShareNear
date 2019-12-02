@@ -63,10 +63,10 @@ class AppNavbar extends BaseReactComponent {
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text className="text-white">
               {/* <button onClick={ this.props.checkUser }>Sign In</button> */}
-               <button onClick={ this.getProfile }>View Profile</button>
-              <a href='./'><button onClick={ this.logout }>Logout</button></a>
-              {/* <a href="./login">Logout
-              &nbsp; <i className="fas fa-user"></i>
+               <button onClick={ this.getProfile } className="navbar-btn">View Profile</button>
+               <i onClick={ this.getProfile } className="fas fa-user"></i> &nbsp;
+              <a href='./'><button onClick={ this.logout } className="navbar-btn">Logout</button></a>
+              {/* <a href="./login">Logout 
               </a> */}
             </Navbar.Text>
           </Navbar.Collapse>

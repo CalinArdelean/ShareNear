@@ -265,3 +265,15 @@ code {
 .jss60{
   padding-right: 10px;
 }
+
+.navbar-btn{
+  background: transparent; 
+  border: 0; 
+  color: #ced4da; 
+  padding-left: 10px; 
+  padding-right: 10px;
+}
+
+.fa-user{
+  cursor: pointer;
+}

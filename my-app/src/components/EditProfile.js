@@ -32,11 +32,7 @@ class editProfile extends React.Component {
                     <input type="text" placeholder="Google+ Profile URL" />
                     <input type="text" placeholder="LinkedIn Profile URL" />
                         <button>Upload Profile Picture</button>
-                        <Link
-                            to={{
-                                pathname: "./profile",
-                                isValidUser: 1
-                            }}><input type="submit" value="Register" /></Link>
+                        
                 </div>
             </div>
 

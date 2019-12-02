@@ -12,11 +12,11 @@ let loggedIn = 0;
 class HomeFiltered extends React.Component {
 
     renderNavbar() {
-        if (typeof (this.props.location) !== 'undefined') {
+        /*if (typeof (this.props.location) !== 'undefined') {
             if (typeof (this.props.location.isValidUser) !== 'undefined') {
                 loggedIn = this.props.location.isValidUser;
             }
-        }
+        }*/
         if (loggedIn) {
             return (<AppNavbarLoggedIn />);
         }

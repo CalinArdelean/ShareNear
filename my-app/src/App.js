@@ -37,11 +37,25 @@ class App extends BaseReactComponent {
     render() {
 		
         const { currentUser, viewProfile, currentView } = this.state;
+		let view = <Login/>;
+		
+		if (viewProfile){
+			view = <Profile/>;
+		}
+		else {
+			if(currentUser){
+				view = <Home/>
+			}
+			else {
+				view = <Login/>;
+			}
+		}
+
         return (
             <div className="app">
             {/* {!currentUser ? <Login /> : <Home />} */}
             {/* {console.log(getState("currentView"))} */}
-            {viewProfile ? <Profile /> : (!currentUser ? <Login /> : <Home />)}
+            {/*viewProfile ? <Profile /> : (!currentUser ? <Login /> : <Home />)*/ view }
             <div>
                     <BrowserRouter>
                         <Switch> { /* Similar to a switch statement - shows the component depending on the URL path */}

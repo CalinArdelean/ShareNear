@@ -64,7 +64,7 @@ class AppNavbar extends BaseReactComponent {
             <Navbar.Text className="text-white">
               {/* <button onClick={ this.props.checkUser }>Sign In</button> */}
                <button onClick={ this.getProfile } className="navbar-btn">View Profile</button>
-               <i className="fas fa-user"></i>  &nbsp;
+               <i onClick={ this.getProfile } className="fas fa-user"></i> &nbsp;
               <a href='./'><button onClick={ this.logout } className="navbar-btn">Logout</button></a>
               {/* <a href="./login">Logout 
               </a> */}

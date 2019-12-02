@@ -224,7 +224,8 @@ app.post('/users', (req, res) => {
 		location: req.body.location,
 		username: req.body.username,
 		password: req.body.password,
-		usertype: false
+		usertype: req.body.usertype,
+		itemlist: []
 	})
 
 	// Save the user

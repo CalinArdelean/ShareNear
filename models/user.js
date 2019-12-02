@@ -57,6 +57,11 @@ const UserSchema = new mongoose.Schema({
 	usertype: {
 		type: Boolean,
 		default: false
+	},
+	itemlist: {
+		type: Object,
+		default: []
+
 	}
 })
 

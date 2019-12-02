@@ -21,7 +21,8 @@ class SignUpForm extends React.Component {
                 location: getState("signupForm").location,
                 username: getState("signupForm").username,
                 password: getState("signupForm").password,
-                usertype: false }),
+                usertype: false,
+                itemlist: []}),
 		 	headers: {
 		 	accept: "application/json, text/plain, /",
 		 	"content-type": "application/json"

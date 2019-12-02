@@ -52,7 +52,7 @@ class LoginPage extends BaseReactComponent {
           bcrypt.compare(inputPassword, allUsers[i].password, (err, res) => { 
             if(res){
               setState("currentUser", allUsers[i])
-              // setState("currentView", <Home />)
+              setState("currentView", "Home")
             } 
             else {
               console.log("Wrong email or password.");

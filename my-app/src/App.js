@@ -39,44 +39,47 @@ class App extends BaseReactComponent {
         const { currentUser, viewProfile, currentView } = this.state;
         return (
             <div className="app">
-            {!currentUser ? <Login /> : <Home />}
+            {/* {!currentUser ? <Login /> : <Home />} */}
             {/* {console.log(getState("currentView"))} */}
-            {/* {!viewProfile ? getState("currentView") : <Profile />} */}
-            <BrowserRouter>
+            {viewProfile ? <Profile /> : (!currentUser ? <Login /> : <Home />)}
+            <div>
+                    <BrowserRouter>
                         <Switch> { /* Similar to a switch statement - shows the component depending on the URL path */}
                             { /* Each Route below shows a different component depending on the exact path in the URL  */}
-                            {/*<Route exact path='/' component={Home}/>
-                            <Route exact path='/login' component={Login} />*/}
+                            {/* <Route exact path='/' component={Home}/>
+                            <Route exact path='/login' component={Login} /> */}
                             <Route exact path='/signup' component={SignUp} />
-                            <Route exact path='/profile' component={Profile} />
+                            {/* <Route exact path='/profile' component={Profile} />
                             <Route exact path='/newpost' component={Post} />
                             <Route exact path='/item' component={Item} />
                             <Route exact path='/edit' component={Edit} />
                             <Route exact path='/listings' component={Listings} />
                             <Route exact path='/HomeFiltered' component={HomeFiltered} />
                             <Route exact path='/HomeLayoutFiltered' component={HomeLayoutFiltered} />
-                            <Route exact path='/userlist' component={UserList} />
+                            <Route exact path='/userlist' component={UserList} /> */}
                         </Switch>
-                    </BrowserRouter></div>
+                    </BrowserRouter>
+                </div>
+            </div>
             // <div className="App">
-            //     <div>
-                    // <BrowserRouter>
-                    //     <Switch> { /* Similar to a switch statement - shows the component depending on the URL path */}
-                    //         { /* Each Route below shows a different component depending on the exact path in the URL  */}
-                    //         <Route exact path='/' component={Home}/>
-                    //         <Route exact path='/login' component={Login} />
-                    //         <Route exact path='/signup' component={SignUp} />
-                    //         <Route exact path='/profile' component={Profile} />
-                    //         <Route exact path='/newpost' component={Post} />
-                    //         <Route exact path='/item' component={Item} />
-                    //         <Route exact path='/edit' component={Edit} />
-                    //         <Route exact path='/listings' component={Listings} />
-                    //         <Route exact path='/HomeFiltered' component={HomeFiltered} />
-                    //         <Route exact path='/HomeLayoutFiltered' component={HomeLayoutFiltered} />
-                    //         <Route exact path='/userlist' component={UserList} />
-                    //     </Switch>
-                    // </BrowserRouter>
-            //     </div>
+                // <div>
+                //     <BrowserRouter>
+                //         <Switch> { /* Similar to a switch statement - shows the component depending on the URL path */}
+                //             { /* Each Route below shows a different component depending on the exact path in the URL  */}
+                //             <Route exact path='/' component={Home}/>
+                //             <Route exact path='/login' component={Login} />
+                //             <Route exact path='/signup' component={SignUp} />
+                //             <Route exact path='/profile' component={Profile} />
+                //             <Route exact path='/newpost' component={Post} />
+                //             <Route exact path='/item' component={Item} />
+                //             <Route exact path='/edit' component={Edit} />
+                //             <Route exact path='/listings' component={Listings} />
+                //             <Route exact path='/HomeFiltered' component={HomeFiltered} />
+                //             <Route exact path='/HomeLayoutFiltered' component={HomeLayoutFiltered} />
+                //             <Route exact path='/userlist' component={UserList} />
+                //         </Switch>
+                //     </BrowserRouter>
+                // </div>
             // </div>
         );
     }

@@ -63,7 +63,7 @@ class AppNavbar extends BaseReactComponent {
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text className="text-white">
               {/* <button onClick={ this.props.checkUser }>Sign In</button> */}
-              <a href='./profile'> <button>View Profile</button></a>
+               <button onClick={ this.getProfile }>View Profile</button>
               <a href='./'><button onClick={ this.logout }>Logout</button></a>
               {/* <a href="./login">Logout
               &nbsp; <i className="fas fa-user"></i>

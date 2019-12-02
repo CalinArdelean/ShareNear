@@ -274,6 +274,10 @@ code {
   padding-right: 10px;
 }
 
-.fa-user{
+.fas{
+  cursor: pointer;
+}
+
+.navbar-logo{
   cursor: pointer;
 }

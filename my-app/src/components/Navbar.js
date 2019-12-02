@@ -31,24 +31,39 @@ class AppNavbar extends BaseReactComponent {
 }
 
   getProfile = () => {
-    setState("viewProfile", 1)
+    setState("currentView", "UserProfile")
+  }
+
+  getHome = () => {
+    setState("currentView", "Home")
+  }
+
+  getUsers = () => {
+    setState("currentView", "UserListPage")
   }
 
   logout = () => {
     setState("currentUser", null)
-    // setState("currentView", <LoginForm />)
   }
 
   render() {
+    let adminButton = "";
+    let adminIcon = "";
+    if(getState("currentUser").usertype){
+      adminButton = <button onClick={ this.getUsers } className="navbar-btn">View User List</button>;
+      adminIcon = <i onClick={ this.getProfile } className="fas fa-list-ul"></i>;
+    }
+
     return (
         <Navbar variant="dark" className="App-navbar">
-            <Navbar.Brand href="/">
+            <Navbar.Brand>
                 <img
                     alt=""
                     src={logo}
                     width="75px"
-                    // height="5px"
                     className="d-inline-block align-top"
+                    className="navbar-logo"
+                    onClick={ this.getHome }
                 />
             </Navbar.Brand>
           <Form inline className="text-white">
@@ -63,9 +78,11 @@ class AppNavbar extends BaseReactComponent {
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text className="text-white">
               {/* <button onClick={ this.props.checkUser }>Sign In</button> */}
-               <button onClick={ this.getProfile } className="navbar-btn">View Profile</button>
-               <i onClick={ this.getProfile } className="fas fa-user"></i> &nbsp;
+              <a> {adminButton} {adminIcon} </a> &nbsp; 
+              <button onClick={ this.getProfile } className="navbar-btn">View Profile</button>
+              <i onClick={ this.getProfile } className="fas fa-user"></i> &nbsp;
               <a href='./'><button onClick={ this.logout } className="navbar-btn">Logout</button></a>
+              <i onClick={ this.logout } class="fas fa-sign-out-alt"></i>
               {/* <a href="./login">Logout 
               </a> */}
             </Navbar.Text>

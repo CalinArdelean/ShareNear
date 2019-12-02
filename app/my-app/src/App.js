@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import { getState, setState } from "statezero";
 import { readCookie } from "./actions/user";
 
 //components (pages) used in our app
@@ -24,8 +25,8 @@ import MainView from './MainView';
 /* Main JavaScript component for our app, linking all other components to each other */
 class App extends BaseReactComponent {
     
-    filterState({ currentUser }){
-        return { currentUser };
+    filterState({ currentUser, viewProfile, currentView }){
+        return { currentUser, viewProfile, currentView };
     }
 
     constructor(props) {
@@ -35,23 +36,26 @@ class App extends BaseReactComponent {
 
     render() {
 		
-        const { currentUser } = this.state;
+        const { currentUser, viewProfile, currentView } = this.state;
         return (
-            <div className="app">{!currentUser ? <Login /> : <Home />}
+            <div className="app">
+            {!currentUser ? <Login /> : <Home />}
+            {/* {console.log(getState("currentView"))} */}
+            {/* {!viewProfile ? getState("currentView") : <Profile />} */}
             <BrowserRouter>
                         <Switch> { /* Similar to a switch statement - shows the component depending on the URL path */}
                             { /* Each Route below shows a different component depending on the exact path in the URL  */}
-                            {/* <Route exact path='/' component={Home}/>
-                            <Route exact path='/login' component={Login} /> */}
+                            {/*<Route exact path='/' component={Home}/>
+                            <Route exact path='/login' component={Login} />*/}
                             <Route exact path='/signup' component={SignUp} />
-                            {/* <Route exact path='/profile' component={Profile} />
+                            <Route exact path='/profile' component={Profile} />
                             <Route exact path='/newpost' component={Post} />
                             <Route exact path='/item' component={Item} />
                             <Route exact path='/edit' component={Edit} />
                             <Route exact path='/listings' component={Listings} />
                             <Route exact path='/HomeFiltered' component={HomeFiltered} />
                             <Route exact path='/HomeLayoutFiltered' component={HomeLayoutFiltered} />
-                            <Route exact path='/userlist' component={UserList} /> */}
+                            <Route exact path='/userlist' component={UserList} />
                         </Switch>
                     </BrowserRouter></div>
             // <div className="App">

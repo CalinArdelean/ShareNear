@@ -2,11 +2,18 @@ import React from 'react'
 import '../App.css';
 import logo from '../logo.svg';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, Form, FormControl, Container, Row, Col } from 'react-bootstrap';
+import { Navbar, Nav, Form, FormControl, Container, Row, Col, Button } from 'react-bootstrap';
+import { getState, setState } from "statezero";
+import BaseReactComponent from './BaseReactComponent';
+import LoginForm from './LoginForm';
 
 
 //component for the navbar at the top of the home page
-class AppNavbar extends React.Component {
+class AppNavbar extends BaseReactComponent {
+
+  filterState({ currentUser, viewProfile }){
+    return { currentUser, viewProfile };
+}
 
   state = {
     location: ""
@@ -22,6 +29,15 @@ class AppNavbar extends React.Component {
     })
 
 }
+
+  getProfile = () => {
+    setState("viewProfile", 1)
+  }
+
+  logout = () => {
+    setState("currentUser", null)
+    // setState("currentView", <LoginForm />)
+  }
 
   render() {
     return (
@@ -46,9 +62,12 @@ class AppNavbar extends React.Component {
           </Form> 
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text className="text-white">
-              <a href="./login">Logout
+              {/* <button onClick={ this.props.checkUser }>Sign In</button> */}
+              <a href='./profile'> <button>View Profile</button></a>
+              <button onClick={ this.logout }>Logout</button>
+              {/* <a href="./login">Logout
               &nbsp; <i className="fas fa-user"></i>
-              </a>
+              </a> */}
             </Navbar.Text>
           </Navbar.Collapse>
         </Navbar>      

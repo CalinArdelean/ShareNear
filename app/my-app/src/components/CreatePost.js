@@ -50,7 +50,7 @@ class newPost extends React.Component {
                         </select>
                         <input name='location' value={this.state.location} onChange={this.handleInputChange} type="text" placeholder="Location" />
                         <button>Upload Item Picture</button>
-                        <Link to={{pathname: './listings', data: this.state}}><input type="submit" value="Create Post" /></Link>
+                        {/*<Link to={{pathname: './listings', data: this.state}}><input type="submit" value="Create Post" /></Link>*/}
                     </div>
                 </div>
 

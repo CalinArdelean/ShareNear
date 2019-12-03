@@ -17,31 +17,31 @@ export const setEmptyState = () => {
     setState("currentView", "Login");
 	
     setState("itemList", [
-        { name: "Children's Bicycle", 
-        description: "Brand new, my son uses it and he\'s eight, so I can guarantee that it\'s good for eight - year - olds.",
-        price: "$15.00",
-        duration: "per day",
-        location: "Mississauga, ON",
-        isAvailable: true, 
-        renter: "5de60679a68f4449f8582996"},
-        {
-            name: "Chainsaw",
-            description: "15-inch petrol chainsaw.",
-            price: "$11.00",
-            duration: "per hour",
-            location: "Toronto, ON",
-            isAvailable: true,
-            renter: "5de60679a68f4449f8582996"
-        },
-        {
-            name: "Snow Blower",
-            description: "This heavy duty snow blower powered by a 11 HP 120 Volt electric start engine transforms banks of snow into a clear path in a single pass.",
-            price: "$20.00",
-            duration: "per day",
-            location: "Mississauga, ON",
-            isAvailable: true,
-            renter: "5de60679a68f4449f8582996"
-        }
+        // { name: "Children's Bicycle", 
+        // description: "Brand new, my son uses it and he\'s eight, so I can guarantee that it\'s good for eight - year - olds.",
+        // price: "$15.00",
+        // duration: "per day",
+        // location: "Mississauga, ON",
+        // isAvailable: true, 
+        // renter: "5de60679a68f4449f8582996"},
+        // {
+        //     name: "Chainsaw",
+        //     description: "15-inch petrol chainsaw.",
+        //     price: "$11.00",
+        //     duration: "per hour",
+        //     location: "Toronto, ON",
+        //     isAvailable: true,
+        //     renter: "5de60679a68f4449f8582996"
+        // },
+        // {
+        //     name: "Snow Blower",
+        //     description: "This heavy duty snow blower powered by a 11 HP 120 Volt electric start engine transforms banks of snow into a clear path in a single pass.",
+        //     price: "$20.00",
+        //     duration: "per day",
+        //     location: "Mississauga, ON",
+        //     isAvailable: true,
+        //     renter: "5de60679a68f4449f8582996"
+        // }
     ]);
 
     setState("message", { type: "", body: "" });

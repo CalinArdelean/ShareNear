@@ -107,26 +107,29 @@ export default function ComplexGrid() {
     
 
     const items = [];
-    let index = 0;
-    for (let i = 0; i < 3; i++) {
-        for (let j = 0; j < numCols; j++) {
+    //let index = 0;
+    for (let index = 0; index < getState("itemList").length; index++) {
+        items.push(singleItem(classes, index));
+    }
+    // for (let i = 0; i < 3; i++) {
+    //     for (let j = 0; j < numCols; j++) {
 
     
 
-            //if (j % numCols == 0) {
-             //   items.push(singleItem(classes));
-            //}
-            items.push(singleItem(classes, index));
+    //         //if (j % numCols == 0) {
+    //          //   items.push(singleItem(classes));
+    //         //}
+    //         items.push(singleItem(classes, index));
             
-            //if (j % numCols == numCols - 1) {
-             //   items.push(singleItem(classes));
-            //}
-            index++;
-            // if (index >= getState("itemList").length) {
-            //     break;
-            // }
-        }
-    }
+    //         //if (j % numCols == numCols - 1) {
+    //          //   items.push(singleItem(classes));
+    //         //}
+    //         index++;
+    //         // if (index >= getState("itemList").length) {
+    //         //     break;
+    //         // }
+    //     }
+    // }
 
     return (
         <div>

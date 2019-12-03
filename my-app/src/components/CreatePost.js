@@ -45,6 +45,28 @@ class newPost extends BaseReactComponent {
                 if (res.status === 200) {
                     console.log("yoo we did it");
                     setState("currentView", "UserProfile")
+
+                    const currList = Object.assign([], getState("itemList"));
+                    currList.push({name: getState("postForm").name,
+                                    description: getState("postForm").description,
+                                    price: getState("postForm").price,
+                                    duration: getState("postForm").duration,
+                                    location: getState("postForm").location,
+                                    isAvailable: true,
+                                    renter: getState('currentUser')._id})        
+
+
+                    
+                    console.log(currList)
+                    // const newItemList = currList.push({name: getState("postForm").name,
+                    //                                                 description: getState("postForm").description,
+                    //                                                 price: getState("postForm").price,
+                    //                                                 duration: getState("postForm").duration,
+                    //                                                 location: getState("postForm").location,
+                    //                                                 isAvailable: true,
+                    //                                                 renter: getState('currentUser')._id})
+                    setState("itemList", currList)     
+                    console.log(getState("itemList"))          
                     return res.json();
                 }
             })

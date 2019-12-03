@@ -30,6 +30,10 @@ class Profile extends BaseReactComponent {
         setState("currentView", "CreatePost")
     }
 
+	editProfile = () => {
+        setState("currentView", "EditProfile")
+    }
+
     
     render() {
 
@@ -60,7 +64,7 @@ class Profile extends BaseReactComponent {
                     <i class="far fa-envelope"></i> <p>{getState("currentUser").email}</p>
                     {<button type="button" onClick={this.createListing}>Create New Listing</button>}
 					<br></br><br></br>
-					{<button type="button">Edit Profile</button>}
+					{<button type="button" onClick={this.editProfile}>Edit Profile</button>}
 					<br></br>
                 </div>
             </div>

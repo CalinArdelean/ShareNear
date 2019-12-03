@@ -1,19 +1,175 @@
 import React from 'react';
 import '../App.css';
 
-import AppNavbarLoggedIn from './NavbarLoggedIn';
+import AppNavbar from './Navbar';
 import { Link } from 'react-router-dom';
+import { getState, setState } from "statezero";
+import BaseReactComponent from './BaseReactComponent'
+import TextField from "@material-ui/core/TextField";
+import { updateEditForm } from './LoginPage';
+const bcrypt = require('bcryptjs')
 
 /* Component for a user to create a post and put an item up for rent */
-class editProfile extends React.Component {
+class editProfile extends BaseReactComponent {
+
+
+	filterState({ currentUser,  currentView }){
+        return { currentUser, currentView };
+    }
+
+	/*updateEditForm(field) {
+		const { name, value } = field;
+		setState(`editForm.${name}`, value);
+	}*/
+
+	patchUser = () => {
+		//let reqString = ;
+		console.log(getState('currentUser'));
+		console.log(getState('editForm'));
+		const request = new Request(`/users/${getState('currentUser')._id}`, {
+		//const request = new Request('/users/5de5a212502f3e49c08ed9bf', {
+		
+			method: "put",
+			body: JSON.stringify({
+				firstname: getState('editForm').firstname,
+				lastname: getState('editForm').lastname,
+				phonenumber: getState("editForm").phonenumber,
+                location: getState("editForm").location,
+                username: getState("editForm").username,
+                description: getState("editForm").description,
+          
+				}),
+			headers: {
+			accept: "application/json, text/plain, /",
+			"content-type": "application/json"
+			}
+		});
+		
+		//send the request with fetch()
+		fetch(request)
+		.then(res => {
+		if (res.status === 200) {
+				console.log("yoo we did it edit profile");
+				//setState("currentView", "Home")
+			return res.json();
+		}
+		})
+		.catch(error => {
+		console.log("we have failed");
+		console.log(error);
+		});
+		
+
+
+
+		const url = '/users';
+		fetch(url)
+      .then((res) => { 
+          if (res.status === 200) {
+
+
+			  
+
+
+              // return a promise that resolves with the JSON body
+             return res.json() 
+         } else {
+              alert('Could not get users')
+         }                
+      })
+      .then((json) => {  // the resolved promise with the JSON body
+          let allUsers = json.users
+			  //const inputEmail = getState("editForm").email
+			  //const inputPassword = getState("editForm").password
+			  const inputId = getState("currentUser")._id
+			  console.log(allUsers)
+			  for(let i = 0; i < allUsers.length; i++){
+				console.log(inputId);
+				console.log(allUsers[i]._id);
+				if(inputId === allUsers[i]._id){
+				   setState("currentUser", allUsers[i])
+				   setState("currentView", "UserProfile")
+				   console.log(getState('currentUser'));
+				}
+			  }
+      }).catch((error) => {
+          console.log(error)
+      });
+	}
+
+
     render() {
         return (
             <div className="Edit">
-                <AppNavbarLoggedIn />
+                <AppNavbar/>
 
                 <div id="sc-edprofile">
                     <h1>Let's Edit your Profile!</h1>
                     <div class="sc-container">
+					<TextField
+                        name="username"
+                        label="New Username"
+                        type="username"
+                        className="textfield login__input app__input app__horizontal-center"
+                        margin="normal"
+                        onChange={e => updateEditForm(e.target)}
+                    />
+					<TextField
+                        name="password"
+                        label="New Password"
+                        type="password"
+                        className="textfield login__input app__input app__horizontal-center"
+                        margin="normal"
+                        onChange={e => updateEditForm(e.target)}
+                    />
+					<TextField
+                        name="email"
+                        label="Email Address"
+                        type="email"
+                        className="textfield login__input app__input app__horizontal-center"
+                        margin="normal"
+                        onChange={e => updateEditForm(e.target)}
+                    />
+					<TextField
+                        name="phonenumber"
+                        label="Phone Number"
+                        type="phonenumber"
+                        className="textfield login__input app__input app__horizontal-center"
+                        margin="normal"
+                        onChange={e => updateEditForm(e.target)}
+                    />
+					<TextField
+                        name="firstname"
+                        label="First Name"
+                        type="firstname"
+                        className="textfield login__input app__input app__horizontal-center"
+                        margin="normal"
+                        onChange={e => updateEditForm(e.target)}
+                    />
+					<TextField
+                        name="lastname"
+                        label="Last Name"
+                        type="lastname"
+                        className="textfield login__input app__input app__horizontal-center"
+                        margin="normal"
+                        onChange={e => updateEditForm(e.target)}
+                    />
+					<TextField
+                        name="location"
+                        label="Location"
+                        type="location"
+                        className="textfield login__input app__input app__horizontal-center"
+                        margin="normal"
+                        onChange={e => updateEditForm(e.target)}
+                    />
+					<TextField
+                        name="description"
+                        label="User Description"
+                        type="description"
+                        className="textfield login__input app__input app__horizontal-center"
+                        margin="normal"
+                        onChange={e => updateEditForm(e.target)}
+                    />
                         <input type="text" placeholder="New Username" />
                         <input type="password" placeholder="New Password" />
                         <input type="text" placeholder="Email Address" />
@@ -32,6 +188,7 @@ class editProfile extends React.Component {
                     <input type="text" placeholder="Google+ Profile URL" />
                     <input type="text" placeholder="LinkedIn Profile URL" />
                         <button>Upload Profile Picture</button>
+						<button type="button" onClick={ this.patchUser }>Save</button>
                         
                 </div>
             </div>

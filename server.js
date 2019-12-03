@@ -209,6 +209,34 @@ app.patch('/items/:id', (req, res) => {
 
 })
 
+app.put('/users/:id', (req, res) => {
+	console.log('enter');
+	const id = req.params.id
+
+	// get the updated name and year only from the request body.
+	const { firstname, lastname, location, phonenumber, description } = req.body
+	const body = { firstname, lastname, location, phonenumber, description }
+	//const { firstname, lastname } = req.body
+	//const body = { firstname, lastname }
+	console.log(body);
+
+	if (!ObjectID.isValid(id)) {
+		res.status(404).send()
+	}
+	
+	// Update the student by their id.
+	User.findByIdAndUpdate(id, {$set: body}, {new: true}).then((user) => {
+		if (!user) {
+			res.status(404).send()
+		} else {
+			res.send(user)
+		}
+	}).catch((error) => {
+		res.status(400).send() // bad request for changing the student.
+	})
+
+})
+
 
 /** User routes below **/
 // Set up a POST route to *create* a user of your web app (*not* a item).

@@ -25,6 +25,11 @@ export const updateLoginForm = field => {
     setState(`loginForm.${name}`, value);
 };
 
+export const updatePostForm = field => {
+    const { name, value } = field;
+    setState(`postForm.${name}`, value);
+};
+
 export const login = () => {
     // Create our request constructor with all the parameters we need
     const request = new Request("/users/login", {

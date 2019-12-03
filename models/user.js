@@ -5,6 +5,15 @@ const mongoose = require('mongoose')
 const validator = require('validator')
 const bcrypt = require('bcryptjs')
 
+const ItemSchema = new mongoose.Schema({
+	name: String,
+	description: String,
+	price: String,
+	duration: String,
+	location: String,
+	image: {data: Buffer, contentType: String }
+});
+
 // Making a Mongoose model a little differently: a Mongoose Schema
 // Allows us to add additional functionality.
 const UserSchema = new mongoose.Schema({
@@ -60,8 +69,12 @@ const UserSchema = new mongoose.Schema({
 	},
 	itemlist: {
 		type: Object,
-		default: []
+		default: [ItemSchema]
 
+	},
+	description: {
+		type: String,
+		default: "Hi! Welcome to my profile."
 	}
 })
 

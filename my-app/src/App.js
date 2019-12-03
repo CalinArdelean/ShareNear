@@ -21,6 +21,7 @@ import UserList from './components/UserListPage';
 import BaseReactComponent from './components/BaseReactComponent';
 import { useState } from "react";
 import MainView from './MainView';
+import modifyUser from './components/ModifyUser';
 
 /* Main JavaScript component for our app, linking all other components to each other */
 class App extends BaseReactComponent {
@@ -62,6 +63,9 @@ class App extends BaseReactComponent {
         }
         else if(getState("currentView") === "UserListPage"){
             view = <UserList />
+        }
+        else if(getState("currentView") === "ModifyUser"){
+            view = <modifyUser />
         }
 
         return (

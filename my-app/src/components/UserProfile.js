@@ -80,11 +80,32 @@ class Profile extends BaseReactComponent {
                 {console.log(getState("currentUser"))}
                 {/* <button type="button" onClick={ this.createListing }>Create New Listing</button> */}
                 <div className="Profile">
-                <h4> Welcome to your profile {getState("currentUser").firstname} </h4>
+                <h4> Welcome to your profile {getState("currentUser").firstname} !</h4>
                 <br></br>
                 <br></br>
                 <button type="button">Create New Listing</button></div>
-                
+                <div className="Profile">
+                    <br></br>
+					
+                    
+                    <h4>{getState("currentUser").firstname} {getState("currentUser").lastname}</h4>
+                    <br/>
+                    <img
+                        alt="profile picture"
+                        src={PaulBlart}
+                        className="d-inline-block align-top"
+                    ></img>
+                    <br></br>
+                    <h5>{getState("currentUser").location}</h5>
+                    <h6>{getState("currentUser").description}</h6>                  
+                    <br></br>
+                    <i class="fas fa-phone-square-alt"></i> <p>{getState("currentUser").phonenumber}</p>
+                    <i class="far fa-envelope"></i> <p>{getState("currentUser").email}</p>
+                    {<button type="button">Create New Listing</button>}
+					<br></br><br></br>
+					{<button type="button">Edit Profile</button>}
+					<br></br>
+                </div>
 
                 {/* <p> Welcome to your profile ;( </p> */}
                 {/* <div className="Profile">

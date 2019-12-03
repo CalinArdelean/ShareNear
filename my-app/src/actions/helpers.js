@@ -10,9 +10,9 @@ import LoginForm from "../components/LoginForm";
 
 export const setEmptyState = () => {
     setState("CurrentUser", null);
-    setState("signupForm", { firstname: "", lastname: "", phonenumber: "", email: "", location:"", username: "", password: "", usertype: false})
+    setState("signupForm", { firstname: "", lastname: "", phonenumber: "", email: "", location:"", username: "", password: "", usertype: false, description:"Hi! Welcome to my profile", itemlist: []})
     setState("loginForm", { email: "", password: "" })
-    
+    setState("postForm", { name: "", description: "", price: "", location: "", duration: "", image: {}})
     setState("currentView", "Login")
 
     setState("itemList", []);

@@ -28,6 +28,10 @@ class newPost extends React.Component {
         //})
 
     }
+    updatePostForm = field => {
+        const { name, value } = field;
+        setState(`postFrom.${ name }`, value);
+    };
 
     render() {
         //console.log(this.state.name);

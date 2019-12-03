@@ -36,7 +36,7 @@ class SignUpForm extends React.Component {
 		 		return res.json();
              }
              else{
-                alert("This username already exists.")
+                alert("This username or email already exists.")
              }
 		 	})
 

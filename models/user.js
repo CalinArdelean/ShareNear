@@ -41,28 +41,24 @@ const UserSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 		minlength: 1,
-		trim: true,
-		validate: {
-			validator: validator.isEmail,   // custom validator
-			message: 'Not valid email'
-		}
+		trim: true
 	}, 
 	location: {
 		type: String,
 		required: true,
 		minlength: 1,
-		trim: true,
+		trim: true
 	},
 	username: {
 		type: String,
 		required: true,
 		minlength: 1,
 		trim: true,
-		unique: true,
+		unique: true
 	},
 	password: {
 		type: String,
-		required: true,
+		required: true
 	},
 	usertype: {
 		type: Boolean,
@@ -98,11 +94,11 @@ UserSchema.pre('save', function(next) {
 // A static method on the document model.
 // Allows us to find a User document by comparing the hashed password
 //  to a given one, for example when logging in.
-UserSchema.statics.findByEmailPassword = function(email, password) {
+UserSchema.statics.findByEmailPassword = function(username, password) {
 	const User = this // binds this to the User model
 
 	// First find the user by their email
-	return User.findOne({ email: email }).then((user) => {
+	return User.findOne({ username: username }).then((user) => {
 		if (!user) {
 			return Promise.reject()  // a rejected promise
 		}

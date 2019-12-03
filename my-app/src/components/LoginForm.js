@@ -10,8 +10,6 @@ import TextField from "@material-ui/core/TextField";
 import { getState, setState } from "statezero";
 import BaseReactComponent from './BaseReactComponent';
 
-// const bcrypt = require('bcryptjs')
-
 /* Component to Login */
 
 class LoginForm extends BaseReactComponent {
@@ -25,86 +23,6 @@ class LoginForm extends BaseReactComponent {
   }
  
   render() {
-    console.log("here we are");
-    if(this.props.validUser === 1){
-      return (
-
-        <div className="App">
-           
-          <Home 
-            validUser={this.props.validUser}
-            currentUser={this.props.currentUser}
-            admin={this.props.admin}
-            />
-         
-        </div>
-      );
-    }
-    else if(this.props.validUser === 0){
-    return (
-      <div className="Form">
-        <br></br>
-        <br></br>
-        <a href = "./">
-        <img
-              alt="ShareNear Logo"
-              src={logo}
-              width="175px"
-              height="100px"
-              className="d-inline-block align-top"
-        />
-        </a>
-        <br></br>
-        <h3>Welcome to ShareNear</h3>
-        <p>Your One-Stop Online Rent Marketplace</p>
-        <br></br>
-        <p> Invalid username or password.</p>
-
-        {/* <input name='userName' 
-    	         value={ this.props.userName } 
-    	         onChange={e => updateLoginForm(e.target)} 
-    	         type="text" 
-    	         placeholder="username" /> */}
-
-        <br></br>
-        <br></br>
-		<TextField
-            name="username"
-            label="Username"
-            className="login__input app__input app__horizontal-center"
-            margin="normal"
-            onChange={e => updateLoginForm(e.target)}
-        />
-
-		<TextField
-                        name="password"
-                        label="Password"
-                        type="password"
-                        className="login__input app__input app__horizontal-center"
-                        margin="normal"
-                        onChange={e => updateLoginForm(e.target)}
-                    />
-
-        {/* <input name='userPassword' 
-    	         value={ this.props.userPassword } 
-    	         onChange={e => updateLoginForm(e.target)} 
-    	         type="text" 
-    	         placeholder="password" /> */}
-
-        <br></br>
-        <br></br>
-  
-          <button onClick={ this.props.checkUser }>Sign In</button>
-        <br></br>
-        <br></br>
-        <a href="./signup">Don't have an account? Sign Up Here</a>
-        <br/>
-        <a href="./signup">Forgot your password?</a>
-      </div>
-
-    );
-  }
-  else{
     return (
       <div className="Form">
         <br></br>
@@ -127,7 +45,7 @@ class LoginForm extends BaseReactComponent {
 
 		<div className="input">
 		<TextField
-            name="email"
+            name="username"
             label="Username"
             className="textfield login__input app__input app__horizontal-center"
             margin="normal"
@@ -159,6 +77,6 @@ class LoginForm extends BaseReactComponent {
     );
   }
 }
-}
+
 
 export default LoginForm;

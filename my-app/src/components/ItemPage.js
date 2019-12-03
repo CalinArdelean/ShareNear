@@ -10,7 +10,6 @@ import ButtonBase from '@material-ui/core/ButtonBase';
 import Dotdotdot from 'react-dotdotdot';
 import './ItemPage.css';
 import AppNavbar from './Navbar';
-import AppNavbarLoggedIn from './NavbarLoggedIn';
 import { spacing } from '@material-ui/system';
 import { Link } from 'react-router-dom';
 import image from '../assets/NewItem.png';

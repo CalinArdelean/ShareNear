@@ -6,36 +6,52 @@ import { getState, setState } from "statezero";
 import { Link } from 'react-router-dom';
 import { updatePostForm } from '../actions/user.js'
 import TextField from "@material-ui/core/TextField";
+import BaseReactComponent from './BaseReactComponent';
+
 // import updatePostForm = field => {
 //     const { name, value } = field;
 //     setState(`postForm.${name}`, value);
 // };
 
 /* Component for a user to create a post and put an item up for rent */
-class newPost extends React.Component {
-    //will have to read information from a data base and push new item to database instead of this
-    /*state = {
-        id: 9,
-        image: ItemPic,
-        name: "",
-        description: "",
-        price: "",
-        location: "",
-        seller: "John Doe",
-        address: "123 Placeholder Lane"
-    }*/
+class newPost extends BaseReactComponent {
+    filterState({ currentUser }) {
+        return { currentUser };
+    }
+    
+    postItem = () => {
 
-    // handleInputChange = (event) => {
-    //     const target = event.target
-    //     const value = target.value
-    //     const name = target.name
+        console.log(getState("postForm"));
+        console.log(`/users/${getState('currentUser')._id}   `);
+        const request = new Request(`/users/${ getState('currentUser')._id }   `, {
+            method: "post",
+            body: JSON.stringify({
+                name: getState("postForm").name,
+                description: getState("postForm").description,
+                price: getState("postForm").price,
+                duration: getState("postForm").duration,
+                location: getState("postForm").location,
+            }),
+            headers: {
+                accept: "application/json, text/plain, /",
+                "content-type": "application/json"
+            }
+        });
+        //send the request with fetch()
+        fetch(request)
+            .then(res => {
+                if (res.status === 200) {
+                    console.log("yoo we did it");
+                    setState("currentView", "UserProfile")
+                    return res.json();
+                }
+            })
+            .catch(error => {
+                console.log("we failed :(");
+                console.log(error);
+            });
 
-    //     //this.setState({
-    //     //    [name]: value
-    //     //})
-
-    // }
-
+    }
 
     render() {
         //console.log(this.state.name);
@@ -109,7 +125,7 @@ class newPost extends React.Component {
                         </select>
                         <input name='location' value='location' onChange={e => updatePostForm(e.target)} type="text" placeholder="Location" /> */}
                         <button>Upload Item Picture</button>
-                        <button>Submit</button>
+                        <button type="button" onClick={this.postItem}>Submit</button>
                         {/*<Link to={{pathname: './listings', data: this.state}}><input type="submit" value="Create Post" /></Link>*/}
                     </div>
                 </div>

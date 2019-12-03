@@ -211,7 +211,7 @@ app.patch('/items/:id', (req, res) => {
 
 
 /** User routes below **/
-// Set up a POST route to *create* a user of your web app (*not* a student).
+// Set up a POST route to *create* a user of your web app (*not* a item).
 app.post('/users', (req, res) => {
 	log(req.body)
 
@@ -235,6 +235,38 @@ app.post('/users', (req, res) => {
 	}, (error) => {
 		res.status(400).send(error) // 400 for bad request
 	})
+})
+
+// Set up a POST route to *create* a item under a user of your web app.
+app.post('/users/:id', (req, res) => {
+
+	const item = {
+		name: req.body.name,
+		description: req.body.description,
+		price: req.body.price,
+		duration: req.body.duration,
+		location: req.body.location,
+		image: null
+	}
+	const id = req.params.id;
+	if (!ObjectID.isValid(id)) {
+		res.status(404).send();
+	}
+	User.findById(id).then(user => {
+		if (!user) {
+			res.status(400).send();
+		}
+		else {
+			user.itemlist.push(item);
+			user.save().then((result) => {
+				res.send(user);
+			}, (error) => {
+				res.status(400).send(error);
+			});
+		}
+	}).catch(error => {
+			res.status(500).send(error);
+		});
 })
 
 /*** Webpage routes below **********************************/

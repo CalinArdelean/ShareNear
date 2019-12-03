@@ -33,7 +33,7 @@ class newPost extends BaseReactComponent {
 				alert('All fields are required.') 
 		}
 		else{
-
+			console.log(getState('currentUser'))
 
 			const request = new Request(`/users/${ getState('currentUser')._id }   `, {
 				method: "post",

@@ -35,7 +35,6 @@ class editProfile extends BaseReactComponent {
 				lastname: getState('editForm').lastname,
 				phonenumber: getState("editForm").phonenumber,
                 location: getState("editForm").location,
-                email: getState("editForm").email,
                 description: getState("editForm").description,
           
 				}),
@@ -111,9 +110,7 @@ class editProfile extends BaseReactComponent {
                         <input type="text" placeholder="Last Name" onChange={e => updateEditForm(e.target)} name="lastname"
                         label="Last Name"
                         />
-                        <input type="text" placeholder="Email Address" onChange={e => updateEditForm(e.target)} name="email"
-                        label="Email Address"
-						/>
+                        
                         <input type="text" placeholder="Phone Number" onChange={e => updateEditForm(e.target)} name="phonenumber"
                         label="Phone Number"
                         />

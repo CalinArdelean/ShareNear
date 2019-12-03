@@ -35,7 +35,7 @@ class editProfile extends BaseReactComponent {
 				lastname: getState('editForm').lastname,
 				phonenumber: getState("editForm").phonenumber,
                 location: getState("editForm").location,
-                username: getState("editForm").username,
+                email: getState("editForm").email,
                 description: getState("editForm").description,
           
 				}),
@@ -106,78 +106,24 @@ class editProfile extends BaseReactComponent {
                 <div id="sc-edprofile">
                     <h1>Let's Edit your Profile!</h1>
                     <div class="sc-container">
-					<TextField
-                        name="username"
-                        label="New Username"
-                        type="username"
-                        className="textfield login__input app__input app__horizontal-center"
-                        margin="normal"
-                        onChange={e => updateEditForm(e.target)}
-                    />
-					<TextField
-                        name="password"
-                        label="New Password"
-                        type="password"
-                        className="textfield login__input app__input app__horizontal-center"
-                        margin="normal"
-                        onChange={e => updateEditForm(e.target)}
-                    />
-					<TextField
-                        name="email"
-                        label="Email Address"
-                        type="email"
-                        className="textfield login__input app__input app__horizontal-center"
-                        margin="normal"
-                        onChange={e => updateEditForm(e.target)}
-                    />
-					<TextField
-                        name="phonenumber"
-                        label="Phone Number"
-                        type="phonenumber"
-                        className="textfield login__input app__input app__horizontal-center"
-                        margin="normal"
-                        onChange={e => updateEditForm(e.target)}
-                    />
-					<TextField
-                        name="firstname"
-                        label="First Name"
-                        type="firstname"
-                        className="textfield login__input app__input app__horizontal-center"
-                        margin="normal"
-                        onChange={e => updateEditForm(e.target)}
-                    />
-					<TextField
-                        name="lastname"
+					
+                       <input type="text" placeholder="First Name" onChange={e => updateEditForm(e.target)} name="firstname" label="First Name"/>
+                        <input type="text" placeholder="Last Name" onChange={e => updateEditForm(e.target)} name="lastname"
                         label="Last Name"
-                        type="lastname"
-                        className="textfield login__input app__input app__horizontal-center"
-                        margin="normal"
-                        onChange={e => updateEditForm(e.target)}
-                    />
-					<TextField
-                        name="location"
+                        />
+                        <input type="text" placeholder="Email Address" onChange={e => updateEditForm(e.target)} name="email"
+                        label="Email Address"
+						/>
+                        <input type="text" placeholder="Phone Number" onChange={e => updateEditForm(e.target)} name="phonenumber"
+                        label="Phone Number"
+                        />
+                        
+                        <input type="text" placeholder="Location" onChange={e => updateEditForm(e.target)} name="location"
                         label="Location"
-                        type="location"
-                        className="textfield login__input app__input app__horizontal-center"
-                        margin="normal"
-                        onChange={e => updateEditForm(e.target)}
-                    />
-					<TextField
-                        name="description"
+                        />
+                        <textarea placeholder="User Description" onChange={e => updateEditForm(e.target)} name="description"
                         label="User Description"
-                        type="description"
-                        className="textfield login__input app__input app__horizontal-center"
-                        margin="normal"
-                        onChange={e => updateEditForm(e.target)}
-                    />
-                        <input type="text" placeholder="New Username" />
-                        <input type="password" placeholder="New Password" />
-                        <input type="text" placeholder="Email Address" />
-                        <input type="text" placeholder="Phone Number" />
-                        <input type="text" placeholder="First Name" />
-                        <input type="text" placeholder="Last Name" />
-                        <input type="text" placeholder="Location" />
-                        <textarea placeholder="User Description" />
+                        />
                     <select>
                         <option value="">Male</option>
                         <option value="">Female</option>

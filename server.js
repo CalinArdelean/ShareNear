@@ -214,8 +214,8 @@ app.put('/users/:id', (req, res) => {
 	const id = req.params.id
 
 	// get the updated name and year only from the request body.
-	const { firstname, lastname, location, phonenumber, description } = req.body
-	const body = { firstname, lastname, location, phonenumber, description }
+	const { firstname, lastname, email, location, phonenumber, description } = req.body
+	const body = { firstname, lastname, email, location, phonenumber, description }
 	//const { firstname, lastname } = req.body
 	//const body = { firstname, lastname }
 	console.log(body);

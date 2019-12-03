@@ -22,6 +22,7 @@ import UserList from './components/UserListPage';
 import BaseReactComponent from './components/BaseReactComponent';
 import { useState } from "react";
 import MainView from './MainView';
+import RenterProfile from './components/RenterProfile'
 
 /* Main JavaScript component for our app, linking all other components to each other */
 class App extends BaseReactComponent {
@@ -46,6 +47,9 @@ class App extends BaseReactComponent {
         else if(getState("currentView") === "UserProfile"){
             view = <Profile />
         }
+        else if (getState("currentView") === "Item") {
+            view = <Item />
+        }
         else if(getState("currentView") === "Login"){
             view = <Login />
         }
@@ -66,6 +70,9 @@ class App extends BaseReactComponent {
         }
         else if(getState("currentView") === "ModifyUserPage"){
             view = <ModifyUser />
+        }
+        else if(getState("currentView") === "RenterProfile"){
+            view = <RenterProfile />
         }
 
         return (

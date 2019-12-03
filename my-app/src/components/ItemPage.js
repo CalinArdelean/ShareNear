@@ -10,10 +10,10 @@ import ButtonBase from '@material-ui/core/ButtonBase';
 import Dotdotdot from 'react-dotdotdot';
 import './ItemPage.css';
 import AppNavbar from './Navbar';
-import AppNavbarLoggedIn from './NavbarLoggedIn';
 import { spacing } from '@material-ui/system';
 import { Link } from 'react-router-dom';
-
+import image from '../assets/NewItem.png';
+import { getState, setState } from "statezero";
 //import arrays
 
 import { listings } from './HomeLayout';
@@ -48,6 +48,13 @@ class ItemPage extends React.Component {
         // }
     }
 
+    goHome = () => {
+        setState("currentView", "Home");
+    }
+
+    rentItem = () => {
+        setState("currentView", "RenterProfile");
+    }
 
     render() {
 
@@ -61,7 +68,7 @@ class ItemPage extends React.Component {
 
         //console.log(this.props.location);
         
-        var data = 0;
+        var data = getState("currentItem");
         //if (typeof (this.props.location.itemIndex) !== 'undefined') {
         //    data = this.props.location.itemIndex;
         //}
@@ -78,25 +85,22 @@ class ItemPage extends React.Component {
                         <Grid item container direction="row" justify="space-evenly" className="item">
                             <Grid item className="imageWrapper">
                             <ButtonBase className="image">
-                                <img className="img" alt="logo" src={listings[data].image} />
+                                <img className="img" alt="logo" src={image} />
                             </ButtonBase>
                             </Grid>
                             <Grid item className="info" direction="column">
                                 <Grid item direction="column">
                                     <Typography gutterBottom variant="header" className="name">
-                                        {listings[data].name}
+                                        {getState("currentItem").name}
                                     </Typography>
-                                    <Grid item className="seller">
-                                        {listings[data].seller}
-                                    </Grid>
                                     <Grid item className="city">
-                                        {listings[data].address}, {listings[data].location}
+                                    {getState("currentItem").location}
                                     </Grid>
                                     <Grid item className="description">
-                                        {listings[data].description}
+                                    {getState("currentItem").description}
                                     </Grid>
                                     <Grid item className="price">
-                                        ${listings[data].price}/day
+                                    ${getState("currentItem").price}/{getState("currentItem").duration}
                                     </Grid>
                                     
                                 </Grid>
@@ -109,6 +113,7 @@ class ItemPage extends React.Component {
                                         }}>
                                     Rent this item
                                     </Link> */}
+                                     <button onClick={this.rentItem}> Rent this item </button>
                                 </Grid>
                             </Grid>
                             <Grid item>
@@ -121,6 +126,7 @@ class ItemPage extends React.Component {
 							//validUser: isValid
                         
 						}}> Return to Listings </Link> */}
+                    <button onClick={this.goHome}>Return to Listings</button>
             
                     
                 </Paper>

@@ -8,8 +8,8 @@ import BaseReactComponent from './BaseReactComponent';
 
 /* Component for the Home page */ 
 class Home extends BaseReactComponent {
-  filterState({ currentUser, itemList }) {
-    return { currentUser, itemList };
+  filterState({ currentUser, itemList, currentItem }) {
+    return { currentUser, itemList, currentItem };
   }
 
   constructor() {

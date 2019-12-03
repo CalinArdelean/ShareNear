@@ -92,19 +92,16 @@ class ItemPage extends React.Component {
                             <Grid item className="info" direction="column">
                                 <Grid item direction="column">
                                     <Typography gutterBottom variant="header" className="name">
-                                        {getState("itemList")[data].name}
+                                        {getState("currentItem").name}
                                     </Typography>
-                                    <Grid item className="seller">
-                                    {getState("itemList")[data].renter}
-                                    </Grid>
                                     <Grid item className="city">
-                                    {getState("itemList")[data].location}
+                                    {getState("currentItem").location}
                                     </Grid>
                                     <Grid item className="description">
-                                    {getState("itemList")[data].description}
+                                    {getState("currentItem").description}
                                     </Grid>
                                     <Grid item className="price">
-                                    ${getState("itemList")[data].price}/{getState("itemList")[data].duration}
+                                    ${getState("currentItem").price}/{getState("currentItem").duration}
                                     </Grid>
                                     
                                 </Grid>

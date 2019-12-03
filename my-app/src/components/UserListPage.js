@@ -2,6 +2,8 @@ import React from 'react';
 import '../App.css';
 import AppNavbarLoggedIn from './NavbarLoggedIn';
 import { Table } from 'react-bootstrap';
+import NavbarCollapse from 'react-bootstrap/NavbarCollapse';
+import Navbar from './Navbar';
 
 /* Component for an admin to view the list of users (currently hardcoded, but will need to read from a database) */
 class userList extends React.Component {
@@ -9,7 +11,7 @@ class userList extends React.Component {
         return (
 
             <div className="UserList">
-                <AppNavbarLoggedIn />
+                <Navbar />
                 
                 <Table striped bordered hover>
                     <thead>

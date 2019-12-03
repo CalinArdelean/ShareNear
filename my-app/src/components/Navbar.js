@@ -51,7 +51,7 @@ class AppNavbar extends BaseReactComponent {
     let adminIcon = "";
     if(getState("currentUser").usertype){
       adminButton = <button onClick={ this.getUsers } className="navbar-btn">View User List</button>;
-      adminIcon = <i onClick={ this.getProfile } className="fas fa-list-ul"></i>;
+      adminIcon = <i onClick={ this.getUsers } className="fas fa-list-ul"></i>;
     }
 
     return (

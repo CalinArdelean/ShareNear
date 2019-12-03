@@ -97,7 +97,7 @@ class LoginForm extends BaseReactComponent {
           <button onClick={ this.props.checkUser }>Sign In</button>
         <br></br>
         <br></br>
-        <a href="./signup">Don't have an account already? Sign Up Here</a>
+        <a href="./signup">Don't have an account? Sign Up Here</a>
         <br/>
         <a href="./signup">Forgot your password?</a>
       </div>
@@ -151,7 +151,7 @@ class LoginForm extends BaseReactComponent {
           <button onClick={ this.props.checkUser }>Sign In</button>
         <br></br>
         <br></br>
-        <button onClick={this.signUp}>Don't have an account already? Sign Up</button>
+        <a className="signup-link" onClick={this.signUp}>Don't have an account? Sign Up</a>
         <br/>
         <a href="./signup">Forgot your password?</a>
       </div>

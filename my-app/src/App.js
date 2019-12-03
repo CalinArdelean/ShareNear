@@ -60,6 +60,9 @@ class App extends BaseReactComponent {
         else if(getState("currentView") === "EditProfile"){
             view = <Edit />
         }
+        else if(getState("currentView") === "UserListPage"){
+            view = <UserList />
+        }
 
         return (
             <div className="app">

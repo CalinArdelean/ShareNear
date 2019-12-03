@@ -16,7 +16,7 @@ export const setEmptyState = () => {
 	setState("editForm", { firstname: "", lastname: "", phonenumber: "", email: "", location:"", username: "", password: "", usertype: false, description:"Hi! Welcome to my profile", itemlist: []})
     setState("currentView", "Login");
 	
-    setState("itemList", [
+    setState("itemList", null);
         // { name: "Children's Bicycle", 
         // description: "Brand new, my son uses it and he\'s eight, so I can guarantee that it\'s good for eight - year - olds.",
         // price: "$15.00",
@@ -42,7 +42,6 @@ export const setEmptyState = () => {
         //     isAvailable: true,
         //     renter: "5de60679a68f4449f8582996"
         // }
-    ]);
 
     setState("message", { type: "", body: "" });
 };

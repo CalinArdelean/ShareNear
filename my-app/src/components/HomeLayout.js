@@ -9,6 +9,7 @@ import ButtonBase from '@material-ui/core/ButtonBase';
 import Dotdotdot from 'react-dotdotdot';
 import { Link } from 'react-router-dom';
 import Item from './ItemPage';
+import { getState, setState } from "statezero";
 
 
 /* Component that makes a grid of the product listings to put on the home page */
@@ -121,6 +122,9 @@ export default function ComplexGrid() {
              //   items.push(singleItem(classes));
             //}
             index++;
+            // if (index >= getState("itemList").length) {
+            //     break;
+            // }
         }
     }
 
@@ -163,14 +167,14 @@ function singleItem(classes, index) {
                         <Grid item xs container direction="column" spacing={2}>
                             <Grid item xs >
                                 <Typography gutterBottom variant="header">
-                                    {listings[index].name}
+                                    {getState('itemList')[0].name}
                                 </Typography>
                                 <Typography variant="body2" gutterBottom>
-                                    {listings[index].location}
+                                    {getState('itemList')[0].location}
                                 </Typography>
                                 <Dotdotdot clamp={3}>
                                     <Typography variant="body2" color="textSecondary">
-                                        {listings[index].description}
+                                        {getState('itemList')[0].description}
                                     </Typography>
                                 </Dotdotdot>
                                 
@@ -192,7 +196,7 @@ function singleItem(classes, index) {
                             </Grid>
                         </Grid>
                         <Grid item>
-                            <Typography variant="subtitle1">${listings[index].price}/day</Typography>
+                            <Typography variant="subtitle1">${getState('itemList')[0].price}/{getState('itemList')[0].duration}</Typography>
                         </Grid>
                     </Grid>
                 </Grid>

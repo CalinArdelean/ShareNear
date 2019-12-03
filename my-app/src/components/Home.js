@@ -18,10 +18,10 @@ class Home extends BaseReactComponent {
       users: []
     };
   }
-    render() {
+
+    getItems = () => {
       //console.log(getState("itemList"));
       const url = '/users';
-
       // Since this is a GET request, simply call fetch on the URL
       fetch(url)
         .then((res) => {
@@ -33,26 +33,33 @@ class Home extends BaseReactComponent {
           }
         })
         .then((json) => {  // the resolved promise with the JSON body
-          this.setState({ users: json.users });
+          let allUsers = json.users
+          const items = []
+            for (let i = 0; i < allUsers.length; i++) {
+            for (let j = 0; j < allUsers[i].itemlist.length; j++) {
+              items.push(allUsers[i].itemlist[j])
+            }
+          }
+          console.log(items);
+          setState("itemList", items);
+          const self = this;
+          self.setState({data: items});
         }).catch((error) => {
           console.log(error)
         });
 
-        const allUsers = this.state.users
-        const items = []
-        for(let i = 0; i < allUsers.length; i++){
-          for(let j = 0; j < allUsers[i].itemlist.length; j++){
-            items.push(allUsers[i].itemlist[j])
-          }
-        }
-       setState("itemList", items);
-       console.log(getState("itemList"));
+    }
+
+    render() {
+      this.getItems()
           return (
             <div>
             <AppNavbar />
-            <HomeLayout 
-              items={this.items}/>
-            </div>)
+              {this.state && this.state.data &&
+                <div><HomeLayout/></div>
+              }
+            </div>
+            )
             
     }
 }

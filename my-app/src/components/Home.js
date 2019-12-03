@@ -19,6 +19,7 @@ class Home extends BaseReactComponent {
     };
   }
     render() {
+      //console.log(getState("itemList"));
       const url = '/users';
 
       // Since this is a GET request, simply call fetch on the URL
@@ -44,8 +45,8 @@ class Home extends BaseReactComponent {
             items.push(allUsers[i].itemlist[j])
           }
         }
-        
-
+       setState("itemList", items);
+       console.log(getState("itemList"));
           return (
             <div>
             <AppNavbar />

@@ -25,60 +25,17 @@ class Profile extends BaseReactComponent {
     filterState({ currentUser }){
         return { currentUser };
     }
-    // renderNavbar() {
 
-    //     if (this.props.location.isValidUser === 1) {
-    //         return (
-    //             <div className="App">
-    //                 <AppNavbarLoggedIn
-    //                     currentUser={this.props.currentUser}
-    //                 />
-    //             </div>
-    //         );
-    //     }
-    //     else {
-    //         return (
-    //             <div className="App">
-    //                 <AppNavbar />
-    //             </div>
-    //         );
-    //     }
-    // }
+    createListing = () => {
+        setState("currentView", "CreatePost")
+    }
+
     
-
     render() {
-
-        // let data = this.props.location.data;
-        // this.props.location.state = this.props.location.data;
-        // console.log(this.props.location.state);
-        // //console.log("Item ID: " + this.props.location.data);
-
-        // //This is our hardcoded user profile
-        // //if admin
-        // let seller = sellers[3];
-        // //else let seller = sellers[0];
-
-        
-        // //Seller data will be obtained from servers
-        // if (typeof (data) !== 'undefined') {
-        //     console.log("TYPEOF: " + typeof (data));
-        //     for (let i = 0; i < sellers.length; i++) {
-        //         for (let j = 0; j < sellers[i].itemIDs.length; j++) {
-        //             if (sellers[i].itemIDs[j] == data) {
-        //                 seller = sellers[i];
-        //                 break;
-        //             }
-        //         }
-        //     }
-        // }
-        // console.log("Seller ID: " + seller.id);
 
         return (
             <div className="App">
-                {/* {this.renderNavbar()} */}
                 <AppNavbar />
-                {console.log(getState("currentUser"))}
-                {/* <button type="button" onClick={ this.createListing }>Create New Listing</button> */}
                 <div className="Profile">
                 <h4> Welcome to your profile {getState("currentUser").firstname} !</h4>
                 <br></br>
@@ -101,65 +58,16 @@ class Profile extends BaseReactComponent {
                     <br></br>
                     <i class="fas fa-phone-square-alt"></i> <p>{getState("currentUser").phonenumber}</p>
                     <i class="far fa-envelope"></i> <p>{getState("currentUser").email}</p>
-                    {<button type="button">Create New Listing</button>}
+                    {<button type="button" onClick={this.createListing}>Create New Listing</button>}
 					<br></br><br></br>
 					{<button type="button">Edit Profile</button>}
 					<br></br>
                 </div>
-
-                {/* <p> Welcome to your profile ;( </p> */}
-                {/* <div className="Profile">
-                    <br></br>
-                    {this.editProfileButton(data)}
-                    <h4>{seller.name}</h4>
-                    <br/>
-                    <img
-                        alt="profile picture"
-                        src={seller.image}
-                        className="d-inline-block align-top"
-                    ></img>
-                    <br></br>
-                    <h5>{seller.address}</h5>
-                    <h6>{seller.description}</h6>                  
-                    <br></br>
-                    <i class="fas fa-phone-square-alt"></i> <p>{seller.phoneNumber}</p>
-                    <i class="far fa-envelope"></i> <p>{seller.email}</p>
-                    {this.createAndViewListings(data)}
-                </div>
-                 */}
             </div>
 
         );
     }
 
-    // editProfileButton(data) {
-
-    //     if (typeof (data) == 'undefined') {
-    //         return (
-    //             <div>
-    //                 <h3>Welcome to your profile! </h3>
-    //                 <br></br>
-    //                 <div className="Right" className="edit">
-    //                     <a href="./edit">
-    //                         <button type="button">Edit Profile</button>
-    //                     </a>
-    //                 </div> <br /> </div>
-    //         );
-    //     }
-    // }
-
-    // createAndViewListings(data) {
-    //     if (typeof (data) == 'undefined') {
-    //         return (
-    //             <div>
-    //             <a href="./newpost">
-    //                 <button type="button">Create New Listing</button>
-    //             </a>
-    //             <br /> 
-    //             </div>
-    //         );
-    //     }
-    // }
 }
 
 export default Profile;

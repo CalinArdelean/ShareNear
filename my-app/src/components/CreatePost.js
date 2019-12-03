@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 import ItemPic from '../assets/NewItem.png'
-import AppNavbarLoggedIn from './NavbarLoggedIn';
+import AppNavbar from './Navbar';
 import { Link } from 'react-router-dom';
 
 /* Component for a user to create a post and put an item up for rent */
@@ -33,7 +33,7 @@ class newPost extends React.Component {
         //console.log(this.state.name);
         return (
             <div className="Edit">
-                <AppNavbarLoggedIn />
+                <AppNavbar />
 
                 <div id="sc-edprofile">
                     <h1>Post a New Item for Rent</h1>
@@ -50,6 +50,7 @@ class newPost extends React.Component {
                         </select>
                         <input name='location' value='location' onChange={this.handleInputChange} type="text" placeholder="Location" />
                         <button>Upload Item Picture</button>
+                        <button>SUBMIT!@!!!!</button>
                         {/*<Link to={{pathname: './listings', data: this.state}}><input type="submit" value="Create Post" /></Link>*/}
                     </div>
                 </div>

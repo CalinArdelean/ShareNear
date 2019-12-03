@@ -42,7 +42,6 @@ const UserSchema = new mongoose.Schema({
 		required: true,
 		minlength: 1,
 		trim: true,
-		unique: true,
 		validate: {
 			validator: validator.isEmail,   // custom validator
 			message: 'Not valid email'
@@ -58,12 +57,12 @@ const UserSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 		minlength: 1,
-		trim: true
+		trim: true,
+		unique: true,
 	},
 	password: {
 		type: String,
 		required: true,
-		minlength: 6
 	},
 	usertype: {
 		type: Boolean,

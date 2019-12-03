@@ -34,11 +34,13 @@ class SignUpForm extends React.Component {
                  console.log("yoo we did it");
                  setState("currentView", "Login")
 		 		return res.json();
-		 	}
+             }
+             else{
+                alert("This username already exists.")
+             }
 		 	})
 
 		 	.catch(error => {
-		 	console.log("we have failed");
 		 	console.log(error);
 		 	});
 

@@ -49,18 +49,18 @@ class LoginPage extends BaseReactComponent {
   })
   .then((json) => {  // the resolved promise with the JSON body
       let allUsers = json.users
-      const inputEmail = getState("loginForm").email
+      const inputUsername = getState("loginForm").username
       const inputPassword = getState("loginForm").password
       console.log(allUsers)
       for(let i = 0; i < allUsers.length; i++){
-        if(inputEmail === allUsers[i].email){
+        if(inputUsername === allUsers[i].username){
           bcrypt.compare(inputPassword, allUsers[i].password, (err, res) => { 
             if(res){
               setState("currentUser", allUsers[i])
               setState("currentView", "Home")
             } 
             else {
-              console.log("Wrong email or password.");
+              alert("Incorrect username or password!");
             }
           })
         }

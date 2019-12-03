@@ -60,17 +60,17 @@ class LoginForm extends BaseReactComponent {
         <br></br>
         <p> Invalid username or password.</p>
 
-        <input name='userName' 
+        {/* <input name='userName' 
     	         value={ this.props.userName } 
     	         onChange={e => updateLoginForm(e.target)} 
     	         type="text" 
-    	         placeholder="username" />
+    	         placeholder="username" /> */}
 
         <br></br>
         <br></br>
 		<TextField
-            name="email"
-            label="Email"
+            name="username"
+            label="Username"
             className="login__input app__input app__horizontal-center"
             margin="normal"
             onChange={e => updateLoginForm(e.target)}
@@ -85,11 +85,11 @@ class LoginForm extends BaseReactComponent {
                         onChange={e => updateLoginForm(e.target)}
                     />
 
-        <input name='userPassword' 
+        {/* <input name='userPassword' 
     	         value={ this.props.userPassword } 
     	         onChange={e => updateLoginForm(e.target)} 
     	         type="text" 
-    	         placeholder="password" />
+    	         placeholder="password" /> */}
 
         <br></br>
         <br></br>

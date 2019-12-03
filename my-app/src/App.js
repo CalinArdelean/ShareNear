@@ -14,6 +14,7 @@ import Home from './components/Home';
 import Item from './components/ItemPage';
 import Post from './components/CreatePost';
 import Edit from './components/EditProfile';
+import ModifyUser from './components/ModifyUserPage';
 import Listings from './components/UserItems';
 import HomeFiltered from './components/HomeFiltered';
 import HomeLayoutFiltered from './components/HomeLayoutFiltered';
@@ -21,7 +22,6 @@ import UserList from './components/UserListPage';
 import BaseReactComponent from './components/BaseReactComponent';
 import { useState } from "react";
 import MainView from './MainView';
-import modifyUser from './components/ModifyUser';
 
 /* Main JavaScript component for our app, linking all other components to each other */
 class App extends BaseReactComponent {
@@ -64,8 +64,8 @@ class App extends BaseReactComponent {
         else if(getState("currentView") === "UserListPage"){
             view = <UserList />
         }
-        else if(getState("currentView") === "ModifyUser"){
-            view = <modifyUser />
+        else if(getState("currentView") === "ModifyUserPage"){
+            view = <ModifyUser />
         }
 
         return (

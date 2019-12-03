@@ -43,7 +43,7 @@ class AppNavbar extends BaseReactComponent {
   }
 
   modifyUsers = () => {
-    setState("currentView", "ModifyUser")
+    setState("currentView", "ModifyUserPage")
   }
 
   logout = () => {

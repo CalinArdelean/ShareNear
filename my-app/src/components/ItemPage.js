@@ -52,6 +52,11 @@ class ItemPage extends React.Component {
     goHome = () => {
         setState("currentView", "Home");
     }
+
+    rentItem = () => {
+        setState("currentView", "RenterProfile");
+    }
+
     render() {
 
         // Show 'View Profile' link on Navbar only if user is logged in
@@ -112,7 +117,7 @@ class ItemPage extends React.Component {
                                         }}>
                                     Rent this item
                                     </Link> */}
-                                    Rent this item
+                                     <button onClick={this.rentItem}> Rent this item </button>
                                 </Grid>
                             </Grid>
                             <Grid item>

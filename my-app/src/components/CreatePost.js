@@ -31,6 +31,8 @@ class newPost extends BaseReactComponent {
                 price: getState("postForm").price,
                 duration: getState("postForm").duration,
                 location: getState("postForm").location,
+                isAvailable: true,
+                renter: getState('currentUser')._id
             }),
             headers: {
                 accept: "application/json, text/plain, /",

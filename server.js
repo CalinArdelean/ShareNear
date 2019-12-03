@@ -245,7 +245,9 @@ app.post('/users/:id', (req, res) => {
 		price: req.body.price,
 		duration: req.body.duration,
 		location: req.body.location,
-		image: null
+		image: null,
+		renter: req.body.renter,
+		isAvailable: true
 	}
 	const id = req.params.id;
 	if (!ObjectID.isValid(id)) {

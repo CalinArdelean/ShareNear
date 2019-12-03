@@ -15,12 +15,12 @@ import BaseReactComponent from './BaseReactComponent';
 
 /* Component for a user to create a post and put an item up for rent */
 class newPost extends BaseReactComponent {
-    filterState({ currentUser }) {
-        return { currentUser };
+    filterState({ currentUser, itemList }) {
+        return { currentUser, itemList };
     }
     
     postItem = () => {
-
+        console.log(getState("itemList"));
         console.log(getState("postForm"));
         console.log(`/users/${getState('currentUser')._id}   `);
         const request = new Request(`/users/${ getState('currentUser')._id }   `, {

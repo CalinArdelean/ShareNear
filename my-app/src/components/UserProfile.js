@@ -23,8 +23,8 @@ var sellers = [
 
 /* Component for the profile page of users */
 class Profile extends BaseReactComponent {
-    filterState({ currentUser }){
-        return { currentUser };
+    filterState({ currentUser, itemList }){
+        return { currentUser, itemList };
     }
 
     createListing = () => {
@@ -37,7 +37,7 @@ class Profile extends BaseReactComponent {
 
     
     render() {
-
+        console.log(getState("itemList"));
         return (
             <div className="App">
                 <AppNavbar />

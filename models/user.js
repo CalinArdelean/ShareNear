@@ -67,11 +67,7 @@ const UserSchema = new mongoose.Schema({
 		type: Boolean,
 		default: false
 	},
-	itemlist: {
-		type: Object,
-		default: [ItemSchema]
-
-	},
+	itemlist:[ItemSchema],
 	description: {
 		type: String,
 		default: "Hi! Welcome to my profile."

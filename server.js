@@ -225,7 +225,6 @@ app.post('/users', (req, res) => {
 		username: req.body.username,
 		password: req.body.password,
 		usertype: req.body.usertype,
-		itemlist: [],
 		description: "Hi! Welcome to my profile"
 	})
 
@@ -237,7 +236,7 @@ app.post('/users', (req, res) => {
 	})
 })
 
-// Set up a POST route to *create* a item under a user of your web app.
+// Set up a POST route to *create* a item under a user of our web app.
 app.post('/users/:id', (req, res) => {
 
 	const item = {

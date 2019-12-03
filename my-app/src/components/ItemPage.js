@@ -53,7 +53,27 @@ class ItemPage extends React.Component {
     }
 
     rentItem = () => {
-        setState("currentView", "RenterProfile");
+        const url = `/users/${getState("currentItem").renter}`;
+    
+      // Since this is a GET request, simply call fetch on the URL
+      fetch(url)
+      .then((res) => { 
+          if (res.status === 200) {
+              // return a promise that resolves with the JSON body
+             return res.json() 
+         } else {
+              alert('Could not get users')
+         }                
+      })
+      .then((json) => {  // the resolved promise with the JSON body
+          console.log(json)
+          setState("renter", json)
+          setState("currentView", "RenterProfile");
+      }).catch((error) => {
+          console.log(error)
+      });
+       
+        
     }
 
     render() {

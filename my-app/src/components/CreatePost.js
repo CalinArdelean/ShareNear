@@ -23,58 +23,76 @@ class newPost extends BaseReactComponent {
         console.log(getState("itemList"));
         console.log(getState("postForm"));
         console.log(`/users/${getState('currentUser')._id}   `);
-        const request = new Request(`/users/${ getState('currentUser')._id }   `, {
-            method: "post",
-            body: JSON.stringify({
-                name: getState("postForm").name,
-                description: getState("postForm").description,
-                price: getState("postForm").price,
-                duration: getState("postForm").duration,
-                location: getState("postForm").location,
-                isAvailable: true,
-                renter: getState('currentUser')._id
-            }),
-            headers: {
-                accept: "application/json, text/plain, /",
-                "content-type": "application/json"
-            }
-        });
-        //send the request with fetch()
-        fetch(request)
-            .then(res => {
-                if (res.status === 200) {
-                    console.log("yoo we did it");
-                    setState("currentView", "UserProfile")
 
-                    const currList = Object.assign([], getState("itemList"));
-                    currList.push({name: getState("postForm").name,
-                                    description: getState("postForm").description,
-                                    price: getState("postForm").price,
-                                    duration: getState("postForm").duration,
-                                    location: getState("postForm").location,
-                                    isAvailable: true,
-                                    renter: getState('currentUser')._id})        
+		if (getState("postForm") == null){
+			
+		}
+		else if (getState("postForm").name == "" || getState("postForm").description == "" || getState("postForm").price == "" || getState("postForm").duration == "" || getState("postForm").location == ""
+			|| !(getState("postForm").name) || !(getState("postForm").description) || !(getState("postForm").price) || !(getState("postForm").duration) || !(getState("postForm").location)){
+						
+				alert('All fields are required.') 
+		}
+		else{
 
 
-                    
-                    console.log(currList)
-                    // const newItemList = currList.push({name: getState("postForm").name,
-                    //                                                 description: getState("postForm").description,
-                    //                                                 price: getState("postForm").price,
-                    //                                                 duration: getState("postForm").duration,
-                    //                                                 location: getState("postForm").location,
-                    //                                                 isAvailable: true,
-                    //                                                 renter: getState('currentUser')._id})
-                    setState("itemList", currList)     
-                    console.log(getState("itemList"))          
-                    return res.json();
-                }
-            })
-            .catch(error => {
-                console.log("we failed :(");
-                console.log(error);
-            });
+			const request = new Request(`/users/${ getState('currentUser')._id }   `, {
+				method: "post",
+				body: JSON.stringify({
+					name: getState("postForm").name,
+					description: getState("postForm").description,
+					price: getState("postForm").price,
+					duration: getState("postForm").duration,
+					location: getState("postForm").location,
+					isAvailable: true,
+					renter: getState('currentUser')._id
+				}),
+				headers: {
+					accept: "application/json, text/plain, /",
+					"content-type": "application/json"
+				}
+			});
+			//send the request with fetch()
+			fetch(request)
+				.then(res => {
+					if (res.status === 200) {
+					
+					
+						
+					
+						console.log("yoo we did it");
+						setState("currentView", "UserProfile")
+					
 
+						const currList = Object.assign([], getState("itemList"));
+						currList.push({name: getState("postForm").name,
+										description: getState("postForm").description,
+										price: getState("postForm").price,
+										duration: getState("postForm").duration,
+										location: getState("postForm").location,
+										isAvailable: true,
+										renter: getState('currentUser')._id})        
+
+
+						setState("postForm", null);
+						console.log(currList)
+						// const newItemList = currList.push({name: getState("postForm").name,
+						//                                                 description: getState("postForm").description,
+						//                                                 price: getState("postForm").price,
+						//                                                 duration: getState("postForm").duration,
+						//                                                 location: getState("postForm").location,
+						//                                                 isAvailable: true,
+						//                                                 renter: getState('currentUser')._id})
+						setState("itemList", currList)     
+						console.log(getState("itemList"))          
+						return res.json();
+						
+					}
+				})
+				.catch(error => {
+					console.log("we failed :(");
+					console.log(error);
+				});
+		}
     }
 
     render() {
@@ -87,56 +105,12 @@ class newPost extends BaseReactComponent {
                 <div id="sc-edprofile">
                     <h1>Post a New Item for Rent</h1>
                     <div className="sc-container">
-                        <div className="input">
-                            <TextField
-                                name="name"
-                                label="Item Name"
-                                type="name"
-                                className="textfield login__input app__input app__horizontal-center"
-                                margin="normal"
-                                onChange={e => updatePostForm(e.target)}
-                            />
-                        </div>
-                        <div className="input">
-                            <TextField
-                                name="description"
-                                label="Item Description"
-                                type="description"
-                                className="textfield login__input app__input app__horizontal-center"
-                                margin="normal"
-                                onChange={e => updatePostForm(e.target)}
-                            />
-                        </div>
-                            <div className="input">
-                                <TextField
-                                    name="price"
-                                    label="Item Price"
-                                    type="price"
-                                    className="textfield login__input app__input app__horizontal-center"
-                                    margin="normal"
-                                    onChange={e => updatePostForm(e.target)}
-                                />
-                            </div>
-                                <div className="input">
-                                    <TextField
-                                        name="duration"
-                                        label="Duration (Per hour/day etc.)"
-                                        type="duration"
-                                        className="textfield login__input app__input app__horizontal-center"
-                                        margin="normal"
-                                        onChange={e => updatePostForm(e.target)}
-                                    />
-                                </div>
-                                <div className="input">
-                                    <TextField
-                                        name="location"
-                                        label="Item Location"
-                                        type="location"
-                                        className="textfield login__input app__input app__horizontal-center"
-                                        margin="normal"
-                                        onChange={e => updatePostForm(e.target)}
-                                    />
-                                </div>
+						<input type="text" placeholder="Item Name" onChange={e => updatePostForm(e.target)} name="name" label="Item Name"/>
+						<input type="text" placeholder="Description" onChange={e => updatePostForm(e.target)} name="description" label="Item Description"/>
+						<input type="text" placeholder="price" onChange={e => updatePostForm(e.target)} name="price" label="Item Price"/>
+						<input type="text" placeholder="Duration" onChange={e => updatePostForm(e.target)} name="duration" label="Rate"/>
+						<input type="text" placeholder="Location" onChange={e => updatePostForm(e.target)} name="location" label="Item Location"/>
+                        
                         {/* <input name='name' value='name' onChange={e => updatePostForm(e.target)} type="text" placeholder="Name of Item" />
                         <textarea name='description' value='description' onChange={e => updatePostForm(e.target)} type="text" placeholder="Description of Item" />
                         <input name='price' value='price' onChange={e => updatePostForm(e.target)} type="text" placeholder="Price" /> */}

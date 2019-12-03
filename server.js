@@ -214,8 +214,8 @@ app.put('/users/:id', (req, res) => {
 	const id = req.params.id
 
 	// get the updated name and year only from the request body.
-	const { firstname, lastname, email, location, phonenumber, description } = req.body
-	const body = { firstname, lastname, email, location, phonenumber, description }
+	const { firstname, lastname, email, location, phonenumber, description, password } = req.body
+	const body = { firstname, lastname, email, location, phonenumber, description, password }
 	//const { firstname, lastname } = req.body
 	//const body = { firstname, lastname }
 	console.log(body);
@@ -296,6 +296,27 @@ app.post('/users/:id', (req, res) => {
 	}).catch(error => {
 			res.status(500).send(error);
 		});
+})
+
+// DELETE route to delete a user by id.
+app.delete('/users/:id', (req, res) => {
+	const id = req.params.id
+
+	// Validate id
+	if (!ObjectID.isValid(id)) {
+		res.status(404).send()
+	}
+
+	// Delete a user by their id
+	User.findByIdAndRemove(id).then((user) => {
+		if (!user) {
+			res.status(404).send()
+		} else {   
+			res.send(user)
+		}
+	}).catch((error) => {
+		res.status(500).send() // server error, could not delete.
+	})
 })
 
 /*** Webpage routes below **********************************/

@@ -14,6 +14,7 @@ import Item from './ItemPage';
 /* Component that makes a grid of the product listings to put on the home page */
 
 //hard coded pictures and listings of products (will need to change for phase 2)
+import itemimage from '../assets/NewItem.png';
 import bike from '../assets/bike.jpg';
 import snowblower from '../assets/snowblower.jpg';
 import chainsaw from '../assets/chainsaw.jpg';
@@ -156,7 +157,7 @@ function singleItem(classes, index) {
                     <Grid item xs sm container spacing={12} className={classes.item}>
                         <Grid item>
                             <ButtonBase className={classes.image}>
-                                <img className={classes.img} alt="logo" src={listings[index].image} />
+                                <img className={classes.img} alt="logo" src={itemimage} />
                             </ButtonBase>
                         </Grid>
                         <Grid item xs container direction="column" spacing={2}>

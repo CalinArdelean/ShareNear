@@ -225,7 +225,8 @@ app.post('/users', (req, res) => {
 		username: req.body.username,
 		password: req.body.password,
 		usertype: req.body.usertype,
-		itemlist: []
+		itemlist: [],
+		description: "Hi! Welcome to my profile"
 	})
 
 	// Save the user

@@ -13,7 +13,9 @@ export const setEmptyState = () => {
     setState("signupForm", { firstname: "", lastname: "", phonenumber: "", email: "", location:"", username: "", password: "", usertype: false, description:"Hi! Welcome to my profile", itemlist: []})
     setState("loginForm", { email: "", password: "" })
     setState("postForm", { name: "", description: "", price: "", location: "", duration: "", image: {}})
+	setState("editForm", { firstname: "", lastname: "", phonenumber: "", email: "", location:"", username: "", password: "", usertype: false, description:"Hi! Welcome to my profile", itemlist: []})
     setState("currentView", "Login")
+	
 
     setState("itemList", []);
     setState("itemForm", {name: "", price:""})

@@ -148,8 +148,8 @@ function wrapper(classes, items) {
 
 
 function singleItem(classes, index) {
-    
     return (
+        
         <div className={classes.root}>
             <Paper className={classes.paper}>
                 <Grid container spacing={2}>

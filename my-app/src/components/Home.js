@@ -2,7 +2,6 @@ import React from 'react';
 import '../App.css';
 
 import AppNavbar from './Navbar';
-import AppNavbarLoggedIn from './NavbarLoggedIn';
 import HomeLayout from './HomeLayout';
 import { getState, setState } from "statezero";
 import BaseReactComponent from './BaseReactComponent';
@@ -38,10 +37,20 @@ class Home extends BaseReactComponent {
           console.log(error)
         });
 
+        const allUsers = this.state.users
+        const items = []
+        for(let i = 0; i < allUsers.length; i++){
+          for(let j = 0; j < allUsers[i].itemlist.length; j++){
+            items.push(allUsers[i].itemlist[j])
+          }
+        }
+        
+
           return (
             <div>
             <AppNavbar />
-            <HomeLayout />
+            <HomeLayout 
+              items={this.items}/>
             </div>)
             
     }

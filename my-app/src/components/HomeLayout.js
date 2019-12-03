@@ -138,6 +138,11 @@ export default function ComplexGrid() {
     );
 }
 
+function getItem(index) {
+    setState("currentView", "Item");
+    setState("currentItem", getState("itemList")[index]);
+}
+
 function wrapper(classes, items) {
 
     return (
@@ -170,14 +175,14 @@ function singleItem(classes, index) {
                         <Grid item xs container direction="column" spacing={2}>
                             <Grid item xs >
                                 <Typography gutterBottom variant="header">
-                                    {getState('itemList')[0].name}
+                                    {getState('itemList')[index].name}
                                 </Typography>
                                 <Typography variant="body2" gutterBottom>
-                                    {getState('itemList')[0].location}
+                                    {getState('itemList')[index].location}
                                 </Typography>
                                 <Dotdotdot clamp={3}>
                                     <Typography variant="body2" color="textSecondary">
-                                        {getState('itemList')[0].description}
+                                        {getState('itemList')[index].description}
                                     </Typography>
                                 </Dotdotdot>
                                 
@@ -193,13 +198,13 @@ function singleItem(classes, index) {
                                         }}>
                                         Rent this item
                                     </Link> */}
-                                    Rent this Item
+                                    <button onClick={getItem(index)}>Rent this Item</button>
                                      
                                 </Typography>
                             </Grid>
                         </Grid>
                         <Grid item>
-                            <Typography variant="subtitle1">${getState('itemList')[0].price}/{getState('itemList')[0].duration}</Typography>
+                            <Typography variant="subtitle1">${getState('itemList')[index].price}/{getState('itemList')[0].duration}</Typography>
                         </Grid>
                     </Grid>
                 </Grid>

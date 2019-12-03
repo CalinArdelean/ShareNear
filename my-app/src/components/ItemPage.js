@@ -109,6 +109,7 @@ class ItemPage extends React.Component {
                                         }}>
                                     Rent this item
                                     </Link> */}
+                                    Rent this item
                                 </Grid>
                             </Grid>
                             <Grid item>
@@ -121,6 +122,7 @@ class ItemPage extends React.Component {
 							//validUser: isValid
                         
 						}}> Return to Listings </Link> */}
+                        Return to Listings
             
                     
                 </Paper>

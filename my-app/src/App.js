@@ -46,6 +46,9 @@ class App extends BaseReactComponent {
         else if(getState("currentView") === "UserProfile"){
             view = <Profile />
         }
+        else if (getState("currentView") === "Item") {
+            view = <Item />
+        }
         else if(getState("currentView") === "Login"){
             view = <Login />
         }

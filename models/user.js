@@ -11,6 +11,8 @@ const ItemSchema = new mongoose.Schema({
 	price: String,
 	duration: String,
 	location: String,
+	isAvailable: Boolean,
+	renter: String,
 	image: {data: Buffer, contentType: String }
 });
 

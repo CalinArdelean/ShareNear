@@ -139,8 +139,8 @@ export default function ComplexGrid() {
 }
 
 function getItem(index) {
+    setState("currentItem", index);
     setState("currentView", "Item");
-    setState("currentItem", getState("itemList")[index]);
 }
 
 function wrapper(classes, items) {
@@ -198,7 +198,7 @@ function singleItem(classes, index) {
                                         }}>
                                         Rent this item
                                     </Link> */}
-                                    <button onClick={getItem(index)}>Rent this Item</button>
+                                    <button value={index} onClick={() => getItem(index)}>Rent this Item</button>
                                      
                                 </Typography>
                             </Grid>

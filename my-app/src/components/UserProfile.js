@@ -1,6 +1,7 @@
 import React from 'react';
 import '../App.css';
 import profilepicture from '../assets/userpicture.jpg';
+import profilepic from '../assets/profilepic.jpg';
 import PaulBlart from '../assets/paul_blart.jpg';
 import MarySmith from '../assets/adminpicture.jpg';
 import JacobJacobson from '../assets/louisCK.jpg';
@@ -53,18 +54,19 @@ class Profile extends BaseReactComponent {
                     <br/>
                     <img
                         alt="profile picture"
-                        src={PaulBlart}
+                        src={profilepic}
                         className="d-inline-block align-top"
                     ></img>
+                    <br></br>
                     <br></br>
                     <h5>{getState("currentUser").location}</h5>
                     <h6>{getState("currentUser").description}</h6>                  
                     <br></br>
                     <i class="fas fa-phone-square-alt"></i> <p>{getState("currentUser").phonenumber}</p>
                     <i class="far fa-envelope"></i> <p>{getState("currentUser").email}</p>
-                    {<button type="button" onClick={this.createListing}>Create New Listing</button>}
+                    {<button type="button" onClick={this.editProfile}>Edit Profile</button>}
 					<br></br><br></br>
-					{<button type="button" onClick={this.editProfile}>Edit Profile</button>}
+                    {<button type="button" onClick={this.createListing}>Create New Listing</button>}
 					<br></br>
                 </div>
             </div>

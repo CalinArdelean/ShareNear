@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 import profilepicture from '../assets/userpicture.jpg';
-import profilepic from '../assets/profilepic.jpg';
+import profilepic from '../assets/ProfilePic.jpg';
 import PaulBlart from '../assets/paul_blart.jpg';
 import MarySmith from '../assets/adminpicture.jpg';
 import JacobJacobson from '../assets/louisCK.jpg';

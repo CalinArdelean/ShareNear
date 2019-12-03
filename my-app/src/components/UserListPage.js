@@ -47,10 +47,9 @@ class userList extends React.Component {
                     hover
                     condensed
                 >
-                    <TableHeaderColumn dataField="_id" isKey dataAlign="center">ID</TableHeaderColumn>
+                    <TableHeaderColumn dataField="username" isKey dataAlign="center">Username</TableHeaderColumn>
                     <TableHeaderColumn dataField="firstname" dataAlign="center">First Name</TableHeaderColumn>
                     <TableHeaderColumn dataField="lastname" dataAlign="center">Last Name</TableHeaderColumn>
-                    <TableHeaderColumn dataField="username" dataAlign="center">Username</TableHeaderColumn>
                     <TableHeaderColumn dataField="email" dataAlign="center">Email</TableHeaderColumn>
                     <TableHeaderColumn dataField="usertype" dataAlign="center">Admin?</TableHeaderColumn>
                 </BootstrapTable>

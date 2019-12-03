@@ -42,16 +42,24 @@ class AppNavbar extends BaseReactComponent {
     setState("currentView", "UserListPage")
   }
 
+  modifyUsers = () => {
+    setState("currentView", "ModifyUser")
+  }
+
   logout = () => {
     setState("currentUser", null)
   }
 
   render() {
-    let adminButton = "";
-    let adminIcon = "";
+    let userListButton = "";
+    let userListIcon = "";
+    let modifyButton = "";
+    let modifyIcon = "";
     if(getState("currentUser").usertype){
-      adminButton = <button onClick={ this.getUsers } className="navbar-btn">View User List</button>;
-      adminIcon = <i onClick={ this.getUsers } className="fas fa-list-ul"></i>;
+      userListButton = <button onClick={ this.getUsers } className="navbar-btn">View User List</button>;
+      userListIcon = <i onClick={ this.getUsers } className="fas fa-list-ul"></i>;
+      modifyButton = <button onClick={ this.modifyUsers } className="navbar-btn">Modify User</button>;
+      modifyIcon = <i onClick={ this.modifyUsers } className="fas fa-edit"></i>;
     }
 
     return (
@@ -78,7 +86,8 @@ class AppNavbar extends BaseReactComponent {
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text className="text-white">
               {/* <button onClick={ this.props.checkUser }>Sign In</button> */}
-              <a> {adminButton} {adminIcon} </a> &nbsp; 
+              <a> {userListButton} {userListIcon} </a> &nbsp; 
+              <a> {modifyButton} {modifyIcon}</a> &nbsp; 
               <button onClick={ this.getProfile } className="navbar-btn">View Profile</button>
               <i onClick={ this.getProfile } className="fas fa-user"></i> &nbsp;
               <a href='./'><button onClick={ this.logout } className="navbar-btn">Logout</button></a>

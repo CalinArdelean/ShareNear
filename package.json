@@ -4,7 +4,8 @@
     "description": "Sharenear Server",
     "main": "server.js",
     "engines": {
-        "node": "v10.16.3"
+        "node": "v10.16.3",
+        "npm": "6.9.0"
     },
     "scripts": {
         "setup": "npm install && cd my-app && npm install && cd ..",

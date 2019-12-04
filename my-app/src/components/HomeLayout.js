@@ -139,7 +139,7 @@ export default function ComplexGrid() {
 }
 
 function getItem(index) {
-    setState("currentItem", index);
+    setState("currentItem", getState("itemList")[index]);
     setState("currentView", "Item");
 }
 

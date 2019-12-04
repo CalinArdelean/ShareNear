@@ -10,7 +10,6 @@ import ButtonBase from '@material-ui/core/ButtonBase';
 import Dotdotdot from 'react-dotdotdot';
 import './ItemPage.css';
 import AppNavbar from './Navbar';
-import AppNavbarLoggedIn from './NavbarLoggedIn';
 import { spacing } from '@material-ui/system';
 import { Link } from 'react-router-dom';
 import image from '../assets/NewItem.png';
@@ -52,6 +51,31 @@ class ItemPage extends React.Component {
     goHome = () => {
         setState("currentView", "Home");
     }
+
+    rentItem = () => {
+        const url = `/users/${getState("currentItem").renter}`;
+    
+      // Since this is a GET request, simply call fetch on the URL
+      fetch(url)
+      .then((res) => { 
+          if (res.status === 200) {
+              // return a promise that resolves with the JSON body
+             return res.json() 
+         } else {
+              alert('Could not get users')
+         }                
+      })
+      .then((json) => {  // the resolved promise with the JSON body
+          console.log(json)
+          setState("renter", json)
+          setState("currentView", "RenterProfile");
+      }).catch((error) => {
+          console.log(error)
+      });
+       
+        
+    }
+
     render() {
 
         // Show 'View Profile' link on Navbar only if user is logged in
@@ -87,19 +111,16 @@ class ItemPage extends React.Component {
                             <Grid item className="info" direction="column">
                                 <Grid item direction="column">
                                     <Typography gutterBottom variant="header" className="name">
-                                        {getState("itemList")[data].name}
+                                        {getState("currentItem").name}
                                     </Typography>
-                                    <Grid item className="seller">
-                                    {getState("itemList")[data].renter}
-                                    </Grid>
                                     <Grid item className="city">
-                                    {getState("itemList")[data].location}
+                                    {getState("currentItem").location}
                                     </Grid>
                                     <Grid item className="description">
-                                    {getState("itemList")[data].description}
+                                    {getState("currentItem").description}
                                     </Grid>
                                     <Grid item className="price">
-                                    ${getState("itemList")[data].price}/{getState("itemList")[data].duration}
+                                    ${getState("currentItem").price}/{getState("currentItem").duration}
                                     </Grid>
                                     
                                 </Grid>
@@ -112,7 +133,7 @@ class ItemPage extends React.Component {
                                         }}>
                                     Rent this item
                                     </Link> */}
-                                    Rent this item
+                                     <button onClick={this.rentItem}> Rent this item </button>
                                 </Grid>
                             </Grid>
                             <Grid item>

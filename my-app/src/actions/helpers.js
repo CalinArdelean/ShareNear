@@ -15,7 +15,8 @@ export const setEmptyState = () => {
     setState("postForm", { name: "", description: "", price: "", location: "", duration: "", image: {}})
 	setState("editForm", { firstname: "", lastname: "", phonenumber: "", email: "", location:"", username: "", password: "", usertype: false, description:"Hi! Welcome to my profile", itemlist: []})
     setState("currentView", "Login");
-	setState("currentItem", null);
+    setState("currentItem", null);
+    setState("renter", null);
     setState("itemList", null);
         // { name: "Children's Bicycle", 
         // description: "Brand new, my son uses it and he\'s eight, so I can guarantee that it\'s good for eight - year - olds.",

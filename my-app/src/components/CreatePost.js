@@ -53,6 +53,8 @@ class newPost extends BaseReactComponent {
 				alert('All fields are required.') 
 		}
 		else{
+			console.log(getState('currentUser'))
+
 			const request = new Request(`/users/${ getState('currentUser')._id }   `, {
 				method: "post",
 				body: JSON.stringify({
@@ -73,14 +75,8 @@ class newPost extends BaseReactComponent {
 			fetch(request)
 				.then(res => {
 					if (res.status === 200) {
-					
-					
-						
-					
-						console.log("yoo we did it");
+						console.log("request fulfilled");
 						setState("currentView", "UserProfile")
-					
-
 						const currList = Object.assign([], getState("itemList"));
 						currList.push({name: getState("postForm").name,
 										description: getState("postForm").description,
@@ -93,13 +89,6 @@ class newPost extends BaseReactComponent {
 
 						setState("postForm", null);
 						console.log(currList)
-						// const newItemList = currList.push({name: getState("postForm").name,
-						//                                                 description: getState("postForm").description,
-						//                                                 price: getState("postForm").price,
-						//                                                 duration: getState("postForm").duration,
-						//                                                 location: getState("postForm").location,
-						//                                                 isAvailable: true,
-						//                                                 renter: getState('currentUser')._id})
 						setState("itemList", currList)     
 						console.log(getState("itemList"))          
 						return res.json();

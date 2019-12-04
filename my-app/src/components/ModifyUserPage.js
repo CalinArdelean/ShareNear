@@ -29,7 +29,9 @@ class ModifyUser extends React.Component {
     }
 
     modifyPassword = () => {
-        console.log("checking user") 
+        if (getState("modifyForm").password.length == 0){
+            alert('Please enter a password')
+        }
         const url = '/users';
     
       // Since this is a GET request, simply call fetch on the URL
@@ -45,18 +47,15 @@ class ModifyUser extends React.Component {
       .then((json) => {  // the resolved promise with the JSON body
           let allUsers = json.users
           const inputUsername = getState("modifyForm").username
-          console.log(allUsers)
           
         for(let i = 0; i < allUsers.length; i++){
             if(inputUsername === allUsers[i].username){
-                console.log(allUsers[i]._id)
                 this.setState({modified_user: allUsers[i]});
             }
         }
 
         bcrypt.genSalt(10, (err, salt) => {
 			bcrypt.hash(getState("modifyForm").password, salt, (err, hash) => {
-                console.log(this.state.modified_user.password)
                 this.state.modified_user.password = hash;
                 
                 const request = new Request(`/users/${this.state.modified_user._id}`, {
@@ -85,7 +84,6 @@ class ModifyUser extends React.Component {
                 }
                 })
                 .catch(error => {
-                console.log("we have failed");
                 console.log(error);
                 });
 			})
@@ -113,7 +111,6 @@ class ModifyUser extends React.Component {
       .then((json) => {  // the resolved promise with the JSON body
           let allUsers = json.users
           const inputUsername = getState("deleteForm").username
-          console.log(allUsers)
           
         for(let i = 0; i < allUsers.length; i++){
             if(inputUsername === allUsers[i].username){
@@ -121,7 +118,6 @@ class ModifyUser extends React.Component {
                 this.setState({deletion_user: allUsers[i]});
             }
         }
-        console.log(this.state.deletion_user._id)
         const request = new Request(`/users/${this.state.deletion_user._id}`, {
 		
             method: "delete",
@@ -139,7 +135,6 @@ class ModifyUser extends React.Component {
         }
         })
         .catch(error => {
-        console.log("we have failed");
         console.log(error);
         });
             

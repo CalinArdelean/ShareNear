@@ -3,6 +3,7 @@
 const log = console.log
 
 const express = require('express')
+const path = require('path')
 // starting the express server
 const app = express();
 
@@ -22,6 +23,38 @@ app.use(bodyParser.json())
 
 // express-session for managing user sessions
 const session = require('express-session')
+const GridFsStorage = require("multer-gridfs-storage");
+const Grid = require("gridfs-stream");
+const multer = require("multer");
+const crypto = require("crypto");
+
+// Create storage engine
+const storage = new GridFsStorage({
+	url: process.env.MONGODB_URI || 'mongodb://localhost:27017/UsersAPI',
+	file: (req, file) => {
+	  return new Promise((resolve, reject) => {
+		crypto.randomBytes(16, (err, buf) => {
+		  if (err) {
+			return reject(err);
+		  }
+		  const filename = file.originalname;
+		  const fileInfo = {
+			filename: filename,
+			bucketName: "uploads"
+		  };
+		  resolve(fileInfo);
+		});
+	  });
+	}
+  });
+
+  const upload = multer({ storage });
+
+  app.post('/', upload.single('img'), (req, res, err) => {
+	if (err) throw err
+	res.status(201).send()
+  })
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 /*** Session handling **************************************/

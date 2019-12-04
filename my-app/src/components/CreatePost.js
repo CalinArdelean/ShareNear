@@ -26,7 +26,7 @@ class newPost extends BaseReactComponent {
 	
 		formData.append("img", file[0]);
 	
-		fetch("/", {
+		fetch("/images/", {
 		  method: "POST",
 		  body: formData
 		}).then(r => {
@@ -35,7 +35,7 @@ class newPost extends BaseReactComponent {
 	
 		document
 		  .getElementById("img")
-		  .setAttribute("src", `/${file[0].name}`);
+		  .setAttribute("src", `/images/${file[0].name}`);
 		console.log(file[0]);
 
 		console.log(getState("itemList"));
@@ -62,7 +62,8 @@ class newPost extends BaseReactComponent {
 					duration: getState("postForm").duration,
 					location: getState("postForm").location,
 					isAvailable: true,
-					renter: getState('currentUser')._id
+					renter: getState('currentUser')._id,
+					image: `mighty-mountain-12412.herokuapp.com/${file[0].name}`
 				}),
 				headers: {
 					accept: "application/json, text/plain, /",

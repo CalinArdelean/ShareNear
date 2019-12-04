@@ -133,11 +133,13 @@ class ItemPage extends React.Component {
                 <Paper className="paper">
                     
                         <Grid item container direction="row" justify="space-evenly" className="item">
-                            <Grid item className="imageWrapper">
+                            {/* <Grid item className="imageWrapper">
                             <ButtonBase className="image">
                                 <img className="img" alt="logo" src={image} />
                             </ButtonBase>
-                            </Grid>
+                            </Grid> */}
+                            <img src={getState("currentItem").image} height="100" width="100"></img>
+
                             <Grid item className="info" direction="column">
                                 <Grid item direction="column">
                                     <Typography gutterBottom variant="header" className="name">

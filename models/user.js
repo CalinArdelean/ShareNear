@@ -13,7 +13,7 @@ const ItemSchema = new mongoose.Schema({
 	location: String,
 	isAvailable: Boolean,
 	renter: String,
-	image: {data: Buffer, contentType: String }
+	image: String
 });
 
 // Making a Mongoose model a little differently: a Mongoose Schema

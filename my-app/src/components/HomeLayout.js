@@ -167,11 +167,11 @@ function singleItem(classes, index) {
                 <Grid container spacing={2}>
                     
                     <Grid item xs sm container spacing={12} className={classes.item}>
-                        <Grid item>
+                        {/* <Grid item>
                             <ButtonBase className={classes.image}>
                                 <img className={classes.img} alt="logo" src={itemimage} />
                             </ButtonBase>
-                        </Grid>
+                        </Grid> */}
                         <Grid item xs container direction="column" spacing={2}>
                             <Grid item xs >
                                 <Typography gutterBottom variant="header">

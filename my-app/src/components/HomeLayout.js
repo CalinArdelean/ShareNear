@@ -154,7 +154,8 @@ function singleItem(classes, index) {
                                 <img className={classes.img} alt="logo" src={itemimage} />
                             </ButtonBase>
                         </Grid> */}
-                        <img src={getState('itemList')[index].image} height="100" width="100"></img>
+                        {console.log(getState('itemList')[index].description.split(': ')[1])}
+                        <img src={getState('itemList')[index].description.split(': ')[1]} height="100" width="100"></img>
                         <Grid item xs container direction="column" spacing={2}>
                             <Grid item xs >
                                 <Typography gutterBottom variant="header">

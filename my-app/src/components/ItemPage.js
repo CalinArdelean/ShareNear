@@ -105,7 +105,7 @@ class ItemPage extends React.Component {
                     
                         <Grid item container direction="row" justify="space-evenly" className="item">
                             
-                            <img src={getState("currentItem").image} height="200" width="200"></img>
+                            <img src={getState("currentItem").description.split(': ')[1]} height="200" width="200"></img>
 
                             <Grid item className="info" direction="column">
                                 <Grid item direction="column">
@@ -125,7 +125,7 @@ class ItemPage extends React.Component {
                                 </Grid>
                                 <Grid item className="rent">
                                    
-                                     <button onClick={this.rentItem}> Rent this item </button>
+                                     <button className="item-btn" onClick={this.rentItem}> Rent this item </button>
                                 </Grid>
                             </Grid>
                             <Grid item>
@@ -133,7 +133,7 @@ class ItemPage extends React.Component {
                             </Grid>
                         </Grid>
 						
-                    <button onClick={this.goHome}>Return to Listings</button>
+                    <button className="item-btn" onClick={this.goHome}>Return to Listings</button>
             
                     
                 </Paper>

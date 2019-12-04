@@ -16,7 +16,8 @@ class AppNavbar extends BaseReactComponent {
 }
 
   state = {
-    location: ""
+    location: "",
+	name: ""
   }
 
   handleInputChange = (event) => {
@@ -50,6 +51,12 @@ class AppNavbar extends BaseReactComponent {
     setState("currentUser", null)
   }
 
+  getHomeFiltered = () => {
+		console.log(this.state.location)
+		setState("homeFiltered", {name: this.state.name, location: this.state.location})
+        setState("currentView", "HomeFiltered")
+    }
+
   render() {
     let userListButton = "";
     let userListIcon = "";
@@ -75,13 +82,13 @@ class AppNavbar extends BaseReactComponent {
                 />
             </Navbar.Brand>
           <Form inline className="text-white">
-            <FormControl type="text" placeholder="Item" className="ml-4 text-white rounded-0 bg-transparent border-left-0 border-right-0 border-top-0" />
+            <FormControl type="text" name='name' value={this.state.name} onChange={this.handleInputChange} placeholder="Item" className="ml-4 text-white rounded-0 bg-transparent border-left-0 border-right-0 border-top-0" />
             <FormControl name='location' value={this.state.location} onChange={this.handleInputChange} type="text" placeholder="Location" className="ml-4 text-white rounded-0 bg-transparent border-left-0 border-right-0 border-top-0" />
             &nbsp; &nbsp; &nbsp; &nbsp;
-            <a href="./HomeFiltered">
-            <i className="fas fa-search"></i>
+            
+            <i className="fas fa-search" onClick={this.getHomeFiltered}></i>
             {/* <Link to={{pathname: './HomeLayoutFiltered', data: this.state.location}}><button className="fas fa-search" /></Link> */}
-            </a>
+            
           </Form> 
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text className="text-white">

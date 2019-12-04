@@ -13,10 +13,11 @@ export const setEmptyState = () => {
     setState("signupForm", { firstname: "", lastname: "", phonenumber: "", email: "", location:"", username: "", password: "", usertype: false, description:"Hi! Welcome to my profile", itemlist: []})
     setState("loginForm", { email: "", password: "" })
     setState("postForm", { name: "", description: "", price: "", location: "", duration: "", image: {}})
-	setState("editForm", { firstname: "", lastname: "", phonenumber: "", email: "", location:"", username: "", password: "", usertype: false, description:"Hi! Welcome to my profile", itemlist: []})
+	setState("editForm", { firstname: "", lastname: "", phonenumber: "", location:"", usertype: false, description:"Hi! Welcome to my profile", itemlist: []})
     setState("currentView", "Login");
 	setState("currentItem", null);
     setState("itemList", null);
+	setState("homeFiltered", null);
         // { name: "Children's Bicycle", 
         // description: "Brand new, my son uses it and he\'s eight, so I can guarantee that it\'s good for eight - year - olds.",
         // price: "$15.00",

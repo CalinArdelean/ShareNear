@@ -67,7 +67,7 @@ class newPost extends BaseReactComponent {
 										renter: getState('currentUser')._id})        
 
 
-						setState("postForm", null);
+						//setState("postForm", null);
 						console.log(currList)
 						setState("itemList", currList)     
 						console.log(getState("itemList"))          

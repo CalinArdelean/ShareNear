@@ -126,10 +126,7 @@ class editProfile extends BaseReactComponent {
                         <option value="">Female</option>
                         <option value="">Other</option>
                     </select>
-                    <input type="text" placeholder="Facebook Profile URL" />
-                    <input type="text" placeholder="Twitter Profile URL" />
-                    <input type="text" placeholder="Google+ Profile URL" />
-                    <input type="text" placeholder="LinkedIn Profile URL" />
+                    
                         <button>Upload Profile Picture</button>
 						<button type="button" onClick={ this.patchUser }>Save</button>
                         

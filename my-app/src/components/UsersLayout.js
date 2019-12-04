@@ -14,21 +14,6 @@ import { getState, setState } from "statezero";
 
 /* Component that makes a grid of the product listings to put on the home page */
 
-//hard coded pictures and listings of products (will need to change for phase 2)
-import itemimage from '../assets/NewItem.png';
-import bike from '../assets/bike.jpg';
-import snowblower from '../assets/snowblower.jpg';
-import chainsaw from '../assets/chainsaw.jpg';
-import ps4 from '../assets/ps4.jpg';
-import airpods from '../assets/airpods.jpg';
-import trampoline from '../assets/trampoline.jpg';
-import apartment from '../assets/apartment.jpg';
-import oculus from '../assets/oculus.jpg';
-import porsche from '../assets/porsche.jpg';
-import { borderColor } from '@material-ui/system';
-
-var numCols = 3;
-
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
@@ -181,7 +166,7 @@ function singleItem(classes, index) {
                             </Grid>
                         </Grid>
                         <Grid item>
-                            <Typography variant="subtitle1">${getState('itemList')[index].price}/{getState('itemList')[0].duration}</Typography>
+                            <Typography variant="subtitle1">${getState('itemList')[index].price}/{getState('itemList')[index].duration}</Typography>
                         </Grid>
                     </Grid>
                 </Grid>

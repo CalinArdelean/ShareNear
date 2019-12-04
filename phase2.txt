@@ -39,6 +39,10 @@ Contains all user information, including first name, last name, location, phone 
 The user can edit their profile, create new listings, and view their listings.
 You can access another user's profile page by clicking the link from an item page. 
 
+Admins:
+~ admins have the same functionalities that regular users do, but they also have access to two more features on the
+navbar, where they can view 
+
 
 Overview of the routes: 
 /users - route for getting all users. 

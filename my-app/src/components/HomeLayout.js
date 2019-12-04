@@ -181,7 +181,7 @@ function singleItem(classes, index) {
                             </Grid>
                         </Grid>
                         <Grid item>
-                            <Typography variant="subtitle1">${getState('itemList')[index].price}/{getState('itemList')[0].duration}</Typography>
+                            <Typography variant="subtitle1">${getState('itemList')[index].price}/{getState('itemList')[index].duration}</Typography>
                         </Grid>
                     </Grid>
                 </Grid>

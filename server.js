@@ -30,7 +30,7 @@ const crypto = require("crypto");
 
 // Create storage engine
 const storage = new GridFsStorage({
-	url: process.env.MONGODB_URI || 'mongodb://localhost:27017/UsersAPI',
+	url: 'mongodb://sharenear:statezero@cluster0-shard-00-00-sxm0g.mongodb.net:27017,cluster0-shard-00-01-sxm0g.mongodb.net:27017,cluster0-shard-00-02-sxm0g.mongodb.net:27017/UsersAPI?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority',
 	file: (req, file) => {
 	  return new Promise((resolve, reject) => {
 		crypto.randomBytes(16, (err, buf) => {

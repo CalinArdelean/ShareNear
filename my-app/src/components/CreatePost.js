@@ -87,7 +87,7 @@ class newPost extends BaseReactComponent {
 									})        
 
 
-						setState("postForm", null);
+						//setState("postForm", null);
 						console.log(currList)
 						setState("itemList", currList)     
 						console.log(getState("itemList"))          

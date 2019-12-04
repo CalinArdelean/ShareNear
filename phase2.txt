@@ -30,11 +30,14 @@ A regular user can:
 
 ~ A user can also view their profile as acessed from the top of the navbar
     - Within their profile a user can choose to edit their profile, create a new listing or view their listings, as accessed
-    - Edit Profile Page:
-    - User should fill out all fields before submitting.
 
-~ User Profile Page:
-Contains all user information, including first name, last name, location, phone number, description, username, password, and email.
+~Edit Profile Page:
+User should fill out all fields before submitting. These will dynamically update the user profile page.
+
+User Profile Page:
+Contains all user information, including first name, last name, location, phone number, description, username, password, and email. 
+The user can edit their profile, create new listings, and view their listings.
+You can access another user's profile page by clicking the link from an item page. 
 
 
 Overview of the routes: 
@@ -47,7 +50,3 @@ PUT will update user's first name, last name, location, phone number, and descri
 POST will create a new item for a user and add it to their item list.
 DELETE will delete a user by id.
 /users/:userid/:itemid - PUT will update a given user's item information.
-
-
-
-

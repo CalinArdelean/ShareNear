@@ -193,6 +193,44 @@ app.put('/users/:id', (req, res) => {
 
 })
 
+app.put('/users/:userid/:itemid', (req, res) => {
+	const userid = req.params.userid
+	const itemid = req.params.itemid
+
+	// get the updated name and year only from the request body.
+	const available = req.body.isAvailable
+	if (!ObjectID.isValid(userid)) {
+		res.status(404).send()
+	}
+
+	User.findById(userid).then((user) => {
+		console.log(user)
+
+		if (!user) {
+			res.status(404).send()  // could not find this student
+		} else {
+
+			const item = user.itemlist.id(itemid);
+
+			if (!item) {
+				res.status(404).send();
+			}
+			else {
+				
+				user.itemlist.id(itemid).isAvailable = available;
+				user.save().then((result) => {
+					res.send({user});
+				}, (error) => {
+					res.status(400).send(error);
+				})
+			}
+		}
+	}).catch((error) => {
+		res.status(500).send()  // server error
+	})
+
+})
+
 
 /** User routes below **/
 // Set up a POST route to *create* a user of your web app (*not* a item).

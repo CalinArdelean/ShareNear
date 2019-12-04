@@ -26,7 +26,38 @@ class Profile extends BaseReactComponent {
     }
     
     viewListing = () => {
-        setState("currentView", "UserPostings");
+            //console.log(getState("itemList"));
+            const url = '/users';
+            // Since this is a GET request, simply call fetch on the URL
+            fetch(url)
+                .then((res) => {
+                    if (res.status === 200) {
+                        // return a promise that resolves with the JSON body
+                        return res.json()
+                    } else {
+                        alert('Could not get users')
+                    }
+                })
+                .then((json) => {  // the resolved promise with the JSON body
+                    let allUsers = json.users
+                    const items = []
+                    for (let i = 0; i < allUsers.length; i++) {
+                        for (let j = 0; j < allUsers[i].itemlist.length; j++) {
+                            if ((allUsers[i].itemlist[j]).renter === getState("currentUser")._id) {
+                                items.push(allUsers[i].itemlist[j])
+                            }
+                        }
+                    }
+                    console.log(items);
+                    setState("itemList", items);
+                    const self = this;
+                    self.setState({ data: items });
+                    setState("currentView", "UserPostings");
+                }).catch((error) => {
+                    console.log(error)
+                });
+
+        
     }
 
     

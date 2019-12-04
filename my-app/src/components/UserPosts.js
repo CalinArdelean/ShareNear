@@ -4,7 +4,7 @@ import item from '../assets/NewItem.png';
 import AppNavbar from './Navbar';
 import BaseReactComponent from './BaseReactComponent';
 import { getState, setState } from "statezero";
-
+import UsersLayout from "./UsersLayout";
 
 /* Component for the profile page of users */
 class UserPosts extends BaseReactComponent {
@@ -17,6 +17,7 @@ class UserPosts extends BaseReactComponent {
         return (
             <div className="App">
                 <AppNavbar />
+                <UsersLayout/>
             </div>
 
         );

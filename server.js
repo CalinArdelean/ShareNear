@@ -84,6 +84,25 @@ app.use(session({
     }
 }));
 
+// Our own express middleware to check for 
+// an active user on the session cookie (indicating a logged in user.)
+const sessionChecker = (req, res, next) => {
+    if (req.session.user) {
+        res.redirect('/dashboard'); // redirect to dashboard if logged in.
+    } else {
+        next(); // next() moves on to the route.
+    }    
+};
+
+app.get('/users', (req, res) => {
+	User.find().then((users) => {
+		res.send({ users }) // can wrap in object if want to add more properties
+	}, (error) => {
+		res.status(500).send(error) // server error
+	})
+})
+
+
 app.get("/:filename", (req, res) => {
 	gfs.files.findOne({ filename: req.params.filename }, (err, file) => {
 	  // Check if file
@@ -106,23 +125,6 @@ app.get("/:filename", (req, res) => {
 	});
   });
 
-// Our own express middleware to check for 
-// an active user on the session cookie (indicating a logged in user.)
-const sessionChecker = (req, res, next) => {
-    if (req.session.user) {
-        res.redirect('/dashboard'); // redirect to dashboard if logged in.
-    } else {
-        next(); // next() moves on to the route.
-    }    
-};
-
-app.get('/users', (req, res) => {
-	User.find().then((users) => {
-		res.send({ users }) // can wrap in object if want to add more properties
-	}, (error) => {
-		res.status(500).send(error) // server error
-	})
-})
 
 // A route to login and create a session
 app.post('/users/login', (req, res) => {

@@ -138,7 +138,7 @@ class ItemPage extends React.Component {
                                 <img className="img" alt="logo" src={image} />
                             </ButtonBase>
                             </Grid> */}
-                            <img src={getState("currentItem").image} height="100" width="100"></img>
+                            <img src={getState("currentItem").image} height="200" width="200"></img>
 
                             <Grid item className="info" direction="column">
                                 <Grid item direction="column">

@@ -26,7 +26,7 @@ class newPost extends BaseReactComponent {
 	
 		formData.append("img", file[0]);
 	
-		fetch("mighty-mountain-12412.herokuapp.com/", {
+		fetch("/", {
 		  method: "POST",
 		  body: formData
 		}).then(r => {
@@ -35,12 +35,10 @@ class newPost extends BaseReactComponent {
 	
 		document
 		  .getElementById("img")
-		  .setAttribute("src", `mighty-mountain-12412.herokuapp.com/${file[0].name}`);
+		  .setAttribute("src", `/${file[0].name}`);
 		console.log(file[0]);
-	  };
 
-    postItem = () => {
-        console.log(getState("itemList"));
+		console.log(getState("itemList"));
         console.log(getState("postForm"));
         console.log(`/users/${getState('currentUser')._id}   `);
 
@@ -100,7 +98,8 @@ class newPost extends BaseReactComponent {
 					console.log(error);
 				});
 		}
-    }
+	  };
+
 
     render() {
         //console.log(this.state.name);
@@ -153,7 +152,7 @@ class newPost extends BaseReactComponent {
         ></img>
       </div>
 
-                        <button type="button" onClick={this.postItem} onClick={this.Post}>Submit</button>
+                        <button type="button" onClick={this.Post}>Submit</button>
                         {/*<Link to={{pathname: './listings', data: this.state}}><input type="submit" value="Create Post" /></Link>*/}
                     </div>
                 </div>

@@ -75,10 +75,9 @@ class App extends BaseReactComponent {
         else if(getState("currentView") === "RenterProfile"){
             view = <RenterProfile />
         }
-
 		else if(getState("currentView") === "HomeFiltered"){
             view = <HomeFiltered />
-
+        }
         else if (getState("currentView") === "UserPostings"){
             view = <Posts/>
 

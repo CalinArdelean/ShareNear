@@ -62,7 +62,7 @@ class Profile extends BaseReactComponent {
 					<br></br><br></br>
                     {<button type="button" onClick={this.createListing}>Create New Listing</button>}
 					<br></br><br></br>
-                    {<button type="button" onClick={this.viewListings}>View Your Listings</button>}
+                    {<button type="button" onClick={this.viewListing}>View Your Listings</button>}
                     <br></br><br></br>
                 </div>
             </div>

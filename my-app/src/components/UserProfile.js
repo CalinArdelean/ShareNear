@@ -43,7 +43,8 @@ class Profile extends BaseReactComponent {
                     const items = []
                     for (let i = 0; i < allUsers.length; i++) {
                         for (let j = 0; j < allUsers[i].itemlist.length; j++) {
-                            if ((allUsers[i].itemlist[j]).renter === getState("currentUser")._id) {
+                            if (((allUsers[i].itemlist[j]).renter === getState("currentUser")._id)
+                                && ((allUsers[i].itemlist[j]).isAvailable)) {
                                 items.push(allUsers[i].itemlist[j])
                             }
                         }

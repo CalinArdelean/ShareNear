@@ -112,8 +112,8 @@ class newPost extends BaseReactComponent {
                     <div className="sc-container">
 						<input type="text" placeholder="Item Name" onChange={e => updatePostForm(e.target)} name="name" label="Item Name"/>
 						<input type="text" placeholder="Description" onChange={e => updatePostForm(e.target)} name="description" label="Item Description"/>
-						<input type="text" placeholder="price" onChange={e => updatePostForm(e.target)} name="price" label="Item Price"/>
-						<input type="text" placeholder="Duration" onChange={e => updatePostForm(e.target)} name="duration" label="Rate"/>
+						<input type="text" placeholder="Price" onChange={e => updatePostForm(e.target)} name="price" label="Item Price"/>
+						<input type="text" placeholder="Rate (hour, day, etc.)" onChange={e => updatePostForm(e.target)} name="duration" label="Rate"/>
 						<input type="text" placeholder="Location" onChange={e => updatePostForm(e.target)} name="location" label="Item Location"/>
                 
                          

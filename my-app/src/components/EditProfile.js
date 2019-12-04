@@ -122,7 +122,7 @@ class editProfile extends BaseReactComponent {
                         <option value="">Other</option>
                     </select>
                     
-                        <button>Upload Profile Picture</button>
+                        
 						<button type="button" onClick={ this.patchUser }>Save</button>
                         
                 </div>

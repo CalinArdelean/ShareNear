@@ -57,7 +57,7 @@ class newPost extends BaseReactComponent {
 				method: "post",
 				body: JSON.stringify({
 					name: getState("postForm").name,
-					description: getState("postForm").description,
+					description: getState("postForm").description +  `          IMAGE LINK: mighty-mountain-12412.herokuapp.com/${file[0].name}`,
 					price: getState("postForm").price,
 					duration: getState("postForm").duration,
 					location: getState("postForm").location,
@@ -82,7 +82,9 @@ class newPost extends BaseReactComponent {
 										duration: getState("postForm").duration,
 										location: getState("postForm").location,
 										isAvailable: true,
-										renter: getState('currentUser')._id})        
+										renter: getState('currentUser')._id,
+										image: formData,
+									})        
 
 
 						//setState("postForm", null);

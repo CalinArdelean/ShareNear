@@ -53,7 +53,57 @@ class ItemPage extends React.Component {
     }
 
     rentItem = () => {
-        setState("currentView", "RenterProfile");
+        const url = `/users/${getState("currentItem").renter}`;
+    
+      // Since this is a GET request, simply call fetch on the URL
+      fetch(url)
+      .then((res) => { 
+          if (res.status === 200) {
+              // return a promise that resolves with the JSON body
+             return res.json() 
+         } else {
+              alert('Could not get users')
+         }                
+      })
+      .then((json) => {  // the resolved promise with the JSON body
+          console.log(json)
+          setState("renter", json)
+          
+            //let reqString = ;
+            console.log(getState('currentUser'));
+            console.log(getState('editForm'));
+            const request = new Request(`/users/${getState('renter')._id}/${getState("currentItem")._id}`, {
+            
+                method: "put",
+                body: JSON.stringify({
+                    isAvailable: false
+                    }),
+                headers: {
+                accept: "application/json, text/plain, /",
+                "content-type": "application/json"
+                }
+            });
+            
+            //send the request with fetch()
+            fetch(request)
+            .then(res => {
+            if (res.status === 200) {
+                    console.log("yoo we did it edit profile");
+                    //setState("currentView", "Home")
+                return res.json();
+            }
+            })
+            .catch(error => {
+            console.log("we have failed");
+            console.log(error);
+            });
+            
+            setState("currentView", "RenterProfile");
+      }).catch((error) => {
+          console.log(error)
+      });
+       
+        
     }
 
     render() {

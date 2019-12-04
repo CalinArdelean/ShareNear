@@ -36,8 +36,10 @@ class Home extends BaseReactComponent {
           let allUsers = json.users
           const items = []
             for (let i = 0; i < allUsers.length; i++) {
-            for (let j = 0; j < allUsers[i].itemlist.length; j++) {
-              items.push(allUsers[i].itemlist[j])
+              for (let j = 0; j < allUsers[i].itemlist.length; j++) {
+                if((allUsers[i].itemlist[j]).isAvailable){
+                  items.push(allUsers[i].itemlist[j])
+                }         
             }
           }
           console.log(items);

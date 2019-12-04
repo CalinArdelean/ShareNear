@@ -16,6 +16,7 @@ import Post from './components/CreatePost';
 import Edit from './components/EditProfile';
 import ModifyUser from './components/ModifyUserPage';
 import Listings from './components/UserItems';
+import Posts from './components/UserPosts';
 import HomeFiltered from './components/HomeFiltered';
 import HomeLayoutFiltered from './components/HomeLayoutFiltered';
 import UserList from './components/UserListPage';
@@ -74,8 +75,13 @@ class App extends BaseReactComponent {
         else if(getState("currentView") === "RenterProfile"){
             view = <RenterProfile />
         }
+
 		else if(getState("currentView") === "HomeFiltered"){
             view = <HomeFiltered />
+
+        else if (getState("currentView") === "UserPostings"){
+            view = <Posts/>
+
         }
 
         return (

@@ -8,10 +8,6 @@ import { updatePostForm } from '../actions/user.js'
 import TextField from "@material-ui/core/TextField";
 import BaseReactComponent from './BaseReactComponent';
 
-// import updatePostForm = field => {
-//     const { name, value } = field;
-//     setState(`postForm.${name}`, value);
-// };
 
 /* Component for a user to create a post and put an item up for rent */
 class newPost extends BaseReactComponent {
@@ -88,7 +84,7 @@ class newPost extends BaseReactComponent {
 									})        
 
 
-						//setState("postForm", null);
+					
 						console.log(currList)
 						setState("itemList", currList)     
 						console.log(getState("itemList"))          
@@ -105,7 +101,7 @@ class newPost extends BaseReactComponent {
 
 
     render() {
-        //console.log(this.state.name);
+      
         console.log(getState("postForm"));
         return (
             <div className="Edit">
@@ -119,18 +115,7 @@ class newPost extends BaseReactComponent {
 						<input type="text" placeholder="price" onChange={e => updatePostForm(e.target)} name="price" label="Item Price"/>
 						<input type="text" placeholder="Duration" onChange={e => updatePostForm(e.target)} name="duration" label="Rate"/>
 						<input type="text" placeholder="Location" onChange={e => updatePostForm(e.target)} name="location" label="Item Location"/>
-                        
-                        {/* <input name='name' value='name' onChange={e => updatePostForm(e.target)} type="text" placeholder="Name of Item" />
-                        <textarea name='description' value='description' onChange={e => updatePostForm(e.target)} type="text" placeholder="Description of Item" />
-                        <input name='price' value='price' onChange={e => updatePostForm(e.target)} type="text" placeholder="Price" /> */}
-                        {/* <select>
-                            <option value="">per hour</option>
-                            <option value="">per day</option>
-                            <option value="">per week</option>
-                            <option value="">per month</option>
-                            <option value="">other</option>
-                        </select>
-                        <input name='location' value='location' onChange={e => updatePostForm(e.target)} type="text" placeholder="Location" /> */}
+                
                          
 						 <div className="container">
         

@@ -99,8 +99,6 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-//var isValid = 0;
-
 
 	
 
@@ -114,7 +112,6 @@ export default function ComplexGrid() {
 	console.log(searchLocation)
 	console.log(searchName)
     const items = [];
-    //let index = 0;
     for (let index = 0; index < getState("itemList").length; index++) {
 		if (searchLocation == ""){
 			if (getState("itemList")[index].name == searchName){
@@ -195,14 +192,7 @@ function singleItem(classes, index) {
                             <Grid item>
                                 <Typography variant="body2" style={{ cursor: 'pointer' }} >
 
-                                    {/* <Link
-                                        to={{
-                                            pathname: "./item",
-                                            itemIndex: index,
-                                            //isValidUser: isValid
-                                        }}>
-                                        Rent this item
-                                    </Link> */}
+                                   
                                     <button value={index} onClick={() => getItem(index)}>Rent this Item</button>
                                      
                                 </Typography>

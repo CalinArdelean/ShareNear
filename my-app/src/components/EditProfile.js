@@ -17,17 +17,13 @@ class editProfile extends BaseReactComponent {
         return { currentUser, currentView };
     }
 
-	/*updateEditForm(field) {
-		const { name, value } = field;
-		setState(`editForm.${name}`, value);
-	}*/
+	
 
 	patchUser = () => {
 		//let reqString = ;
 		console.log(getState('currentUser'));
 		console.log(getState('editForm'));
 		const request = new Request(`/users/${getState('currentUser')._id}`, {
-		//const request = new Request('/users/5de5a212502f3e49c08ed9bf', {
 		
 			method: "put",
 			body: JSON.stringify({
@@ -78,8 +74,7 @@ class editProfile extends BaseReactComponent {
       })
       .then((json) => {  // the resolved promise with the JSON body
           let allUsers = json.users
-			  //const inputEmail = getState("editForm").email
-			  //const inputPassword = getState("editForm").password
+
 			  const inputId = getState("currentUser")._id
 			  console.log(allUsers)
 			  for(let i = 0; i < allUsers.length; i++){

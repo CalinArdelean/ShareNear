@@ -1,0 +1,53 @@
+Team 34--
+
+The link to run our app is: https://mighty-mountain-12412.herokuapp.com/
+
+ShareNear is a web application service that allows its user to put up listings of items they want to rent out,
+and interact with other users to rent their items as well. 
+
+Demo to use our app-
+The app begins at a login page. You can login using the credentials-
+username: user
+password: user
+
+or 
+
+username: admin
+password: admin
+
+To login as a regular user or admin respectively.
+
+A regular user can:
+~ view all the listings available for rent.
+    - click on these listings to see them with more detail, and decide whether to rent them.
+    - deciding to rent the items will take a user to the renter's profile page
+    - once an item is rented, it is no longer available for view on the home page
+
+~ When a user wants to go back to the home page they should click the logo at the top of the navigation bar.
+
+~ A user can also search for specific item based on name or location or both 
+    - ( to test this please type exactly as the name or location as is displayed on the item caps sensitive)
+
+~ A user can also view their profile as acessed from the top of the navbar
+    - Within their profile a user can choose to edit their profile, create a new listing or view their listings, as accessed
+    - Edit Profile Page:
+    - User should fill out all fields before submitting.
+
+~ User Profile Page:
+Contains all user information, including first name, last name, location, phone number, description, username, password, and email.
+
+
+Overview of the routes: 
+/users - route for getting all users. 
+/users/login - route to login and create a session. Verifies the given username and password to check if it is in the database.
+/users/logout - route to logout a user. Removes the session and redirects to the login page.
+/users/check-session: checks if the user is logged in on the session cookie.
+/users/:id - GET will retrieve the user that matches the specified id
+PUT will update user's first name, last name, location, phone number, and description. User is not allowed to change their username, password or email. Used when user edits their profile.
+POST will create a new item for a user and add it to their item list.
+DELETE will delete a user by id.
+/users/:userid/:itemid - PUT will update a given user's item information.
+
+
+
+

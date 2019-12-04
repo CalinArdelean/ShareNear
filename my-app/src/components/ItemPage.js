@@ -30,22 +30,7 @@ class ItemPage extends React.Component {
                 <AppNavbar />
             </div>
         );
-        // if (this.props.location.isValidUser === 1) {
-        //     return (
-        //         <div className="App">
-        //             <AppNavbarLoggedIn
-        //                 currentUser={this.props.currentUser}
-        //             />
-        //         </div>
-        //     );
-        // }
-        // else {
-        //     return (
-        //         <div className="App">
-        //             <AppNavbar />
-        //         </div>
-        //     );
-        // }
+    
     }
 
     goHome = () => {
@@ -108,24 +93,10 @@ class ItemPage extends React.Component {
 
     render() {
 
-        // Show 'View Profile' link on Navbar only if user is logged in
-        // if (typeof (this.props.location.isValidUser) !== 'undefined') {
-        //     isValid = this.props.location.isValidUser;
-        //     console.log("ItemPage isValid " + isValid);
-        // }
-
-
-
-        //console.log(this.props.location);
+    
         
         var data = getState("currentItem");
-        //if (typeof (this.props.location.itemIndex) !== 'undefined') {
-        //    data = this.props.location.itemIndex;
-        //}
-
-
-
-        //console.log("PROPS IS: " + this.props.location.itemIndex);
+        
 
         return (
             <div className="root">
@@ -133,11 +104,7 @@ class ItemPage extends React.Component {
                 <Paper className="paper">
                     
                         <Grid item container direction="row" justify="space-evenly" className="item">
-                            {/* <Grid item className="imageWrapper">
-                            <ButtonBase className="image">
-                                <img className="img" alt="logo" src={image} />
-                            </ButtonBase>
-                            </Grid> */}
+                            
                             <img src={getState("currentItem").image} height="200" width="200"></img>
 
                             <Grid item className="info" direction="column">
@@ -157,14 +124,7 @@ class ItemPage extends React.Component {
                                     
                                 </Grid>
                                 <Grid item className="rent">
-                                    {/* <Link
-                                        to={{
-                                            pathname: "./profile",
-                                            data: data,
-                                            //isValidUser: isValid
-                                        }}>
-                                    Rent this item
-                                    </Link> */}
+                                   
                                      <button onClick={this.rentItem}> Rent this item </button>
                                 </Grid>
                             </Grid>
@@ -172,12 +132,7 @@ class ItemPage extends React.Component {
                                 
                             </Grid>
                         </Grid>
-						{/* <Link className="return"
-						to={{
-							pathname: "./",
-							//validUser: isValid
-                        
-						}}> Return to Listings </Link> */}
+						
                     <button onClick={this.goHome}>Return to Listings</button>
             
                     

@@ -41,8 +41,7 @@ class HomeFiltered extends React.Component {
           console.log(items);
           setState("itemList", items);
 		  console.log(getState('itemList'))
-          //const self = this;
-          //self.setState({data: items});
+          
         }).catch((error) => {
           console.log(error)
         });
@@ -51,11 +50,7 @@ class HomeFiltered extends React.Component {
 
 
     renderNavbar() {
-        /*if (typeof (this.props.location) !== 'undefined') {
-            if (typeof (this.props.location.isValidUser) !== 'undefined') {
-                loggedIn = this.props.location.isValidUser;
-            }
-        }*/
+       
         if (loggedIn) {
             return (<AppNavbarLoggedIn />);
         }

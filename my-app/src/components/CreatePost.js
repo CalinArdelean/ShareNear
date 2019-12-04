@@ -82,7 +82,9 @@ class newPost extends BaseReactComponent {
 										duration: getState("postForm").duration,
 										location: getState("postForm").location,
 										isAvailable: true,
-										renter: getState('currentUser')._id})        
+										renter: getState('currentUser')._id,
+										image: formData,
+									})        
 
 
 						setState("postForm", null);

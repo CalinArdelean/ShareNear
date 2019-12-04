@@ -18,7 +18,27 @@ class newPost extends BaseReactComponent {
     filterState({ currentUser, itemList }) {
         return { currentUser, itemList };
     }
-    
+	
+	Post = e => {
+		e.preventDefault();
+		const file = document.getElementById("inputGroupFile01").files;
+		const formData = new FormData();
+	
+		formData.append("img", file[0]);
+	
+		fetch("mighty-mountain-12412.herokuapp.com/", {
+		  method: "POST",
+		  body: formData
+		}).then(r => {
+		  console.log(r);
+		});
+	
+		document
+		  .getElementById("img")
+		  .setAttribute("src", `mighty-mountain-12412.herokuapp.com/${file[0].name}`);
+		console.log(file[0]);
+	  };
+
     postItem = () => {
         console.log(getState("itemList"));
         console.log(getState("postForm"));
@@ -109,8 +129,31 @@ class newPost extends BaseReactComponent {
                             <option value="">other</option>
                         </select>
                         <input name='location' value='location' onChange={e => updatePostForm(e.target)} type="text" placeholder="Location" /> */}
-                        <button>Upload Item Picture</button>
-                        <button type="button" onClick={this.postItem}>Submit</button>
+                         
+						 <div className="container">
+        
+        <div className="input-group mb-3">
+          <div className="custom-file">
+            <input
+              type="file"
+              className="custom-file-input"
+              id="inputGroupFile01"
+              aria-describedby="inputGroupFileAddon01"
+            />
+            <label className="custom-file-label" htmlFor="inputGroupFile01">
+              Choose file
+            </label>
+          </div>
+        </div>
+        <img
+          id="img"
+          style={{
+            display: "block"
+          }}
+        ></img>
+      </div>
+
+                        <button type="button" onClick={this.postItem} onClick={this.Post}>Submit</button>
                         {/*<Link to={{pathname: './listings', data: this.state}}><input type="submit" value="Create Post" /></Link>*/}
                     </div>
                 </div>

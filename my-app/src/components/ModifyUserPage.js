@@ -58,7 +58,7 @@ class ModifyUser extends React.Component {
 			bcrypt.hash(getState("modifyForm").password, salt, (err, hash) => {
                 this.state.modified_user.password = hash;
                 
-                const request = new Request(`/users/${this.state.modified_user._id}`, {
+                const request = new Request(`/modify/${this.state.modified_user._id}`, {
 		
                     method: "put",
                     body: JSON.stringify({

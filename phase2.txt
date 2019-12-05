@@ -1,56 +1,141 @@
 Team 34--
+!--Our group would not like to be marked late, so please mark our last commit from before the deadline.
+The commits following the deadline have just been some visual and aesthetic updates to make our presentation look
+nicer. This latest commit also contains the most updated/detailed phase2.txt, so you can read this one while 
+marking our old commits--!
 
 The link to run our app is: https://mighty-mountain-12412.herokuapp.com/
 
-ShareNear is a web application service that allows its user to put up listings of items they want to rent out,
-and interact with other users to rent their items as well. 
+Description + Benefit:
+ShareNear is a web application service that allows its users to create profiles, and put up listings of items
+that they want to rent out to other users. They can also browse items that other users have put up for 
+rent and choose to rent those items as well. It has great user benefit because it provides a platform 
+that appeals to all ages, and is for anyone who would like to start making extra money by renting stuff
+that would otherwise be collecting dust in their homes. It also appeals to users who are looking to
+make use of items for a specific purpose or time period, and thus have no reason to actually purchase
+such items they want to rent out. 
 
-Demo to use our app-
+DEMO-
+!--Disclaimer don't press the back button or forward button in your browser as this sometimes breaks the app,
+all pages can be accessed through button clicks on our site. 
+
 The app begins at a login page. You can login using the credentials-
 username: user
 password: user
-
 or 
-
 username: admin
 password: admin
-
 To login as a regular user or admin respectively.
-
-A regular user can:
-~ view all the listings available for rent.
-    - click on these listings to see them with more detail, and decide whether to rent them.
-    - deciding to rent the items will take a user to the renter's profile page
-    - once an item is rented, it is no longer available for view on the home page
-
-~ When a user wants to go back to the home page they should click the logo at the top of the navigation bar.
-
-~ A user can also search for specific item based on name or location or both 
-    - ( to test this please type exactly as the name or location as is displayed on the item caps sensitive)
-
-~ A user can also view their profile as acessed from the top of the navbar
-    - Within their profile a user can choose to edit their profile, create a new listing or view their listings, as accessed
-
-~Edit Profile Page:
-User should fill out all fields before submitting. These will dynamically update the user profile page.
-
-User Profile Page:
-Contains all user information, including first name, last name, location, phone number, description, username, password, and email. 
-The user can edit their profile, create new listings, and view their listings.
-You can access another user's profile page by clicking the link from an item page. 
-
-Admins:
-~ admins have the same functionalities that regular users do, but they also have access to two more features on the
-navbar, where they can view 
+You can also sign up and create a new account by clicking the link at the bottom of the logout page. 
+This will take you to the sign up page. Please fill in all fields. The username and email inputted must be 
+uniqur and the page will alert you if try to sign up using an already existing username or email. If the sign up
+is successful, you will be redirected to the login page where you can login with the new credentials you
+used to create your account. 
 
 
-Overview of the routes: 
-/users - route for getting all users. 
-/users/login - route to login and create a session. Verifies the given username and password to check if it is in the database.
-/users/logout - route to logout a user. Removes the session and redirects to the login page.
-/users/check-session: checks if the user is logged in on the session cookie.
-/users/:id - GET will retrieve the user that matches the specified id
-PUT will update user's first name, last name, location, phone number, and description. User is not allowed to change their username, password or email. Used when user edits their profile.
-POST will create a new item for a user and add it to their item list.
-DELETE will delete a user by id.
-/users/:userid/:itemid - PUT will update a given user's item information.
+REGULAR USER:
+Once logged in, a regular user is directed to the home page of our app. All items currently avaible for rent
+posted by every user, will be displayed on the home page.
+
+A user can click on view profile to see their profile information. On this page they can do one of three things:
+    1. Edit your profile.
+        -To test this please input all the fields appropriately on the form. Then after clicking the button, you
+        should logout of your profile, log back in and view your profile to view your updated information. 
+    2. Create new listing.
+        -To test this, also fill out all the fields, the name of the item, e.g. 'TV', 'Computer', 'Wrench'.
+        The description of the item; e.g. 'Cool new bicycle in perfect condition'
+        The price of the item; e.g. '10.00', '2.00', etc.
+        The location of the item; e.g 'Brampton', 'Toronto', etc.
+        Also ensure that you upload an image of the item from your file explorer.
+    3. View your listings.
+        -When you go to this page it will show the user a list of all the items they have up for rent. 
+        You can delete the item from clicking the button respectively. And this removes your item from 
+        the home page, and your current listings page.
+
+A user can always click on the ShareNear logo on the navbar to return to the home page.
+
+On the home page a user can view all listings, and can click to view the item in a single page. After browsing through
+items, if a user likes an item, they can click to rent it. This takes them to the profile page of the renter,
+which displays their contact information, which they can use to establish communication with the renter to
+get the item. Rented items are no longer available for rent on the home page as well.
+
+Our home page also has a search bar, which allows you to filter items by name, location, or both. A user can 
+fill in the appropriate fields and click the search icon to use this.
+    To test this, please type the name of the item and/or the location exactly as displayed in the listing.
+    To search more than once, please always click the logo to go back to the home page, before specifying
+    another search. 
+
+Finally, a user can log out through the nav bar, which will redirect them back to the login page. 
+
+ADMIN USERS:
+An admin user has all the same functionality as a regular user, however, they have two more features on the 
+navigation bar, view users and modify users.
+
+-View users allows an admin to view a list of all the users currently set up on the platform, as well as their 
+public information (Username, name, email, etc.). You can use the search bar and type in anything you currently
+see on the page to filter the results.
+
+-Modify users takes the admin to a page where they can delete a user, or change their pass word.
+The admin would type in the username of the user they want to modify to perform these actions.
+You can test the modified user passwords by typing in the user name and changed password, and clicking the 
+button. The next time this specified user wants to login, they will have to use the changed password.
+You can delete a user simply by typing in their username. You can see that this information gets updated 
+in the view users page, their items get deleted, and the user can no longer login. 
+
+OVERVIEW OF THE SERVER ROUTES:
+
+~app.post('/images/'...) 
+This route allows users to upload pictures (when creating a new item listing). It saves the uploaded image
+onto our site database on atlas cloud, and links the images onto our deployed app on heroku through the link
+https://mighty-mountain-12412.herokuapp.com/images/{name of uploaded image}. 
+
+~app.get("/images/:filename"...)
+This route gets a specified image uploaded to our app, so that it can be displayed for each item listing. 
+
+~app.use(session...)
+Creates a session cookie of our sever so that we can have user authentication. 
+Only logged in users that will get to connect to our server using our established secret, 
+and can then access information from the server by navigating to the different site components.
+
+~app.get('/users'...)
+This route allows us to get the list of all users signed up on our site, as well as the relevant data stored
+in the user attributes, which are described in our models/user.js. We use the route when we want to get all the 
+users items (displayed on the home page), current user items, and simply to view a list of all users 
+(for the admin pages). We also use it to check if a user's login credentials are accurate.
+
+~app.post('/users'...)
+This route is used when a new user is created when they sign up on our site. It saves the new user in our database.
+
+~app.post('/users/login'...)
+This route is called when users login, and is used to create a session and session cookie (for user authentication).
+It also verifies the given username and password, checking it is in the databse before creating the session. 
+
+~app.get('/users/logout'...)
+This route is used when a user logs out. It destroys the current session of the user so that they get redirected
+back to the login page and can no longer view the protected site information.
+
+~app.get('/users/check-session'...) 
+This route is used to check if a user is logged in on a session cookie (so that they can access restricted 
+site information) once logged in.
+
+~app.get('/users/:id'...)
+This route is used to get one specific user from our data base with the corresponding id. It is useful when we
+want the information of a single user (such as the user currently logged on so we can update their profile
+page information or get their item listings etc...).
+
+~app.post('/users/:id'...)
+This route is called when the specified user wants to create a new item listing. It creates the listing and 
+adds the item to the users item list.
+
+~app.put('/users/:id'...)
+This route allows us to update the infromation in our database of the user with the specified id (for example,
+when the user wants to update their profile information, or the admin wants to modify their password).
+
+~app.delete('/users/:id'...)
+This route is called when an admin wants to delete a specified user. It destroys the user and their information
+from our database.
+
+~app.put('/users/:userid/:itemid'...)
+This route updates a specific item listing from one of the users, changing its availability field (i.e.
+it makes the item unavailable and inaccessible because the user has either deleted this listing, or someone else 
+is currently clicked to rent the item).

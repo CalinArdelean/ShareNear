@@ -18,11 +18,13 @@ all pages can be accessed through button clicks on our site.
 The app begins at a login page. You can login using the credentials-
 
 username: user
+
 password: user
 
 or 
 
 username: admin
+
 password: admin
 
 To login as a regular user or admin respectively.

@@ -16,11 +16,15 @@ DEMO-
 all pages can be accessed through button clicks on our site. 
 
 The app begins at a login page. You can login using the credentials-
+
 username: user
 password: user
+
 or 
+
 username: admin
 password: admin
+
 To login as a regular user or admin respectively.
 You can also sign up and create a new account by clicking the link at the bottom of the logout page. 
 This will take you to the sign up page. Please fill in all fields. The username and email inputted must be 

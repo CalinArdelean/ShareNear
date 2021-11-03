@@ -27,7 +27,7 @@
         "multer-gridfs-storage": "^4.0.1",
         "react-images-upload": "^1.2.7",
         "statezero": "^0.5.4",
-        "validator": "^12.1.0"
+        "validator": "^13.7.0"
     },
     "devDependencies": {
         "nodemon": "^2.0.1"
